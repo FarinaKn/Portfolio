@@ -861,8 +861,9 @@
 
         @media (max-width: 580px) {
             .hero-split { grid-template-columns: 1fr; }
-            .hero-avatar { justify-content: flex-start; }
+            .hero-avatar { justify-content: center; }
             .avatar-frame { margin-left: 0; }
+            .avatar-img { height: clamp(300px, 60vw, 420px); }
             .hero-glass-left, .hero-glass-right { display: none; }
             .grid { grid-template-columns: 1fr; }
             .tools-grid { grid-template-columns: 1fr; }
