@@ -1,0 +1,5 @@
+.DS_Store
+serve.py
+skills-lock.json
+.agents/
+.claude/

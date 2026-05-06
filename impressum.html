@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum — Farina Knoblauch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .imp-wrap {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 140px 48px 100px;
+        }
+        .imp-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--muted);
+            text-decoration: none;
+            margin-bottom: 64px;
+            transition: color .3s;
+        }
+        .imp-back:hover { color: var(--accent); }
+        .imp-back svg { transition: transform .3s; }
+        .imp-back:hover svg { transform: translateX(-3px); }
+
+        .imp-section {
+            margin-bottom: 64px;
+        }
+        .imp-title {
+            font-family: var(--display);
+            font-size: clamp(36px, 5vw, 64px);
+            font-weight: 700;
+            letter-spacing: -.02em;
+            line-height: 1;
+            color: var(--text);
+            margin-bottom: 48px;
+        }
+        .imp-h2 {
+            font-family: var(--display);
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -.01em;
+            color: var(--text);
+            margin-bottom: 16px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+        }
+        .imp-section:first-of-type .imp-h2 {
+            border-top: none;
+            padding-top: 0;
+        }
+        .imp-label {
+            font-size: 10px;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        .imp-body {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 2;
+        }
+        .imp-body a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(212,168,184,.3);
+            transition: border-color .3s;
+        }
+        .imp-body a:hover { border-color: var(--accent); }
+        .imp-body ul {
+            list-style: none;
+            margin-top: 8px;
+        }
+        .imp-body ul li::before {
+            content: '—';
+            color: var(--accent);
+            margin-right: 10px;
+        }
+        .imp-address {
+            font-family: var(--mono);
+            font-size: 12px;
+            color: var(--muted);
+            line-height: 2.2;
+            margin-bottom: 8px;
+        }
+        .imp-divider {
+            height: 1px;
+            background: var(--border);
+            margin: 64px 0;
+        }
+    </style>
+</head>
+<body>
+
+<nav id="nav">
+    <a href="index.html" class="nav-logo">FK</a>
+</nav>
+
+<div class="imp-wrap">
+
+    <a href="index.html" class="imp-back">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M12 7H2M2 7l5-5M2 7l5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Zurück zum Portfolio
+    </a>
+
+    <!-- IMPRESSUM -->
+    <div class="imp-section">
+        <p class="imp-label">Rechtliche Angaben</p>
+        <h1 class="imp-title">Impressum</h1>
+
+        <div class="imp-h2" style="border-top:none;padding-top:0;">Angaben gemäß § 5 TMG</div>
+        <p class="imp-address">
+            Farina Knoblauch<br>
+            Hohenkrähenstraße 41<br>
+            78224 Singen<br>
+            Deutschland
+        </p>
+        <p class="imp-body">
+            E-Mail: <a href="mailto:FarinaKnoblauch@gmail.com">FarinaKnoblauch@gmail.com</a><br>
+            Berufsbezeichnung: Freelancerin im Bereich Design, Branding und Fotografie
+        </p>
+    </div>
+
+    <div class="imp-divider"></div>
+
+    <!-- DATENSCHUTZ -->
+    <div class="imp-section">
+        <p class="imp-label">Datenschutz</p>
+        <h2 class="imp-title">Datenschutz&shy;erklärung</h2>
+
+        <h3 class="imp-h2" style="border-top:none;padding-top:0;">Allgemeine Hinweise</h3>
+        <p class="imp-body">
+            Der Schutz Ihrer persönlichen Daten ist mir wichtig. Diese Website verarbeitet personenbezogene Daten ausschließlich im Rahmen der gesetzlichen Datenschutzvorschriften (DSGVO).
+        </p>
+
+        <h3 class="imp-h2">Verantwortliche Stelle</h3>
+        <p class="imp-address">
+            Farina Knoblauch<br>
+            Hohenkrähenstraße 41<br>
+            78224 Singen<br>
+            Deutschland
+        </p>
+        <p class="imp-body">
+            E-Mail: <a href="mailto:FarinaKnoblauch@gmail.com">FarinaKnoblauch@gmail.com</a>
+        </p>
+
+        <h3 class="imp-h2">Hosting</h3>
+        <p class="imp-body">
+            Diese Website wird aktuell über GitHub Pages bereitgestellt. Beim Besuch der Website können durch den Hosting-Anbieter technische Daten wie IP-Adresse, Browsertyp oder Zeitpunkt des Zugriffs verarbeitet werden.
+        </p>
+
+        <h3 class="imp-h2">Kontaktformular</h3>
+        <p class="imp-body">
+            Wenn Sie mich über das Kontaktformular kontaktieren, werden die von Ihnen eingegebenen Daten ausschließlich zur Bearbeitung Ihrer Anfrage verwendet. Die Verarbeitung erfolgt gemäß Art. 6 Abs. 1 lit. b DSGVO.
+        </p>
+
+        <h3 class="imp-h2">Externe Links</h3>
+        <p class="imp-body">
+            Diese Website enthält Links zu externen Plattformen wie Instagram und LinkedIn. Beim Anklicken dieser Links verlassen Sie diese Website. Für die Inhalte und Datenschutzrichtlinien der jeweiligen Plattformen sind ausschließlich deren Betreiber verantwortlich.
+        </p>
+
+        <h3 class="imp-h2">Ihre Rechte</h3>
+        <p class="imp-body">Sie haben jederzeit das Recht auf:</p>
+        <p class="imp-body">
+            <ul>
+                <li>Auskunft über Ihre gespeicherten Daten</li>
+                <li>Berichtigung unrichtiger Daten</li>
+                <li>Löschung Ihrer Daten</li>
+                <li>Einschränkung der Verarbeitung</li>
+                <li>Widerspruch gegen die Verarbeitung</li>
+            </ul>
+        </p>
+        <p class="imp-body" style="margin-top:16px;">
+            Bei Fragen zum Datenschutz können Sie mich jederzeit per E-Mail kontaktieren.
+        </p>
+    </div>
+
+</div>
+
+<footer>
+    <span class="f-copy">© 2026 Farina Knoblauch</span>
+    <span class="f-love">Built with love &amp; questionable sleep schedules.</span>
+    <a href="#" class="f-top"><span class="f-top-text">Back to top ↑</span></a>
+</footer>
+
+</body>
+</html>
