@@ -254,7 +254,7 @@
         }
 
         .hero-avatar { display: flex; align-items: flex-end; }
-        .avatar-frame { position: relative; }
+        .avatar-frame { position: relative; margin-left: -32px; }
         .avatar-img {
             height: clamp(280px, 36vw, 480px);
             width: auto;
