@@ -62,3 +62,32 @@ const nav = document.getElementById('nav');
         setTimeout(type, del ? 52 : 82);
     }
     type();
+
+    /* Contact form — Formspree AJAX submit */
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async e => {
+            e.preventDefault();
+            const btn = contactForm.querySelector('.form-submit');
+            const success = document.getElementById('formSuccess');
+            btn.classList.add('sending');
+            btn.querySelector('span').textContent = 'Sending...';
+            try {
+                const res = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: new FormData(contactForm),
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (res.ok) {
+                    contactForm.reset();
+                    success.style.display = 'block';
+                    btn.querySelector('span').textContent = 'Sent ✓';
+                } else {
+                    btn.querySelector('span').textContent = 'Error — try again';
+                }
+            } catch {
+                btn.querySelector('span').textContent = 'Error — try again';
+            }
+            btn.classList.remove('sending');
+        });
+    }

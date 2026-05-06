@@ -698,13 +698,52 @@
         }
 
         /* ── CONTACT ────────────────────────────── */
-        #contact { border-top: 1px solid var(--border); min-height: 56vh; display: flex; flex-direction: column; justify-content: center; }
-        .contact-pre { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; color: var(--muted); margin-bottom: 32px; }
+        #contact { border-top: 1px solid var(--border); }
+        .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
         .contact-h {
-            font-family: var(--display); font-size: clamp(50px, 7.5vw, 105px);
-            font-weight: 700; line-height: .93; letter-spacing: -.02em; margin-bottom: 48px;
+            font-family: var(--display); font-size: clamp(40px, 5.5vw, 80px);
+            font-weight: 700; line-height: .93; letter-spacing: -.02em; margin-bottom: 40px;
         }
         .contact-h em { font-style: italic; color: var(--accent); }
+
+        /* ── CONTACT FORM ───────────────────────── */
+        .contact-form { display: flex; flex-direction: column; gap: 14px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .form-field { display: flex; flex-direction: column; gap: 7px; }
+        .form-label {
+            font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted);
+        }
+        .form-input, .form-textarea {
+            background: rgba(255,255,255,.03);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 13px 16px;
+            font-family: var(--mono);
+            font-size: 12px;
+            color: var(--text);
+            outline: none;
+            width: 100%;
+            transition: border-color .3s, background .3s;
+            -webkit-appearance: none;
+        }
+        .form-input:focus, .form-textarea:focus {
+            border-color: rgba(212,168,184,.45);
+            background: rgba(255,255,255,.055);
+        }
+        .form-input::placeholder, .form-textarea::placeholder { color: var(--muted); opacity: .45; }
+        .form-textarea { resize: vertical; min-height: 130px; line-height: 1.8; }
+        .form-submit {
+            align-self: flex-start;
+            margin-top: 6px;
+            cursor: pointer;
+            font-family: var(--mono);
+        }
+        .form-submit.sending { opacity: .6; pointer-events: none; }
+        .form-success {
+            display: none;
+            font-size: 13px; color: var(--accent); font-family: var(--serif);
+            font-style: italic; margin-top: 8px;
+        }
 
         .contact-mail {
             display: inline-flex; align-items: center; gap: 14px;
@@ -816,6 +855,8 @@
             .card:nth-child(n) { grid-column: span 1; }
             .about-layout { grid-template-columns: 1fr; gap: 48px; }
             .exp-layout { grid-template-columns: 1fr; gap: 48px; }
+            .contact-layout { grid-template-columns: 1fr; gap: 48px; }
+            .form-row { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 580px) {
