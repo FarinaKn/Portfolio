@@ -862,11 +862,15 @@
         @media (max-width: 580px) {
             .hero-split { grid-template-columns: 1fr; }
             .hero-avatar { justify-content: flex-start; }
+            .avatar-frame { margin-left: 0; }
             .hero-glass-left, .hero-glass-right { display: none; }
             .grid { grid-template-columns: 1fr; }
             .tools-grid { grid-template-columns: 1fr; }
             .stats { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
             footer { flex-direction: column; gap: 12px; text-align: center; }
+            .f-love { position: static; transform: none; }
             .socials { flex-wrap: wrap; }
             .filters { gap: 6px; }
+            .exp-layout { grid-template-columns: 1fr; gap: 40px; }
         }
