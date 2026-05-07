@@ -471,8 +471,7 @@
         .c-video .card-thumb::after  { width:66%;height:66%;border-radius:50%;top:17%;left:17%;border:1px solid rgba(76,32,144,.18); }
         .c-3d .card-thumb::before { width:38%;height:38%;top:calc(50% - 19%);left:calc(50% - 19%);border:1px solid rgba(82,82,82,.4);transform:rotate(45deg); }
         .c-3d .card-thumb::after  { width:20%;height:20%;top:calc(50% - 10%);left:calc(50% - 10%);border:1px solid rgba(82,82,82,.2);transform:rotate(45deg); }
-        .c-photo .card-thumb::before { width:48%;height:48%;border-radius:50%;top:26%;left:26%;border:1px solid rgba(60,96,64,.45); }
-        .c-photo .card-thumb::after  { width:22%;height:22%;border-radius:50%;top:calc(50% - 11%);left:calc(50% - 11%);background:rgba(60,96,64,.12); }
+        .c-photo .card-thumb::before, .c-photo .card-thumb::after { display: none; }
         .c-web .card-thumb::before { width:72%;height:44%;top:28%;left:14%;border:1px solid rgba(33,53,112,.5);border-radius:3px; }
         .c-web .card-thumb::after  { width:36%;height:6%;top:18%;left:14%;background:rgba(33,53,112,.3);border-radius:2px; }
 
