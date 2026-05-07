@@ -477,8 +477,8 @@
         .about-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
         .about-text { font-family: var(--serif); font-size: clamp(22px, 2.5vw, 30px); font-weight: 300; line-height: 1.55; }
         .about-text em { color: var(--accent); font-style: italic; }
-        .about-sub { margin-top: 28px; font-size: 12px; color: var(--muted); line-height: 2; }
-        .tools-label { font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+        .about-sub { margin-top: 28px; font-size: 13px; color: var(--muted); line-height: 2; }
+        .tools-label { font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
 
         .tools-grid {
             display: grid; grid-template-columns: 1fr 1fr;
@@ -655,22 +655,23 @@
         .exp-edu-item:last-child { margin-bottom: 0; }
         .exp-edu-role {
             font-family: var(--display);
-            font-size: 16px;
+            font-size: clamp(18px, 1.8vw, 24px);
             font-weight: 700;
             color: var(--text);
             letter-spacing: -.01em;
-            margin-bottom: 3px;
-        }
-        .exp-edu-school {
-            font-size: 11px;
-            color: var(--accent);
-            letter-spacing: .05em;
+            line-height: 1.1;
             margin-bottom: 4px;
         }
+        .exp-edu-school {
+            font-size: 12px;
+            color: var(--accent);
+            letter-spacing: .06em;
+            margin-bottom: 6px;
+        }
         .exp-edu-tags {
-            font-size: 11px;
+            font-size: 12px;
             color: var(--muted);
-            line-height: 1.7;
+            line-height: 1.9;
         }
         .exp-thesis {
             margin-top: 10px;
