@@ -253,7 +253,7 @@
             animation: fadeUp .9s ease forwards .42s;
         }
 
-        .hero-avatar { display: flex; align-items: flex-end; }
+        .hero-avatar { display: flex; align-items: flex-end; position: relative; z-index: 0; }
         .avatar-frame { position: relative; margin-left: -32px; }
         .avatar-frame::after {
             content: '';
