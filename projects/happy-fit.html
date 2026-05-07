@@ -136,8 +136,8 @@
         }
         .slide:hover { border-color: rgba(255,255,255,.18); }
 
-        /* Square 1:1 — feed posts */
-        .slide.sq  { width: 260px; aspect-ratio: 1 / 1; }
+        /* Feed posts 4:5 — 1080×1350 */
+        .slide.sq  { width: 216px; aspect-ratio: 4 / 5; }
 
         /* Portrait 9:16 — stories & reels */
         .slide.port { width: 160px; aspect-ratio: 9 / 16; }
@@ -182,27 +182,32 @@
             color: rgba(255,255,255,.2);
         }
 
-        /* ── Expanded (lightbox) state ── */
+        /* ── Lightbox overlay (appended to body) ── */
         .slide-backdrop {
             position: fixed; inset: 0;
-            background: rgba(0,0,0,.85);
+            background: rgba(0,0,0,.88);
             z-index: 8999;
             cursor: zoom-out;
         }
-        .slide.expanded {
-            position: fixed !important;
-            inset: auto !important;
-            top: 50% !important;
-            left: 50% !important;
-            transform: translate(-50%, -50%) !important;
+        .slide-lightbox {
+            position: fixed;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
             z-index: 9000;
             border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,.12);
             cursor: zoom-out;
-            border-color: rgba(255,255,255,.12);
-            /* width overridden by JS based on .sq / .port */
+            animation: lbIn .22s cubic-bezier(.16,1,.3,1);
         }
-        .slide.sq.expanded  { width: min(80vw, 500px); }
-        .slide.port.expanded { width: min(55vw, 360px); }
+        @keyframes lbIn {
+            from { opacity: 0; transform: translate(-50%,-50%) scale(.92); }
+            to   { opacity: 1; transform: translate(-50%,-50%) scale(1); }
+        }
+        .slide-lightbox img,
+        .slide-lightbox video { display: block; width: 100%; height: 100%; object-fit: cover; }
+        .slide-lightbox .slide-ph,
+        .slide-lightbox .slide-ph-video { width: 100%; height: 100%; }
 
         .proj-page-footer {
             padding-top: 48px;
@@ -211,10 +216,8 @@
 
         @media (max-width: 700px) {
             .proj-page-wrap { padding: 100px 24px 80px; }
-            .slide.sq  { width: 200px; }
-            .slide.port { width: 130px; }
-            .slide.sq.expanded  { width: 90vw; }
-            .slide.port.expanded { width: 75vw; }
+            .slide.sq  { width: 160px; }
+            .slide.port { width: 120px; }
         }
     </style>
 </head>
@@ -389,30 +392,37 @@
 
     /* ── Click to expand / collapse ── */
     let backdrop = null;
-    let expanded = null;
+    let lightbox = null;
+    let pausedTrack = null;
 
     function collapse() {
-        if (!expanded) return;
-        expanded.classList.remove('expanded');
-        expanded.closest('.slider-track').classList.remove('paused');
-        expanded = null;
-        if (backdrop) { backdrop.remove(); backdrop = null; }
+        if (lightbox)  { lightbox.remove();  lightbox  = null; }
+        if (backdrop)  { backdrop.remove();  backdrop  = null; }
+        if (pausedTrack) { pausedTrack.classList.remove('paused'); pausedTrack = null; }
     }
 
     document.querySelectorAll('.slide').forEach(slide => {
         slide.addEventListener('click', () => {
-            if (slide === expanded) {
-                collapse();
-                return;
-            }
-            // close previous
-            collapse();
+            // if already open, close
+            if (lightbox) { collapse(); return; }
 
-            // open new
-            expanded = slide;
-            slide.classList.add('expanded');
-            slide.closest('.slider-track').classList.add('paused');
+            // pause this track
+            pausedTrack = slide.closest('.slider-track');
+            pausedTrack.classList.add('paused');
 
+            // build lightbox — clone inner content
+            const isPortrait = slide.classList.contains('port');
+            const lb = document.createElement('div');
+            lb.className = 'slide-lightbox';
+            lb.style.cssText = isPortrait
+                ? 'width:min(55vw,340px); aspect-ratio:9/16;'
+                : 'width:min(75vw,480px); aspect-ratio:4/5;';
+            lb.innerHTML = slide.innerHTML;
+            lb.addEventListener('click', collapse);
+            document.body.appendChild(lb);
+            lightbox = lb;
+
+            // backdrop
             backdrop = document.createElement('div');
             backdrop.className = 'slide-backdrop';
             backdrop.addEventListener('click', collapse);
