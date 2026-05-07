@@ -473,8 +473,7 @@
         .c-3d .card-thumb::before { width:38%;height:38%;top:calc(50% - 19%);left:calc(50% - 19%);border:1px solid rgba(82,82,82,.4);transform:rotate(45deg); }
         .c-3d .card-thumb::after  { width:20%;height:20%;top:calc(50% - 10%);left:calc(50% - 10%);border:1px solid rgba(82,82,82,.2);transform:rotate(45deg); }
         .c-photo .card-thumb::before, .c-photo .card-thumb::after { display: none; }
-        .c-web .card-thumb::before { width:72%;height:44%;top:28%;left:14%;border:1px solid rgba(33,53,112,.5);border-radius:3px; }
-        .c-web .card-thumb::after  { width:36%;height:6%;top:18%;left:14%;background:rgba(33,53,112,.3);border-radius:2px; }
+        .c-web .card-thumb::before, .c-web .card-thumb::after { display: none; }
 
         /* ── ABOUT ──────────────────────────────── */
         #about { border-top: 1px solid var(--border); }
