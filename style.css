@@ -447,7 +447,7 @@
         .c-video  .card-thumb { background: linear-gradient(140deg,#08040F 0%,#180A32 45%,#301560 80%,#4C2090 100%); }
         .c-3d     .card-thumb { background: linear-gradient(140deg,#070707 0%,#141414 45%,#2A2A2A 80%,#525252 100%); }
         .c-photo  .card-thumb { background: linear-gradient(140deg,#060C07 0%,#101C12 45%,#203824 80%,#3C6040 100%); }
-        .c-web    .card-thumb { background: linear-gradient(140deg,#050812 0%,#0C1430 45%,#182858 80%,#213570 100%); }
+        .c-web    .card-thumb { background: linear-gradient(140deg,#030E12 0%,#082030 45%,#0E4858 80%,#1A7880 100%); }
 
         .card-thumb::before, .card-thumb::after { content: ''; position: absolute; }
         .c-brand .card-thumb::before { width:42%;height:72%;top:14%;left:28%;border:1px solid rgba(184,122,68,.25);transform:rotate(12deg); }
