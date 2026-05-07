@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maren Studio — Farina Knoblauch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css?v=3">
+    <style>
+        .proj-page-wrap {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 130px 48px 100px;
+        }
+        .proj-page-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--muted);
+            text-decoration: none;
+            margin-bottom: 72px;
+            transition: color .3s;
+        }
+        .proj-page-back:hover { color: var(--accent); }
+        .proj-page-back:hover svg { transform: translateX(-3px); }
+        .proj-page-back svg { transition: transform .3s; }
+        .proj-page-header {
+            margin-bottom: 64px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid var(--border);
+        }
+        .proj-page-cat {
+            display: block;
+            font-family: var(--mono);
+            font-size: 10px;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+        .proj-page-title {
+            font-family: var(--display);
+            font-size: clamp(36px, 6vw, 72px);
+            font-weight: 900;
+            letter-spacing: -.03em;
+            line-height: 1;
+            color: var(--text);
+            margin-bottom: 24px;
+        }
+        .proj-page-meta {
+            display: flex;
+            gap: 32px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        .proj-page-desc {
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.9;
+            max-width: 600px;
+            flex: 1;
+        }
+        .proj-page-year {
+            font-family: var(--mono);
+            font-size: 11px;
+            color: var(--muted);
+            letter-spacing: .12em;
+            white-space: nowrap;
+            margin-top: 3px;
+        }
+        .proj-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 12px;
+            margin-bottom: 80px;
+        }
+        .proj-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            transition: transform .5s cubic-bezier(.16,1,.3,1), border-color .3s;
+        }
+        .proj-img:hover {
+            transform: scale(1.015);
+            border-color: rgba(255,255,255,.14);
+        }
+        .proj-placeholder {
+            aspect-ratio: 1;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .proj-placeholder-label {
+            font-family: var(--mono);
+            font-size: 10px;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,.15);
+        }
+        .proj-page-live {
+            margin-bottom: 48px;
+        }
+        .proj-live-btn {
+            display: inline-flex;
+            align-items: center;
+        }
+        .proj-page-footer {
+            padding-top: 48px;
+            border-top: 1px solid var(--border);
+        }
+        @media (max-width: 700px) {
+            .proj-page-wrap { padding: 100px 24px 80px; }
+            .proj-gallery { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<nav id="nav">
+    <a href="../index.html" class="nav-logo">FK</a>
+    <a href="../index.html#work" class="proj-page-back" style="position:absolute;right:48px;top:50%;transform:translateY(-50%);margin:0;">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M12 7H2M2 7l5-5M2 7l5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        All Projects
+    </a>
+</nav>
+
+<div class="proj-page-wrap">
+
+    <a href="../index.html#work" class="proj-page-back">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M12 7H2M2 7l5-5M2 7l5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        All Projects
+    </a>
+
+    <header class="proj-page-header">
+        <span class="proj-page-cat">Brand Design</span>
+        <h1 class="proj-page-title">Maren Studio</h1>
+        <div class="proj-page-meta">
+            <p class="proj-page-desc">A complete brand identity for Maren Studio — an independent creative studio. The project covered logo design, typography system, colour palette, and a cohesive set of brand guidelines to ensure consistent application across all touchpoints.</p>
+            <span class="proj-page-year">2024</span>
+        </div>
+    </header>
+
+    <div class="proj-gallery">
+            <div class="proj-placeholder" style="background:linear-gradient(140deg,#160C04 0%,#341808 45%,#7A4820 80%,#B87A44 100%);">
+                <span class="proj-placeholder-label">Image 1</span>
+            </div>
+            <div class="proj-placeholder" style="background:linear-gradient(140deg,#160C04 0%,#341808 45%,#7A4820 80%,#B87A44 100%);">
+                <span class="proj-placeholder-label">Image 2</span>
+            </div>
+            <div class="proj-placeholder" style="background:linear-gradient(140deg,#160C04 0%,#341808 45%,#7A4820 80%,#B87A44 100%);">
+                <span class="proj-placeholder-label">Image 3</span>
+            </div>
+            <div class="proj-placeholder" style="background:linear-gradient(140deg,#160C04 0%,#341808 45%,#7A4820 80%,#B87A44 100%);">
+                <span class="proj-placeholder-label">Image 4</span>
+            </div>
+    </div>
+
+
+
+    <div class="proj-page-footer">
+        <a href="../index.html#work" class="proj-page-back">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M12 7H2M2 7l5-5M2 7l5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Back to all projects
+        </a>
+    </div>
+
+</div>
+
+<footer>
+    <span class="f-copy">© 2026 Farina Knoblauch</span>
+    <span class="f-love">Built with love &amp; questionable sleep schedules.</span>
+    <a href="../index.html#work" class="f-top"><span class="f-top-text">Back to projects ↑</span></a>
+</footer>
+
+<script>
+    const nav = document.getElementById('nav');
+    addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60));
+</script>
+
+</body>
+</html>
