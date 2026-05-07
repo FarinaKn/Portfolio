@@ -66,8 +66,6 @@
             line-height: 1.9;
             max-width: 600px;
         }
-
-        /* ── Photo rows (full-width) ── */
         .photo-rows {
             padding: 0 0 80px;
             display: flex;
@@ -91,12 +89,8 @@
             animation: slider-scroll var(--dur, 60s) linear infinite;
         }
         .prow-track:hover,
-        .prow-track.paused {
-            animation-play-state: paused;
-        }
-        .prow-track.reverse {
-            animation-direction: reverse;
-        }
+        .prow-track.paused { animation-play-state: paused; }
+        .prow-track.reverse { animation-direction: reverse; }
         .pslide {
             flex-shrink: 0;
             height: 300px;
@@ -113,8 +107,6 @@
             display: block;
             object-fit: cover;
         }
-
-        /* ── Lightbox ── */
         .slide-backdrop {
             position: fixed; inset: 0;
             background: rgba(0,0,0,.92);
@@ -146,15 +138,12 @@
             height: auto;
             object-fit: contain;
         }
-
         .photo-page-footer {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 48px 80px;
+            padding: 48px 48px 80px;
             border-top: 1px solid var(--border);
-            padding-top: 48px;
         }
-
         @media (max-width: 700px) {
             .photo-page-header { padding: 100px 24px 48px; }
             .pslide { height: 200px; }
@@ -186,276 +175,145 @@
         <h1 class="proj-page-title">Chiaroscuro</h1>
         <span class="proj-page-year">2024</span>
     </div>
-    <p class="proj-page-desc">A study of light and shadow. This series explores the dramatic interplay between darkness and illumination — capturing moments where contrast defines form, texture, and atmosphere.</p>
+    <p class="proj-page-desc">A study of light and shadow. This series explores the dramatic interplay between darkness and illumination — capturing moments where contrast defines form, texture, and atmosphere. Shot entirely without post-processing: the only tools were light itself and the camera&#8217;s black&#8209;&amp;&#8209;white setting.</p>
 </div>
 
 <div class="photo-rows">
-
-    <!-- Row 1 — left -->
     <div class="prow-wrap">
-        <div class="prow-track" style="--dur:246s">
+        <div class="prow-track" style="--dur:120s">
                 <div class="pslide"><img src="photography/chiaroscuro/P1100421.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P1100582.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/chiaroscuro/P1100593.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P1100636.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/chiaroscuro/P1100678.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P1100691.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050001.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050009.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050014.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050020.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050030.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050033.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050039.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050045.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050048.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050054.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050057.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050060.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050065.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050069.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050073.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050079.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050083.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050093.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050099.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050103.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050108.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050114.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050124.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050135.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050160.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050169.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050172.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050177.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050185.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050188.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050195.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050200.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050203.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050211.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050216.jpg" alt="" loading="lazy"></div>
-            
-                <div class="pslide"><img src="photography/chiaroscuro/P1100421.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P1100582.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P1100593.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P1100636.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P1100678.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P1100691.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050001.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050009.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050014.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050020.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050030.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050033.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050039.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050045.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050048.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050054.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050057.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050060.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050065.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050069.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050073.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050079.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050083.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050093.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050099.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050103.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050108.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050114.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050124.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050135.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050160.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050169.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050172.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050177.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050185.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050188.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050195.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050200.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050203.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050211.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050216.jpg" alt="" loading="lazy"></div>
-        </div>
-    </div>
-
-    <!-- Row 2 — right -->
-    <div class="prow-wrap">
-        <div class="prow-track reverse" style="--dur:246s">
-                <div class="pslide"><img src="photography/chiaroscuro/P1100570.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P1100583.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P1100634.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P1100637.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P1100680.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P1100693.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050004.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050010.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050015.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050028.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050031.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050034.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050041.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050046.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050049.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050055.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050058.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050062.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050066.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050071.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050075.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050080.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050087.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050094.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050100.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050105.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050109.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050117.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050125.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050154.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050162.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050170.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050173.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050179.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050186.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050190.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050197.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050201.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050204.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050212.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050220.jpg" alt="" loading="lazy"></div>
-            
-                <div class="pslide"><img src="photography/chiaroscuro/P1100570.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P1100583.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P1100634.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P1100637.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P1100680.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P1100693.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050004.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050010.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050015.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050028.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050031.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050034.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050041.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050046.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050049.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050055.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050058.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050062.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050066.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050071.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050075.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050080.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050087.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050094.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050100.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050105.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050109.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050117.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050125.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050154.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050162.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050170.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050173.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050179.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050186.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050190.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050197.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050201.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050204.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050212.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050220.jpg" alt="" loading="lazy"></div>
-        </div>
-    </div>
-
-    <!-- Row 3 — left -->
-    <div class="prow-wrap">
-        <div class="prow-track" style="--dur:240s">
-                <div class="pslide"><img src="photography/chiaroscuro/P1100580.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P1100592.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P1100635.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P1100646.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P1100685.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/chiaroscuro/P1100694.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/chiaroscuro/P5050008.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050013.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050018.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050029.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050032.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050038.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050042.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050047.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050052.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050056.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050059.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050063.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050067.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050020.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050039.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050049.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050057.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050065.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/chiaroscuro/P5050072.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/chiaroscuro/P5050076.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050081.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050088.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050098.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050101.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050083.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050100.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/chiaroscuro/P5050106.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/chiaroscuro/P5050110.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050122.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050129.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050159.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050165.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050171.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050174.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050184.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050187.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050191.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050198.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050185.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050197.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/chiaroscuro/P5050202.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/chiaroscuro/P5050207.jpg" alt="" loading="lazy"></div>
+            
+                <div class="pslide"><img src="photography/chiaroscuro/P1100421.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P1100593.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P1100678.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P1100694.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050008.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050020.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050039.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050049.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050057.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050065.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050072.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050076.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050083.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050100.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050106.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050110.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050185.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050197.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050202.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050207.jpg" alt="" loading="lazy"></div>
+        </div>
+    </div>
+    <div class="prow-wrap">
+        <div class="prow-track reverse" style="--dur:120s">
+                <div class="pslide"><img src="photography/chiaroscuro/P1100570.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P1100636.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P1100680.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050001.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050013.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050028.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050042.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050052.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050058.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050066.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050073.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050079.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050094.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050101.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050108.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050124.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050188.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050200.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050203.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/chiaroscuro/P5050213.jpg" alt="" loading="lazy"></div>
             
-                <div class="pslide"><img src="photography/chiaroscuro/P1100580.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P1100592.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P1100635.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P1100646.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P1100685.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P1100694.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050008.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P1100570.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P1100636.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P1100680.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050001.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/chiaroscuro/P5050013.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050018.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050029.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050032.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050038.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050028.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/chiaroscuro/P5050042.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050047.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/chiaroscuro/P5050052.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050056.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050059.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050063.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050067.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050072.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050076.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050081.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050088.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050098.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050058.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050066.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050073.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050079.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050094.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/chiaroscuro/P5050101.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050106.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050110.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050122.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050129.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050159.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050165.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050171.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050174.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050184.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050187.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050191.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050198.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050202.jpg" alt="" loading="lazy"></div>
-                <div class="pslide"><img src="photography/chiaroscuro/P5050207.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050108.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050124.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050188.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050200.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050203.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/chiaroscuro/P5050213.jpg" alt="" loading="lazy"></div>
         </div>
     </div>
-
+    <div class="prow-wrap">
+        <div class="prow-track" style="--dur:120s">
+                <div class="pslide"><img src="photography/chiaroscuro/P1100580.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P1100646.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P1100685.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050004.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050014.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050038.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050045.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050055.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050063.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050067.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050075.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050080.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050099.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050103.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050109.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050169.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050190.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050201.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050204.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050220.jpg" alt="" loading="lazy"></div>
+            
+                <div class="pslide"><img src="photography/chiaroscuro/P1100580.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P1100646.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P1100685.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050004.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050014.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050038.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050045.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050055.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050063.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050067.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050075.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050080.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050099.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050103.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050109.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050169.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050190.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050201.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050204.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/chiaroscuro/P5050220.jpg" alt="" loading="lazy"></div>
+        </div>
+    </div>
 </div>
 
 <div class="photo-page-footer">
