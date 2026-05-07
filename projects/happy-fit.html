@@ -30,8 +30,9 @@
         .proj-page-back:hover { color: var(--accent); }
         .proj-page-back:hover svg { transform: translateX(-3px); }
         .proj-page-back svg { transition: transform .3s; }
+
         .proj-page-header {
-            margin-bottom: 64px;
+            margin-bottom: 72px;
             padding-bottom: 48px;
             border-bottom: 1px solid var(--border);
         }
@@ -74,12 +75,50 @@
             white-space: nowrap;
             margin-top: 3px;
         }
-        .proj-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 12px;
+
+        /* ── Sections ── */
+        .proj-section {
             margin-bottom: 80px;
         }
+        .proj-section-head {
+            display: flex;
+            align-items: baseline;
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+        .proj-section-title {
+            font-family: var(--display);
+            font-size: clamp(22px, 2.8vw, 32px);
+            font-weight: 700;
+            letter-spacing: -.02em;
+            color: var(--text);
+            white-space: nowrap;
+        }
+        .proj-section-line {
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+        .proj-section-count {
+            font-family: var(--mono);
+            font-size: 10px;
+            letter-spacing: .14em;
+            color: var(--muted);
+            white-space: nowrap;
+        }
+
+        /* ── Gallery grids ── */
+        .proj-grid {
+            display: grid;
+            gap: 10px;
+        }
+        .proj-grid-square {
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        }
+        .proj-grid-portrait {
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        }
+
         .proj-img {
             width: 100%;
             height: auto;
@@ -93,13 +132,15 @@
             border-color: rgba(255,255,255,.14);
         }
         .proj-placeholder {
-            aspect-ratio: 1;
             border-radius: 4px;
             border: 1px solid var(--border);
             display: flex;
             align-items: center;
             justify-content: center;
+            background: linear-gradient(140deg,#040A12 0%,#0A1E30 45%,#164260 80%,#226888 100%);
         }
+        .proj-placeholder.square { aspect-ratio: 1 / 1; }
+        .proj-placeholder.portrait { aspect-ratio: 9 / 16; }
         .proj-placeholder-label {
             font-family: var(--mono);
             font-size: 10px;
@@ -107,20 +148,14 @@
             text-transform: uppercase;
             color: rgba(255,255,255,.15);
         }
-        .proj-page-live {
-            margin-bottom: 48px;
-        }
-        .proj-live-btn {
-            display: inline-flex;
-            align-items: center;
-        }
+
         .proj-page-footer {
             padding-top: 48px;
             border-top: 1px solid var(--border);
         }
         @media (max-width: 700px) {
             .proj-page-wrap { padding: 100px 24px 80px; }
-            .proj-gallery { grid-template-columns: 1fr; }
+            .proj-grid-portrait { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
@@ -154,15 +189,80 @@
         </div>
     </header>
 
-    <div class="proj-gallery">
-            <img class="proj-img" src="../projects/happy-fit/HF_band.jpg" alt="" loading="lazy">
-            <img class="proj-img" src="../projects/happy-fit/HF_Gold_Neujahr.jpg" alt="" loading="lazy">
-            <img class="proj-img" src="../projects/happy-fit/HF_Gold_Weihnachten.jpg" alt="" loading="lazy">
-            <img class="proj-img" src="../projects/happy-fit/HF_OsterAktion_gruen.jpg" alt="" loading="lazy">
-            <img class="proj-img" src="../projects/happy-fit/Hansefit.jpg" alt="" loading="lazy">
+    <!-- AKTIONEN -->
+    <div class="proj-section">
+        <div class="proj-section-head">
+            <h2 class="proj-section-title">Aktionen</h2>
+            <div class="proj-section-line"></div>
+            <span class="proj-section-count">3 Beiträge</span>
+        </div>
+        <div class="proj-grid proj-grid-square">
+            <img class="proj-img" src="happy-fit/HF_Gold_Neujahr.jpg" alt="Neujahrs-Aktion" loading="lazy">
+            <img class="proj-img" src="happy-fit/HF_Gold_Weihnachten.jpg" alt="Weihnachts-Aktion" loading="lazy">
+            <img class="proj-img" src="happy-fit/HF_OsterAktion_gruen.jpg" alt="Oster-Aktion" loading="lazy">
+        </div>
     </div>
 
+    <!-- WUSSTEST DU SCHON? -->
+    <div class="proj-section">
+        <div class="proj-section-head">
+            <h2 class="proj-section-title">Wusstest Du schon?</h2>
+            <div class="proj-section-line"></div>
+            <span class="proj-section-count">Platzhalter</span>
+        </div>
+        <div class="proj-grid proj-grid-square">
+            <div class="proj-placeholder square"><span class="proj-placeholder-label">Beitrag 1</span></div>
+            <div class="proj-placeholder square"><span class="proj-placeholder-label">Beitrag 2</span></div>
+            <div class="proj-placeholder square"><span class="proj-placeholder-label">Beitrag 3</span></div>
+            <div class="proj-placeholder square"><span class="proj-placeholder-label">Beitrag 4</span></div>
+        </div>
+    </div>
 
+    <!-- STUDIOBEITRÄGE -->
+    <div class="proj-section">
+        <div class="proj-section-head">
+            <h2 class="proj-section-title">Studiobeiträge</h2>
+            <div class="proj-section-line"></div>
+            <span class="proj-section-count">Platzhalter</span>
+        </div>
+        <div class="proj-grid proj-grid-square">
+            <img class="proj-img" src="happy-fit/HF_band.jpg" alt="Studiobeitrag" loading="lazy">
+            <img class="proj-img" src="happy-fit/Hansefit.jpg" alt="Hansefit" loading="lazy">
+            <div class="proj-placeholder square"><span class="proj-placeholder-label">Beitrag 3</span></div>
+            <div class="proj-placeholder square"><span class="proj-placeholder-label">Beitrag 4</span></div>
+        </div>
+    </div>
+
+    <!-- STORYS -->
+    <div class="proj-section">
+        <div class="proj-section-head">
+            <h2 class="proj-section-title">Storys</h2>
+            <div class="proj-section-line"></div>
+            <span class="proj-section-count">Platzhalter</span>
+        </div>
+        <div class="proj-grid proj-grid-portrait">
+            <div class="proj-placeholder portrait"><span class="proj-placeholder-label">Story 1</span></div>
+            <div class="proj-placeholder portrait"><span class="proj-placeholder-label">Story 2</span></div>
+            <div class="proj-placeholder portrait"><span class="proj-placeholder-label">Story 3</span></div>
+            <div class="proj-placeholder portrait"><span class="proj-placeholder-label">Story 4</span></div>
+            <div class="proj-placeholder portrait"><span class="proj-placeholder-label">Story 5</span></div>
+        </div>
+    </div>
+
+    <!-- REELS -->
+    <div class="proj-section">
+        <div class="proj-section-head">
+            <h2 class="proj-section-title">Reels</h2>
+            <div class="proj-section-line"></div>
+            <span class="proj-section-count">Platzhalter</span>
+        </div>
+        <div class="proj-grid proj-grid-portrait">
+            <div class="proj-placeholder portrait"><span class="proj-placeholder-label">Reel 1</span></div>
+            <div class="proj-placeholder portrait"><span class="proj-placeholder-label">Reel 2</span></div>
+            <div class="proj-placeholder portrait"><span class="proj-placeholder-label">Reel 3</span></div>
+            <div class="proj-placeholder portrait"><span class="proj-placeholder-label">Reel 4</span></div>
+        </div>
+    </div>
 
     <div class="proj-page-footer">
         <a href="../index.html#work" class="proj-page-back">
