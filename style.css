@@ -425,6 +425,7 @@
         .card:nth-child(9)  { grid-column: span 4; }
         .card:nth-child(10) { grid-column: span 5; }
         .card:nth-child(11) { grid-column: span 7; }
+        .card:nth-child(12) { grid-column: span 12; }
         .card.hidden { display: none; }
 
         .card-thumb {
