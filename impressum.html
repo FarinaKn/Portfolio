@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Impressum — Farina Knoblauch</title>
+    <title>Impressum & Legal Notice — Farina Knoblauch</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=3">
     <style>
         .imp-wrap {
-            max-width: 680px;
+            max-width: 720px;
             margin: 0 auto;
             padding: 140px 48px 100px;
         }
@@ -31,12 +31,34 @@
         .imp-back svg { transition: transform .3s; }
         .imp-back:hover svg { transform: translateX(-3px); }
 
-        .imp-section {
-            margin-bottom: 64px;
+        .imp-lang-switch {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 48px;
         }
+        .imp-lang-btn {
+            font-family: var(--mono);
+            font-size: 10px;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: var(--muted);
+            background: none;
+            border: 1px solid var(--border);
+            padding: 6px 14px;
+            cursor: pointer;
+            transition: color .3s, border-color .3s;
+        }
+        .imp-lang-btn.active,
+        .imp-lang-btn:hover { color: var(--accent); border-color: var(--accent); }
+
+        .imp-block { display: none; }
+        .imp-block.active { display: block; }
+
+        .imp-section { margin-bottom: 56px; }
+
         .imp-title {
             font-family: var(--display);
-            font-size: clamp(36px, 5vw, 64px);
+            font-size: clamp(32px, 5vw, 56px);
             font-weight: 700;
             letter-spacing: -.02em;
             line-height: 1;
@@ -45,18 +67,15 @@
         }
         .imp-h2 {
             font-family: var(--display);
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 700;
             letter-spacing: -.01em;
             color: var(--text);
-            margin-bottom: 16px;
-            padding-top: 40px;
+            margin-bottom: 14px;
+            padding-top: 36px;
             border-top: 1px solid var(--border);
         }
-        .imp-section:first-of-type .imp-h2 {
-            border-top: none;
-            padding-top: 0;
-        }
+        .imp-section:first-of-type .imp-h2 { border-top: none; padding-top: 0; }
         .imp-label {
             font-size: 10px;
             letter-spacing: .2em;
@@ -76,15 +95,8 @@
             transition: border-color .3s;
         }
         .imp-body a:hover { border-color: var(--accent); }
-        .imp-body ul {
-            list-style: none;
-            margin-top: 8px;
-        }
-        .imp-body ul li::before {
-            content: '—';
-            color: var(--accent);
-            margin-right: 10px;
-        }
+        .imp-body ul { list-style: none; margin-top: 8px; }
+        .imp-body ul li::before { content: '—'; color: var(--accent); margin-right: 10px; }
         .imp-address {
             font-family: var(--mono);
             font-size: 12px;
@@ -92,10 +104,10 @@
             line-height: 2.2;
             margin-bottom: 8px;
         }
-        .imp-divider {
-            height: 1px;
-            background: var(--border);
-            margin: 64px 0;
+        .imp-divider { height: 1px; background: var(--border); margin: 64px 0; }
+
+        @media (max-width: 580px) {
+            .imp-wrap { padding: 100px 24px 80px; }
         }
     </style>
 </head>
@@ -111,80 +123,203 @@
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
             <path d="M12 7H2M2 7l5-5M2 7l5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        Zurück zum Portfolio
+        Back to Portfolio
     </a>
 
-    <!-- IMPRESSUM -->
-    <div class="imp-section">
-        <p class="imp-label">Rechtliche Angaben</p>
-        <h1 class="imp-title">Impressum</h1>
-
-        <div class="imp-h2" style="border-top:none;padding-top:0;">Angaben gemäß § 5 TMG</div>
-        <p class="imp-address">
-            Farina Knoblauch<br>
-            Hohenkrähenstraße 41<br>
-            78224 Singen<br>
-            Deutschland
-        </p>
-        <p class="imp-body">
-            E-Mail: <a href="mailto:FarinaKnoblauch@gmail.com">FarinaKnoblauch@gmail.com</a><br>
-            Berufsbezeichnung: Freelancerin im Bereich Design, Branding und Fotografie
-        </p>
+    <div class="imp-lang-switch">
+        <button class="imp-lang-btn active" onclick="switchLang('de', this)">Deutsch</button>
+        <button class="imp-lang-btn" onclick="switchLang('en', this)">English</button>
     </div>
 
-    <div class="imp-divider"></div>
+    <!-- ═══════════════ DEUTSCH ═══════════════ -->
+    <div class="imp-block active" id="lang-de">
 
-    <!-- DATENSCHUTZ -->
-    <div class="imp-section">
-        <p class="imp-label">Datenschutz</p>
-        <h2 class="imp-title">Datenschutz&shy;erklärung</h2>
+        <div class="imp-section">
+            <p class="imp-label">Rechtliche Angaben</p>
+            <h1 class="imp-title">Impressum</h1>
 
-        <h3 class="imp-h2" style="border-top:none;padding-top:0;">Allgemeine Hinweise</h3>
-        <p class="imp-body">
-            Der Schutz Ihrer persönlichen Daten ist mir wichtig. Diese Website verarbeitet personenbezogene Daten ausschließlich im Rahmen der gesetzlichen Datenschutzvorschriften (DSGVO).
-        </p>
+            <div class="imp-h2" style="border-top:none;padding-top:0;">Angaben gemäß § 5 TMG</div>
+            <p class="imp-address">
+                Farina Knoblauch<br>
+                Hohenkrähenstraße 41<br>
+                78224 Singen<br>
+                Deutschland
+            </p>
+            <p class="imp-body">
+                E-Mail: <a href="mailto:FarinaKnoblauch@gmail.com">FarinaKnoblauch@gmail.com</a><br>
+                Berufsbezeichnung: Freelancerin im Bereich Design, Branding und Fotografie
+            </p>
 
-        <h3 class="imp-h2">Verantwortliche Stelle</h3>
-        <p class="imp-address">
-            Farina Knoblauch<br>
-            Hohenkrähenstraße 41<br>
-            78224 Singen<br>
-            Deutschland
-        </p>
-        <p class="imp-body">
-            E-Mail: <a href="mailto:FarinaKnoblauch@gmail.com">FarinaKnoblauch@gmail.com</a>
-        </p>
+            <div class="imp-h2">Umsatzsteuer</div>
+            <p class="imp-body">
+                Gemäß § 19 UStG wird keine Umsatzsteuer berechnet (Kleinunternehmerregelung).
+            </p>
 
-        <h3 class="imp-h2">Hosting</h3>
-        <p class="imp-body">
-            Diese Website wird aktuell über GitHub Pages bereitgestellt. Beim Besuch der Website können durch den Hosting-Anbieter technische Daten wie IP-Adresse, Browsertyp oder Zeitpunkt des Zugriffs verarbeitet werden.
-        </p>
+            <div class="imp-h2">Haftung für Inhalte</div>
+            <p class="imp-body">
+                Als Diensteanbieter bin ich gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG bin ich als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen. Bei Bekanntwerden von Rechtsverletzungen werde ich derartige Inhalte umgehend entfernen.
+            </p>
 
-        <h3 class="imp-h2">Kontaktformular</h3>
-        <p class="imp-body">
-            Wenn Sie mich über das Kontaktformular kontaktieren, werden die von Ihnen eingegebenen Daten ausschließlich zur Bearbeitung Ihrer Anfrage verwendet. Die Verarbeitung erfolgt gemäß Art. 6 Abs. 1 lit. b DSGVO.
-        </p>
+            <div class="imp-h2">Haftung für Links</div>
+            <p class="imp-body">
+                Diese Website enthält Links zu externen Websites Dritter. Auf deren Inhalte habe ich keinen Einfluss. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter verantwortlich. Bei Bekanntwerden von Rechtsverletzungen werde ich derartige Links umgehend entfernen.
+            </p>
 
-        <h3 class="imp-h2">Externe Links</h3>
-        <p class="imp-body">
-            Diese Website enthält Links zu externen Plattformen wie Instagram und LinkedIn. Beim Anklicken dieser Links verlassen Sie diese Website. Für die Inhalte und Datenschutzrichtlinien der jeweiligen Plattformen sind ausschließlich deren Betreiber verantwortlich.
-        </p>
+            <div class="imp-h2">Urheberrecht</div>
+            <p class="imp-body">
+                Die durch mich erstellten Inhalte und Werke auf dieser Website unterliegen dem deutschen Urheberrecht. Beiträge Dritter sind als solche gekennzeichnet. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen meiner schriftlichen Zustimmung.
+            </p>
+        </div>
 
-        <h3 class="imp-h2">Ihre Rechte</h3>
-        <p class="imp-body">Sie haben jederzeit das Recht auf:</p>
-        <p class="imp-body">
-            <ul>
-                <li>Auskunft über Ihre gespeicherten Daten</li>
-                <li>Berichtigung unrichtiger Daten</li>
-                <li>Löschung Ihrer Daten</li>
-                <li>Einschränkung der Verarbeitung</li>
-                <li>Widerspruch gegen die Verarbeitung</li>
-            </ul>
-        </p>
-        <p class="imp-body" style="margin-top:16px;">
-            Bei Fragen zum Datenschutz können Sie mich jederzeit per E-Mail kontaktieren.
-        </p>
-    </div>
+        <div class="imp-divider"></div>
+
+        <div class="imp-section">
+            <p class="imp-label">Datenschutz</p>
+            <h2 class="imp-title">Datenschutz&shy;erklärung</h2>
+
+            <h3 class="imp-h2" style="border-top:none;padding-top:0;">Allgemeine Hinweise</h3>
+            <p class="imp-body">
+                Der Schutz Ihrer persönlichen Daten ist mir wichtig. Diese Website verarbeitet personenbezogene Daten ausschließlich im Rahmen der gesetzlichen Datenschutzvorschriften (DSGVO, BDSG). Verantwortlich im Sinne der DSGVO ist die unter „Impressum" genannte Person.
+            </p>
+
+            <h3 class="imp-h2">Hosting — GitHub Pages</h3>
+            <p class="imp-body">
+                Diese Website wird über GitHub Pages (GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA) bereitgestellt. Beim Aufruf der Website werden technische Zugriffsdaten (u. a. IP-Adresse, Browsertyp, Betriebssystem, Referrer-URL, Zeitpunkt des Zugriffs) durch GitHub verarbeitet. GitHub ist unter dem EU-US Data Privacy Framework zertifiziert. Weitere Informationen: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub Privacy Statement</a>.
+            </p>
+
+            <h3 class="imp-h2">Google Fonts</h3>
+            <p class="imp-body">
+                Diese Website verwendet Google Fonts (Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA). Die Schriftarten werden beim Aufruf der Seite direkt von Google-Servern geladen, wodurch Ihre IP-Adresse an Google übermittelt wird. Google ist unter dem EU-US Data Privacy Framework zertifiziert. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer einheitlichen Darstellung der Website). Weitere Informationen: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Datenschutzerklärung</a>.
+            </p>
+
+            <h3 class="imp-h2">Kontaktformular — Formspree</h3>
+            <p class="imp-body">
+                Wenn Sie mich über das Kontaktformular kontaktieren, werden die von Ihnen eingegebenen Daten (Name, E-Mail-Adresse, Nachricht) zur Bearbeitung Ihrer Anfrage verwendet. Die Übermittlung erfolgt über den Dienstleister Formspree Inc. (USA), der als Auftragsverarbeiter gemäß Art. 28 DSGVO tätig ist. Die Daten werden nicht für andere Zwecke verwendet und nach Abschluss der Anfrage gelöscht. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO.
+            </p>
+
+            <h3 class="imp-h2">Externe Links</h3>
+            <p class="imp-body">
+                Diese Website enthält Links zu externen Plattformen wie Instagram und LinkedIn. Beim Anklicken dieser Links verlassen Sie diese Website. Für die Inhalte und Datenschutzpraktiken der jeweiligen Plattformen sind ausschließlich deren Betreiber verantwortlich.
+            </p>
+
+            <h3 class="imp-h2">Ihre Rechte</h3>
+            <p class="imp-body">Sie haben jederzeit das Recht auf:</p>
+            <p class="imp-body">
+                <ul>
+                    <li>Auskunft über Ihre gespeicherten Daten (Art. 15 DSGVO)</li>
+                    <li>Berichtigung unrichtiger Daten (Art. 16 DSGVO)</li>
+                    <li>Löschung Ihrer Daten (Art. 17 DSGVO)</li>
+                    <li>Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+                    <li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
+                    <li>Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
+                </ul>
+            </p>
+            <p class="imp-body" style="margin-top:16px;">
+                Bei Fragen zum Datenschutz wenden Sie sich per E-Mail an: <a href="mailto:FarinaKnoblauch@gmail.com">FarinaKnoblauch@gmail.com</a>
+            </p>
+
+            <h3 class="imp-h2">Beschwerderecht bei einer Aufsichtsbehörde</h3>
+            <p class="imp-body">
+                Sie haben gemäß Art. 77 DSGVO das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Die zuständige Behörde für Baden-Württemberg ist der Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg (LfDI BW), Königstraße 10a, 70173 Stuttgart, <a href="https://www.baden-wuerttemberg.datenschutz.de" target="_blank" rel="noopener">www.baden-wuerttemberg.datenschutz.de</a>.
+            </p>
+        </div>
+
+    </div><!-- /lang-de -->
+
+    <!-- ═══════════════ ENGLISH ═══════════════ -->
+    <div class="imp-block" id="lang-en">
+
+        <div class="imp-section">
+            <p class="imp-label">Legal Information</p>
+            <h1 class="imp-title">Legal Notice</h1>
+
+            <div class="imp-h2" style="border-top:none;padding-top:0;">Information pursuant to § 5 TMG (German Telemedia Act)</div>
+            <p class="imp-address">
+                Farina Knoblauch<br>
+                Hohenkrähenstraße 41<br>
+                78224 Singen<br>
+                Germany
+            </p>
+            <p class="imp-body">
+                E-mail: <a href="mailto:FarinaKnoblauch@gmail.com">FarinaKnoblauch@gmail.com</a><br>
+                Profession: Freelance Designer specialising in Design, Branding and Photography
+            </p>
+
+            <div class="imp-h2">VAT</div>
+            <p class="imp-body">
+                Pursuant to § 19 UStG (German VAT Act), no VAT is charged (small business exemption).
+            </p>
+
+            <div class="imp-h2">Liability for Content</div>
+            <p class="imp-body">
+                As a service provider I am responsible for my own content on this website in accordance with general law (§ 7 para. 1 TMG). However, pursuant to §§ 8–10 TMG I am not obliged to monitor transmitted or stored third-party information. Should I become aware of any legal violations, I will remove the relevant content immediately.
+            </p>
+
+            <div class="imp-h2">Liability for Links</div>
+            <p class="imp-body">
+                This website contains links to external third-party websites. I have no influence over their content and accept no liability for it. The respective provider is always responsible for the content of linked pages. Should I become aware of any legal violations, I will remove such links immediately.
+            </p>
+
+            <div class="imp-h2">Copyright</div>
+            <p class="imp-body">
+                The content and works on this website created by me are subject to German copyright law. Reproduction, editing, distribution, and any kind of use beyond the limits of copyright law require my written consent.
+            </p>
+        </div>
+
+        <div class="imp-divider"></div>
+
+        <div class="imp-section">
+            <p class="imp-label">Privacy</p>
+            <h2 class="imp-title">Privacy Policy</h2>
+
+            <h3 class="imp-h2" style="border-top:none;padding-top:0;">General Information</h3>
+            <p class="imp-body">
+                Protecting your personal data is important to me. This website processes personal data solely within the framework of applicable data protection laws (GDPR, BDSG). The controller within the meaning of the GDPR is the person named under "Legal Notice" above.
+            </p>
+
+            <h3 class="imp-h2">Hosting — GitHub Pages</h3>
+            <p class="imp-body">
+                This website is hosted via GitHub Pages (GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA). When you visit the site, GitHub processes technical access data (including IP address, browser type, operating system, referrer URL, and time of access). GitHub is certified under the EU–US Data Privacy Framework. For more information, see the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub Privacy Statement</a>.
+            </p>
+
+            <h3 class="imp-h2">Google Fonts</h3>
+            <p class="imp-body">
+                This website uses Google Fonts (Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA). Fonts are loaded directly from Google's servers when the page is accessed, which transmits your IP address to Google. Google is certified under the EU–US Data Privacy Framework. The legal basis is Art. 6(1)(f) GDPR (legitimate interest in consistent visual presentation). For more information, see <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.
+            </p>
+
+            <h3 class="imp-h2">Contact Form — Formspree</h3>
+            <p class="imp-body">
+                When you contact me via the contact form, the data you enter (name, e-mail address, message) is used to process your enquiry. Transmission is handled by Formspree Inc. (USA), acting as a data processor pursuant to Art. 28 GDPR. Your data will not be used for any other purpose and will be deleted once your enquiry has been resolved. Legal basis: Art. 6(1)(b) GDPR.
+            </p>
+
+            <h3 class="imp-h2">External Links</h3>
+            <p class="imp-body">
+                This website contains links to external platforms such as Instagram and LinkedIn. Clicking these links will take you away from this site. The respective operators are solely responsible for the content and privacy practices of those platforms.
+            </p>
+
+            <h3 class="imp-h2">Your Rights</h3>
+            <p class="imp-body">You have the right at any time to:</p>
+            <p class="imp-body">
+                <ul>
+                    <li>Access the data stored about you (Art. 15 GDPR)</li>
+                    <li>Rectification of inaccurate data (Art. 16 GDPR)</li>
+                    <li>Erasure of your data (Art. 17 GDPR)</li>
+                    <li>Restriction of processing (Art. 18 GDPR)</li>
+                    <li>Data portability (Art. 20 GDPR)</li>
+                    <li>Object to processing (Art. 21 GDPR)</li>
+                </ul>
+            </p>
+            <p class="imp-body" style="margin-top:16px;">
+                For any data protection enquiries, please contact me by e-mail: <a href="mailto:FarinaKnoblauch@gmail.com">FarinaKnoblauch@gmail.com</a>
+            </p>
+
+            <h3 class="imp-h2">Right to Lodge a Complaint</h3>
+            <p class="imp-body">
+                Pursuant to Art. 77 GDPR, you have the right to lodge a complaint with a supervisory authority. The competent authority for Baden-Württemberg is the State Commissioner for Data Protection and Freedom of Information (LfDI BW), Königstraße 10a, 70173 Stuttgart, <a href="https://www.baden-wuerttemberg.datenschutz.de" target="_blank" rel="noopener">www.baden-wuerttemberg.datenschutz.de</a>.
+            </p>
+        </div>
+
+    </div><!-- /lang-en -->
 
 </div>
 
@@ -193,6 +328,18 @@
     <span class="f-love">Built with love &amp; questionable sleep schedules.</span>
     <a href="#" class="f-top"><span class="f-top-text">Back to top ↑</span></a>
 </footer>
+
+<script>
+    const nav = document.getElementById('nav');
+    addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60));
+
+    function switchLang(lang, btn) {
+        document.querySelectorAll('.imp-block').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.imp-lang-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById('lang-' + lang).classList.add('active');
+        btn.classList.add('active');
+    }
+</script>
 
 </body>
 </html>
