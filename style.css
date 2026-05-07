@@ -247,7 +247,7 @@
         .hero-split {
             display: grid;
             grid-template-columns: 240px 1fr;
-            gap: 48px;
+            gap: 96px;
             align-items: center;
             opacity: 0;
             animation: fadeUp .9s ease forwards .42s;
