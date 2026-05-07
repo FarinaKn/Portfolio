@@ -122,7 +122,14 @@
             .proj-page-wrap { padding: 100px 24px 80px; }
             .proj-gallery { grid-template-columns: 1fr; }
         }
-    </style>
+            .proj-title-row {
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .proj-page-title { margin-bottom: 0; }
+        </style>
 </head>
 <body>
 
@@ -147,10 +154,12 @@
 
     <header class="proj-page-header">
         <span class="proj-page-cat">Brand Design</span>
-        <h1 class="proj-page-title">Luna Identity</h1>
+        <div class="proj-title-row">
+            <h1 class="proj-page-title">Luna Identity</h1>
+            <span class="proj-page-year">2025</span>
+        </div>
         <div class="proj-page-meta">
             <p class="proj-page-desc">A complete brand identity for a wellness label — developed from initial concept through to final delivery. The project included logo design, custom packaging artwork, print collateral and a brand guidelines document.</p>
-            <span class="proj-page-year">2025</span>
         </div>
     </header>
 

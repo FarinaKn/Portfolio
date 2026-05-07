@@ -122,7 +122,14 @@
             .proj-page-wrap { padding: 100px 24px 80px; }
             .proj-gallery { grid-template-columns: 1fr; }
         }
-    </style>
+            .proj-title-row {
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .proj-page-title { margin-bottom: 0; }
+        </style>
 </head>
 <body>
 
@@ -147,10 +154,12 @@
 
     <header class="proj-page-header">
         <span class="proj-page-cat">Brand Design</span>
-        <h1 class="proj-page-title">Maren Studio</h1>
+        <div class="proj-title-row">
+            <h1 class="proj-page-title">Maren Studio</h1>
+            <span class="proj-page-year">2024</span>
+        </div>
         <div class="proj-page-meta">
             <p class="proj-page-desc">A complete brand identity for Maren Studio — an independent creative studio. The project covered logo design, typography system, colour palette, and a cohesive set of brand guidelines to ensure consistent application across all touchpoints.</p>
-            <span class="proj-page-year">2024</span>
         </div>
     </header>
 

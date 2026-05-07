@@ -39,6 +39,12 @@
             color: var(--accent);
             margin-bottom: 16px;
         }
+        .proj-title-row {
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
         .proj-page-title {
             font-family: var(--display);
             font-size: clamp(36px, 6vw, 72px);
@@ -46,20 +52,6 @@
             letter-spacing: -.03em;
             line-height: 1;
             color: var(--text);
-            margin-bottom: 24px;
-        }
-        .proj-page-meta {
-            display: flex;
-            gap: 32px;
-            align-items: flex-start;
-            flex-wrap: wrap;
-        }
-        .proj-page-desc {
-            font-size: 14px;
-            color: var(--muted);
-            line-height: 1.9;
-            max-width: 600px;
-            flex: 1;
         }
         .proj-page-year {
             font-family: var(--mono);
@@ -67,7 +59,12 @@
             color: var(--muted);
             letter-spacing: .12em;
             white-space: nowrap;
-            margin-top: 3px;
+        }
+        .proj-page-desc {
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.9;
+            max-width: 600px;
         }
 
         /* ── Photo rows (full-width) ── */
@@ -91,7 +88,7 @@
             align-items: center;
             gap: 12px;
             width: max-content;
-            animation: slider-scroll var(--dur, 36s) linear infinite;
+            animation: slider-scroll var(--dur, 60s) linear infinite;
         }
         .prow-track:hover,
         .prow-track.paused {
@@ -117,7 +114,7 @@
             object-fit: cover;
         }
 
-        /* ── Lightbox (appended to body) ── */
+        /* ── Lightbox ── */
         .slide-backdrop {
             position: fixed; inset: 0;
             background: rgba(0,0,0,.92);
@@ -185,22 +182,23 @@
         All Projects
     </a>
     <span class="proj-page-cat">Photography</span>
-    <h1 class="proj-page-title">Echoes</h1>
-    <div class="proj-page-meta">
-        <p class="proj-page-desc">A photographic companion to print. Echoes documents the process of bringing a publication to life — comparing spreads, layouts, and the physicality of paper as a medium.</p>
+    <div class="proj-title-row">
+        <h1 class="proj-page-title">Echoes</h1>
         <span class="proj-page-year">2024</span>
     </div>
+    <p class="proj-page-desc">A photographic companion to print. Echoes documents the process of bringing a publication to life — comparing spreads, layouts, and the physicality of paper as a medium.</p>
 </div>
 
 <div class="photo-rows">
 
     <!-- Row 1 — left -->
     <div class="prow-wrap">
-        <div class="prow-track" style="--dur:20s">
+        <div class="prow-track" style="--dur:60s">
                 <div class="pslide"><img src="photography/echoes/buch-vergleiche.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/echoes/buch-vergleiche12.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/echoes/buch-vergleiche4.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/echoes/buch-vergleiche7.jpg" alt="" loading="lazy"></div>
+            
                 <div class="pslide"><img src="photography/echoes/buch-vergleiche.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/echoes/buch-vergleiche12.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/echoes/buch-vergleiche4.jpg" alt="" loading="lazy"></div>
@@ -210,11 +208,12 @@
 
     <!-- Row 2 — right -->
     <div class="prow-wrap">
-        <div class="prow-track reverse" style="--dur:20s">
+        <div class="prow-track reverse" style="--dur:60s">
                 <div class="pslide"><img src="photography/echoes/buch-vergleiche10.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/echoes/buch-vergleiche2.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/echoes/buch-vergleiche5.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/echoes/buch-vergleiche8.jpg" alt="" loading="lazy"></div>
+            
                 <div class="pslide"><img src="photography/echoes/buch-vergleiche10.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/echoes/buch-vergleiche2.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/echoes/buch-vergleiche5.jpg" alt="" loading="lazy"></div>
@@ -224,11 +223,12 @@
 
     <!-- Row 3 — left -->
     <div class="prow-wrap">
-        <div class="prow-track" style="--dur:20s">
+        <div class="prow-track" style="--dur:60s">
                 <div class="pslide"><img src="photography/echoes/buch-vergleiche11.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/echoes/buch-vergleiche3.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/echoes/buch-vergleiche6.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/echoes/buch-vergleiche9.jpg" alt="" loading="lazy"></div>
+            
                 <div class="pslide"><img src="photography/echoes/buch-vergleiche11.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/echoes/buch-vergleiche3.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/echoes/buch-vergleiche6.jpg" alt="" loading="lazy"></div>

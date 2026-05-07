@@ -39,6 +39,12 @@
             color: var(--accent);
             margin-bottom: 16px;
         }
+        .proj-title-row {
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
         .proj-page-title {
             font-family: var(--display);
             font-size: clamp(36px, 6vw, 72px);
@@ -46,20 +52,6 @@
             letter-spacing: -.03em;
             line-height: 1;
             color: var(--text);
-            margin-bottom: 24px;
-        }
-        .proj-page-meta {
-            display: flex;
-            gap: 32px;
-            align-items: flex-start;
-            flex-wrap: wrap;
-        }
-        .proj-page-desc {
-            font-size: 14px;
-            color: var(--muted);
-            line-height: 1.9;
-            max-width: 600px;
-            flex: 1;
         }
         .proj-page-year {
             font-family: var(--mono);
@@ -67,7 +59,12 @@
             color: var(--muted);
             letter-spacing: .12em;
             white-space: nowrap;
-            margin-top: 3px;
+        }
+        .proj-page-desc {
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.9;
+            max-width: 600px;
         }
 
         /* ── Photo rows (full-width) ── */
@@ -91,7 +88,7 @@
             align-items: center;
             gap: 12px;
             width: max-content;
-            animation: slider-scroll var(--dur, 36s) linear infinite;
+            animation: slider-scroll var(--dur, 60s) linear infinite;
         }
         .prow-track:hover,
         .prow-track.paused {
@@ -117,7 +114,7 @@
             object-fit: cover;
         }
 
-        /* ── Lightbox (appended to body) ── */
+        /* ── Lightbox ── */
         .slide-backdrop {
             position: fixed; inset: 0;
             background: rgba(0,0,0,.92);
@@ -185,18 +182,18 @@
         All Projects
     </a>
     <span class="proj-page-cat">Photography</span>
-    <h1 class="proj-page-title">Glyphs</h1>
-    <div class="proj-page-meta">
-        <p class="proj-page-desc">The alphabet as subject. Each letter photographed as an autonomous form — tracing the visual language of type in the physical world, from A to Z.</p>
+    <div class="proj-title-row">
+        <h1 class="proj-page-title">Glyphs</h1>
         <span class="proj-page-year">2024</span>
     </div>
+    <p class="proj-page-desc">The alphabet as subject. Each letter photographed as an autonomous form — tracing the visual language of type in the physical world, from A to Z.</p>
 </div>
 
 <div class="photo-rows">
 
     <!-- Row 1 — left -->
     <div class="prow-wrap">
-        <div class="prow-track" style="--dur:20s">
+        <div class="prow-track" style="--dur:60s">
                 <div class="pslide"><img src="photography/glyphs/a.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/glyphs/e.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/glyphs/h.jpg" alt="" loading="lazy"></div>
@@ -205,6 +202,7 @@
                 <div class="pslide"><img src="photography/glyphs/s.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/glyphs/v.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/glyphs/z.jpg" alt="" loading="lazy"></div>
+            
                 <div class="pslide"><img src="photography/glyphs/a.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/glyphs/e.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/glyphs/h.jpg" alt="" loading="lazy"></div>
@@ -218,7 +216,7 @@
 
     <!-- Row 2 — right -->
     <div class="prow-wrap">
-        <div class="prow-track reverse" style="--dur:20s">
+        <div class="prow-track reverse" style="--dur:60s">
                 <div class="pslide"><img src="photography/glyphs/c.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/glyphs/f.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/glyphs/i.jpg" alt="" loading="lazy"></div>
@@ -226,6 +224,8 @@
                 <div class="pslide"><img src="photography/glyphs/q.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/glyphs/t.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/glyphs/w.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/glyphs/z.jpg" alt="" loading="lazy"></div>
+            
                 <div class="pslide"><img src="photography/glyphs/c.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/glyphs/f.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/glyphs/i.jpg" alt="" loading="lazy"></div>
@@ -233,12 +233,13 @@
                 <div class="pslide"><img src="photography/glyphs/q.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/glyphs/t.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/glyphs/w.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/glyphs/z.jpg" alt="" loading="lazy"></div>
         </div>
     </div>
 
     <!-- Row 3 — left -->
     <div class="prow-wrap">
-        <div class="prow-track" style="--dur:20s">
+        <div class="prow-track" style="--dur:60s">
                 <div class="pslide"><img src="photography/glyphs/d.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/glyphs/g.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/glyphs/j.jpg" alt="" loading="lazy"></div>
@@ -246,6 +247,8 @@
                 <div class="pslide"><img src="photography/glyphs/r.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/glyphs/u.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/glyphs/x.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/glyphs/z.jpg" alt="" loading="lazy"></div>
+            
                 <div class="pslide"><img src="photography/glyphs/d.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/glyphs/g.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/glyphs/j.jpg" alt="" loading="lazy"></div>
@@ -253,6 +256,7 @@
                 <div class="pslide"><img src="photography/glyphs/r.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/glyphs/u.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/glyphs/x.jpg" alt="" loading="lazy"></div>
+                <div class="pslide"><img src="photography/glyphs/z.jpg" alt="" loading="lazy"></div>
         </div>
     </div>
 

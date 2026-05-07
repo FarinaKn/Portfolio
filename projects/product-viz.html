@@ -122,7 +122,14 @@
             .proj-page-wrap { padding: 100px 24px 80px; }
             .proj-gallery { grid-template-columns: 1fr; }
         }
-    </style>
+            .proj-title-row {
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .proj-page-title { margin-bottom: 0; }
+        </style>
 </head>
 <body>
 
@@ -147,10 +154,12 @@
 
     <header class="proj-page-header">
         <span class="proj-page-cat">Motion & 3D</span>
-        <h1 class="proj-page-title">Product Viz</h1>
+        <div class="proj-title-row">
+            <h1 class="proj-page-title">Product Viz</h1>
+            <span class="proj-page-year">2024</span>
+        </div>
         <div class="proj-page-meta">
             <p class="proj-page-desc">3D product visualisation created in Blender. The project focused on photorealistic lighting setups, PBR material creation and high-quality rendering to produce lifestyle imagery suitable for e-commerce and brand campaigns.</p>
-            <span class="proj-page-year">2024</span>
         </div>
     </header>
 

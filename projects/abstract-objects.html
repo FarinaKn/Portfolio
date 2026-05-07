@@ -122,7 +122,14 @@
             .proj-page-wrap { padding: 100px 24px 80px; }
             .proj-gallery { grid-template-columns: 1fr; }
         }
-    </style>
+            .proj-title-row {
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .proj-page-title { margin-bottom: 0; }
+        </style>
 </head>
 <body>
 
@@ -147,10 +154,12 @@
 
     <header class="proj-page-header">
         <span class="proj-page-cat">Motion & 3D</span>
-        <h1 class="proj-page-title">Abstract Objects</h1>
+        <div class="proj-title-row">
+            <h1 class="proj-page-title">Abstract Objects</h1>
+            <span class="proj-page-year">2023</span>
+        </div>
         <div class="proj-page-meta">
             <p class="proj-page-desc">An experimental 3D series created in Blender, exploring abstract geometric forms, procedural textures and dramatic render aesthetics. The project was a personal exploration of light, shadow and materiality as design tools.</p>
-            <span class="proj-page-year">2023</span>
         </div>
     </header>
 

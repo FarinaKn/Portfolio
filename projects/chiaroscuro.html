@@ -39,6 +39,12 @@
             color: var(--accent);
             margin-bottom: 16px;
         }
+        .proj-title-row {
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
         .proj-page-title {
             font-family: var(--display);
             font-size: clamp(36px, 6vw, 72px);
@@ -46,20 +52,6 @@
             letter-spacing: -.03em;
             line-height: 1;
             color: var(--text);
-            margin-bottom: 24px;
-        }
-        .proj-page-meta {
-            display: flex;
-            gap: 32px;
-            align-items: flex-start;
-            flex-wrap: wrap;
-        }
-        .proj-page-desc {
-            font-size: 14px;
-            color: var(--muted);
-            line-height: 1.9;
-            max-width: 600px;
-            flex: 1;
         }
         .proj-page-year {
             font-family: var(--mono);
@@ -67,7 +59,12 @@
             color: var(--muted);
             letter-spacing: .12em;
             white-space: nowrap;
-            margin-top: 3px;
+        }
+        .proj-page-desc {
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.9;
+            max-width: 600px;
         }
 
         /* ── Photo rows (full-width) ── */
@@ -91,7 +88,7 @@
             align-items: center;
             gap: 12px;
             width: max-content;
-            animation: slider-scroll var(--dur, 36s) linear infinite;
+            animation: slider-scroll var(--dur, 60s) linear infinite;
         }
         .prow-track:hover,
         .prow-track.paused {
@@ -117,7 +114,7 @@
             object-fit: cover;
         }
 
-        /* ── Lightbox (appended to body) ── */
+        /* ── Lightbox ── */
         .slide-backdrop {
             position: fixed; inset: 0;
             background: rgba(0,0,0,.92);
@@ -185,18 +182,18 @@
         All Projects
     </a>
     <span class="proj-page-cat">Photography</span>
-    <h1 class="proj-page-title">Chiaroscuro</h1>
-    <div class="proj-page-meta">
-        <p class="proj-page-desc">A study of light and shadow. This series explores the dramatic interplay between darkness and illumination — capturing moments where contrast defines form, texture, and atmosphere.</p>
+    <div class="proj-title-row">
+        <h1 class="proj-page-title">Chiaroscuro</h1>
         <span class="proj-page-year">2024</span>
     </div>
+    <p class="proj-page-desc">A study of light and shadow. This series explores the dramatic interplay between darkness and illumination — capturing moments where contrast defines form, texture, and atmosphere.</p>
 </div>
 
 <div class="photo-rows">
 
     <!-- Row 1 — left -->
     <div class="prow-wrap">
-        <div class="prow-track" style="--dur:82s">
+        <div class="prow-track" style="--dur:246s">
                 <div class="pslide"><img src="photography/chiaroscuro/P1100421.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/chiaroscuro/P1100582.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/chiaroscuro/P1100593.jpg" alt="" loading="lazy"></div>
@@ -238,6 +235,7 @@
                 <div class="pslide"><img src="photography/chiaroscuro/P5050203.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/chiaroscuro/P5050211.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/chiaroscuro/P5050216.jpg" alt="" loading="lazy"></div>
+            
                 <div class="pslide"><img src="photography/chiaroscuro/P1100421.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/chiaroscuro/P1100582.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/chiaroscuro/P1100593.jpg" alt="" loading="lazy"></div>
@@ -284,7 +282,7 @@
 
     <!-- Row 2 — right -->
     <div class="prow-wrap">
-        <div class="prow-track reverse" style="--dur:82s">
+        <div class="prow-track reverse" style="--dur:246s">
                 <div class="pslide"><img src="photography/chiaroscuro/P1100570.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/chiaroscuro/P1100583.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/chiaroscuro/P1100634.jpg" alt="" loading="lazy"></div>
@@ -326,6 +324,7 @@
                 <div class="pslide"><img src="photography/chiaroscuro/P5050204.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/chiaroscuro/P5050212.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/chiaroscuro/P5050220.jpg" alt="" loading="lazy"></div>
+            
                 <div class="pslide"><img src="photography/chiaroscuro/P1100570.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/chiaroscuro/P1100583.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/chiaroscuro/P1100634.jpg" alt="" loading="lazy"></div>
@@ -372,7 +371,7 @@
 
     <!-- Row 3 — left -->
     <div class="prow-wrap">
-        <div class="prow-track" style="--dur:80s">
+        <div class="prow-track" style="--dur:240s">
                 <div class="pslide"><img src="photography/chiaroscuro/P1100580.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/chiaroscuro/P1100592.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/chiaroscuro/P1100635.jpg" alt="" loading="lazy"></div>
@@ -413,6 +412,7 @@
                 <div class="pslide"><img src="photography/chiaroscuro/P5050202.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/chiaroscuro/P5050207.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/chiaroscuro/P5050213.jpg" alt="" loading="lazy"></div>
+            
                 <div class="pslide"><img src="photography/chiaroscuro/P1100580.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/chiaroscuro/P1100592.jpg" alt="" loading="lazy"></div>
                 <div class="pslide"><img src="photography/chiaroscuro/P1100635.jpg" alt="" loading="lazy"></div>
