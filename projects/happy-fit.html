@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../style.css?v=3">
     <style>
         .proj-page-wrap {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 130px 48px 100px;
         }
@@ -76,19 +76,20 @@
             margin-top: 3px;
         }
 
-        /* ── Sections ── */
+        /* ── Section headers ── */
         .proj-section {
-            margin-bottom: 80px;
+            margin-bottom: 72px;
         }
         .proj-section-head {
             display: flex;
             align-items: baseline;
             gap: 20px;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
+            padding: 0 4px;
         }
         .proj-section-title {
             font-family: var(--display);
-            font-size: clamp(22px, 2.8vw, 32px);
+            font-size: clamp(20px, 2.5vw, 28px);
             font-weight: 700;
             letter-spacing: -.02em;
             color: var(--text);
@@ -107,46 +108,72 @@
             white-space: nowrap;
         }
 
-        /* ── Gallery grids ── */
-        .proj-grid {
-            display: grid;
-            gap: 10px;
-        }
-        .proj-grid-square {
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        }
-        .proj-grid-portrait {
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        /* ── Infinite slider ── */
+        @keyframes slider-scroll {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
-        .proj-img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 4px;
-            border: 1px solid var(--border);
-            transition: transform .5s cubic-bezier(.16,1,.3,1), border-color .3s;
+        .slider-wrap {
+            overflow: hidden;
+            -webkit-mask: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%);
+            mask: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%);
         }
-        .proj-img:hover {
-            transform: scale(1.015);
-            border-color: rgba(255,255,255,.14);
-        }
-        .proj-placeholder {
-            border-radius: 4px;
-            border: 1px solid var(--border);
+        .slider-track {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(140deg,#040A12 0%,#0A1E30 45%,#164260 80%,#226888 100%);
+            gap: 10px;
+            width: max-content;
+            animation: slider-scroll var(--dur, 28s) linear infinite;
         }
-        .proj-placeholder.square { aspect-ratio: 1 / 1; }
-        .proj-placeholder.portrait { aspect-ratio: 9 / 16; }
-        .proj-placeholder-label {
+        .slider-track:hover { animation-play-state: paused; }
+
+        /* Square slides (feed posts) */
+        .slide { flex-shrink: 0; border-radius: 6px; overflow: hidden; border: 1px solid var(--border); position: relative; }
+        .slide.sq  { width: 280px; height: 280px; }
+        .slide.port { width: 168px; height: 298px; }
+
+        .slide img,
+        .slide video {
+            width: 100%; height: 100%;
+            object-fit: cover; display: block;
+            transition: transform .5s cubic-bezier(.16,1,.3,1);
+        }
+        .slide:hover img,
+        .slide:hover video { transform: scale(1.04); }
+
+        /* Placeholder gradient */
+        .slide-ph {
+            width: 100%; height: 100%;
+            background: linear-gradient(140deg,#040A12 0%,#0A1E30 45%,#164260 80%,#226888 100%);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .slide-ph-label {
             font-family: var(--mono);
             font-size: 10px;
             letter-spacing: .18em;
             text-transform: uppercase;
             color: rgba(255,255,255,.15);
+        }
+
+        /* Video placeholder play icon */
+        .slide-ph-video {
+            width: 100%; height: 100%;
+            background: linear-gradient(140deg,#08040F 0%,#180A32 45%,#301560 80%,#4C2090 100%);
+            display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+        }
+        .slide-ph-play {
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(255,255,255,.2);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .slide-ph-play svg { margin-left: 3px; }
+        .slide-ph-video-label {
+            font-family: var(--mono);
+            font-size: 9px;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,.2);
         }
 
         .proj-page-footer {
@@ -155,7 +182,8 @@
         }
         @media (max-width: 700px) {
             .proj-page-wrap { padding: 100px 24px 80px; }
-            .proj-grid-portrait { grid-template-columns: repeat(2, 1fr); }
+            .slide.sq  { width: 200px; height: 200px; }
+            .slide.port { width: 130px; height: 231px; }
         }
     </style>
 </head>
@@ -196,10 +224,21 @@
             <div class="proj-section-line"></div>
             <span class="proj-section-count">3 Beiträge</span>
         </div>
-        <div class="proj-grid proj-grid-square">
-            <img class="proj-img" src="happy-fit/HF_Gold_Neujahr.jpg" alt="Neujahrs-Aktion" loading="lazy">
-            <img class="proj-img" src="happy-fit/HF_Gold_Weihnachten.jpg" alt="Weihnachts-Aktion" loading="lazy">
-            <img class="proj-img" src="happy-fit/HF_OsterAktion_gruen.jpg" alt="Oster-Aktion" loading="lazy">
+        <div class="slider-wrap">
+            <div class="slider-track" style="--dur:22s">
+                <!-- original set -->
+                <div class="slide sq"><img src="happy-fit/HF_Gold_Neujahr.jpg" alt="Neujahrs-Aktion" loading="lazy"></div>
+                <div class="slide sq"><img src="happy-fit/HF_Gold_Weihnachten.jpg" alt="Weihnachts-Aktion" loading="lazy"></div>
+                <div class="slide sq"><img src="happy-fit/HF_OsterAktion_gruen.jpg" alt="Oster-Aktion" loading="lazy"></div>
+                <div class="slide sq"><div class="slide-ph"><span class="slide-ph-label">Bald mehr</span></div></div>
+                <div class="slide sq"><div class="slide-ph"><span class="slide-ph-label">Bald mehr</span></div></div>
+                <!-- duplicate for seamless loop -->
+                <div class="slide sq"><img src="happy-fit/HF_Gold_Neujahr.jpg" alt="" loading="lazy"></div>
+                <div class="slide sq"><img src="happy-fit/HF_Gold_Weihnachten.jpg" alt="" loading="lazy"></div>
+                <div class="slide sq"><img src="happy-fit/HF_OsterAktion_gruen.jpg" alt="" loading="lazy"></div>
+                <div class="slide sq"><div class="slide-ph"><span class="slide-ph-label">Bald mehr</span></div></div>
+                <div class="slide sq"><div class="slide-ph"><span class="slide-ph-label">Bald mehr</span></div></div>
+            </div>
         </div>
     </div>
 
@@ -210,11 +249,19 @@
             <div class="proj-section-line"></div>
             <span class="proj-section-count">Platzhalter</span>
         </div>
-        <div class="proj-grid proj-grid-square">
-            <div class="proj-placeholder square"><span class="proj-placeholder-label">Beitrag 1</span></div>
-            <div class="proj-placeholder square"><span class="proj-placeholder-label">Beitrag 2</span></div>
-            <div class="proj-placeholder square"><span class="proj-placeholder-label">Beitrag 3</span></div>
-            <div class="proj-placeholder square"><span class="proj-placeholder-label">Beitrag 4</span></div>
+        <div class="slider-wrap">
+            <div class="slider-track" style="--dur:30s">
+                <div class="slide sq"><div class="slide-ph"><span class="slide-ph-label">Beitrag 1</span></div></div>
+                <div class="slide sq"><div class="slide-ph"><span class="slide-ph-label">Beitrag 2</span></div></div>
+                <div class="slide sq"><div class="slide-ph"><span class="slide-ph-label">Beitrag 3</span></div></div>
+                <div class="slide sq"><div class="slide-ph"><span class="slide-ph-label">Beitrag 4</span></div></div>
+                <div class="slide sq"><div class="slide-ph"><span class="slide-ph-label">Beitrag 5</span></div></div>
+                <div class="slide sq"><div class="slide-ph"><span class="slide-ph-label">Beitrag 1</span></div></div>
+                <div class="slide sq"><div class="slide-ph"><span class="slide-ph-label">Beitrag 2</span></div></div>
+                <div class="slide sq"><div class="slide-ph"><span class="slide-ph-label">Beitrag 3</span></div></div>
+                <div class="slide sq"><div class="slide-ph"><span class="slide-ph-label">Beitrag 4</span></div></div>
+                <div class="slide sq"><div class="slide-ph"><span class="slide-ph-label">Beitrag 5</span></div></div>
+            </div>
         </div>
     </div>
 
@@ -225,11 +272,19 @@
             <div class="proj-section-line"></div>
             <span class="proj-section-count">Platzhalter</span>
         </div>
-        <div class="proj-grid proj-grid-square">
-            <img class="proj-img" src="happy-fit/HF_band.jpg" alt="Studiobeitrag" loading="lazy">
-            <img class="proj-img" src="happy-fit/Hansefit.jpg" alt="Hansefit" loading="lazy">
-            <div class="proj-placeholder square"><span class="proj-placeholder-label">Beitrag 3</span></div>
-            <div class="proj-placeholder square"><span class="proj-placeholder-label">Beitrag 4</span></div>
+        <div class="slider-wrap">
+            <div class="slider-track" style="--dur:26s">
+                <div class="slide sq"><img src="happy-fit/HF_band.jpg" alt="Studiobeitrag" loading="lazy"></div>
+                <div class="slide sq"><img src="happy-fit/Hansefit.jpg" alt="Hansefit" loading="lazy"></div>
+                <div class="slide sq"><div class="slide-ph"><span class="slide-ph-label">Beitrag 3</span></div></div>
+                <div class="slide sq"><div class="slide-ph"><span class="slide-ph-label">Beitrag 4</span></div></div>
+                <div class="slide sq"><div class="slide-ph"><span class="slide-ph-label">Beitrag 5</span></div></div>
+                <div class="slide sq"><img src="happy-fit/HF_band.jpg" alt="" loading="lazy"></div>
+                <div class="slide sq"><img src="happy-fit/Hansefit.jpg" alt="" loading="lazy"></div>
+                <div class="slide sq"><div class="slide-ph"><span class="slide-ph-label">Beitrag 3</span></div></div>
+                <div class="slide sq"><div class="slide-ph"><span class="slide-ph-label">Beitrag 4</span></div></div>
+                <div class="slide sq"><div class="slide-ph"><span class="slide-ph-label">Beitrag 5</span></div></div>
+            </div>
         </div>
     </div>
 
@@ -240,12 +295,21 @@
             <div class="proj-section-line"></div>
             <span class="proj-section-count">Platzhalter</span>
         </div>
-        <div class="proj-grid proj-grid-portrait">
-            <div class="proj-placeholder portrait"><span class="proj-placeholder-label">Story 1</span></div>
-            <div class="proj-placeholder portrait"><span class="proj-placeholder-label">Story 2</span></div>
-            <div class="proj-placeholder portrait"><span class="proj-placeholder-label">Story 3</span></div>
-            <div class="proj-placeholder portrait"><span class="proj-placeholder-label">Story 4</span></div>
-            <div class="proj-placeholder portrait"><span class="proj-placeholder-label">Story 5</span></div>
+        <div class="slider-wrap">
+            <div class="slider-track" style="--dur:24s">
+                <div class="slide port"><div class="slide-ph"><span class="slide-ph-label">Story 1</span></div></div>
+                <div class="slide port"><div class="slide-ph"><span class="slide-ph-label">Story 2</span></div></div>
+                <div class="slide port"><div class="slide-ph"><span class="slide-ph-label">Story 3</span></div></div>
+                <div class="slide port"><div class="slide-ph"><span class="slide-ph-label">Story 4</span></div></div>
+                <div class="slide port"><div class="slide-ph"><span class="slide-ph-label">Story 5</span></div></div>
+                <div class="slide port"><div class="slide-ph"><span class="slide-ph-label">Story 6</span></div></div>
+                <div class="slide port"><div class="slide-ph"><span class="slide-ph-label">Story 1</span></div></div>
+                <div class="slide port"><div class="slide-ph"><span class="slide-ph-label">Story 2</span></div></div>
+                <div class="slide port"><div class="slide-ph"><span class="slide-ph-label">Story 3</span></div></div>
+                <div class="slide port"><div class="slide-ph"><span class="slide-ph-label">Story 4</span></div></div>
+                <div class="slide port"><div class="slide-ph"><span class="slide-ph-label">Story 5</span></div></div>
+                <div class="slide port"><div class="slide-ph"><span class="slide-ph-label">Story 6</span></div></div>
+            </div>
         </div>
     </div>
 
@@ -256,11 +320,19 @@
             <div class="proj-section-line"></div>
             <span class="proj-section-count">Platzhalter</span>
         </div>
-        <div class="proj-grid proj-grid-portrait">
-            <div class="proj-placeholder portrait"><span class="proj-placeholder-label">Reel 1</span></div>
-            <div class="proj-placeholder portrait"><span class="proj-placeholder-label">Reel 2</span></div>
-            <div class="proj-placeholder portrait"><span class="proj-placeholder-label">Reel 3</span></div>
-            <div class="proj-placeholder portrait"><span class="proj-placeholder-label">Reel 4</span></div>
+        <div class="slider-wrap">
+            <div class="slider-track" style="--dur:20s">
+                <div class="slide port"><div class="slide-ph-video"><div class="slide-ph-play"><svg width="12" height="14" viewBox="0 0 12 14" fill="none"><path d="M1 1l10 6-10 6V1z" fill="rgba(255,255,255,.3)"/></svg></div><span class="slide-ph-video-label">Reel 1</span></div></div>
+                <div class="slide port"><div class="slide-ph-video"><div class="slide-ph-play"><svg width="12" height="14" viewBox="0 0 12 14" fill="none"><path d="M1 1l10 6-10 6V1z" fill="rgba(255,255,255,.3)"/></svg></div><span class="slide-ph-video-label">Reel 2</span></div></div>
+                <div class="slide port"><div class="slide-ph-video"><div class="slide-ph-play"><svg width="12" height="14" viewBox="0 0 12 14" fill="none"><path d="M1 1l10 6-10 6V1z" fill="rgba(255,255,255,.3)"/></svg></div><span class="slide-ph-video-label">Reel 3</span></div></div>
+                <div class="slide port"><div class="slide-ph-video"><div class="slide-ph-play"><svg width="12" height="14" viewBox="0 0 12 14" fill="none"><path d="M1 1l10 6-10 6V1z" fill="rgba(255,255,255,.3)"/></svg></div><span class="slide-ph-video-label">Reel 4</span></div></div>
+                <div class="slide port"><div class="slide-ph-video"><div class="slide-ph-play"><svg width="12" height="14" viewBox="0 0 12 14" fill="none"><path d="M1 1l10 6-10 6V1z" fill="rgba(255,255,255,.3)"/></svg></div><span class="slide-ph-video-label">Reel 5</span></div></div>
+                <div class="slide port"><div class="slide-ph-video"><div class="slide-ph-play"><svg width="12" height="14" viewBox="0 0 12 14" fill="none"><path d="M1 1l10 6-10 6V1z" fill="rgba(255,255,255,.3)"/></svg></div><span class="slide-ph-video-label">Reel 1</span></div></div>
+                <div class="slide port"><div class="slide-ph-video"><div class="slide-ph-play"><svg width="12" height="14" viewBox="0 0 12 14" fill="none"><path d="M1 1l10 6-10 6V1z" fill="rgba(255,255,255,.3)"/></svg></div><span class="slide-ph-video-label">Reel 2</span></div></div>
+                <div class="slide port"><div class="slide-ph-video"><div class="slide-ph-play"><svg width="12" height="14" viewBox="0 0 12 14" fill="none"><path d="M1 1l10 6-10 6V1z" fill="rgba(255,255,255,.3)"/></svg></div><span class="slide-ph-video-label">Reel 3</span></div></div>
+                <div class="slide port"><div class="slide-ph-video"><div class="slide-ph-play"><svg width="12" height="14" viewBox="0 0 12 14" fill="none"><path d="M1 1l10 6-10 6V1z" fill="rgba(255,255,255,.3)"/></svg></div><span class="slide-ph-video-label">Reel 4</span></div></div>
+                <div class="slide port"><div class="slide-ph-video"><div class="slide-ph-play"><svg width="12" height="14" viewBox="0 0 12 14" fill="none"><path d="M1 1l10 6-10 6V1z" fill="rgba(255,255,255,.3)"/></svg></div><span class="slide-ph-video-label">Reel 5</span></div></div>
+            </div>
         </div>
     </div>
 
