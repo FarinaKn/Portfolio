@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sombra — Farina Knoblauch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css?v=3">
+    <style>
+        .photo-page-header {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 130px 48px 64px;
+        }
+        .proj-page-back {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-family: var(--mono); font-size: 11px; letter-spacing: .12em;
+            text-transform: uppercase; color: var(--muted); text-decoration: none;
+            margin-bottom: 64px; transition: color .3s;
+        }
+        .proj-page-back:hover { color: var(--accent); }
+        .proj-page-back:hover svg { transform: translateX(-3px); }
+        .proj-page-back svg { transition: transform .3s; }
+        .proj-page-cat {
+            display: block; font-family: var(--mono); font-size: 10px;
+            letter-spacing: .22em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px;
+        }
+        .proj-title-row { display: flex; align-items: baseline; gap: 16px; margin-bottom: 24px; }
+        .proj-page-title {
+            font-family: var(--display); font-size: clamp(36px, 6vw, 72px);
+            font-weight: 900; letter-spacing: -.03em; line-height: 1; color: var(--text);
+        }
+        .proj-page-year { font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: .12em; white-space: nowrap; }
+        .proj-page-desc { font-size: 14px; color: var(--muted); line-height: 1.9; max-width: 600px; }
+        .photo-rows { padding: 0 0 80px; display: flex; flex-direction: column; gap: 14px; }
+        @keyframes slider-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .prow-wrap {
+            overflow: hidden;
+            -webkit-mask: linear-gradient(90deg, transparent 0%, black 5%, black 95%, transparent 100%);
+            mask: linear-gradient(90deg, transparent 0%, black 5%, black 95%, transparent 100%);
+        }
+        .prow-track {
+            display: flex; align-items: center; gap: 12px; width: max-content;
+            animation: slider-scroll var(--dur, 60s) linear infinite;
+        }
+        .prow-track:hover, .prow-track.paused { animation-play-state: paused; }
+        .prow-track.reverse { animation-direction: reverse; }
+        .pslide {
+            flex-shrink: 0; height: 300px; border-radius: 6px; overflow: hidden;
+            border: 1px solid var(--border); cursor: zoom-in; transition: border-color .3s;
+        }
+        .pslide:hover { border-color: rgba(255,255,255,.18); }
+        .pslide img { height: 100%; width: auto; display: block; object-fit: cover; }
+        .pslide-ph {
+            height: 100%; aspect-ratio: 3/2;
+            background: linear-gradient(140deg, #0C0A08 0%, #1C1512 40%, #2E2018 70%, #1A130C 100%);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .pslide-ph span { font-family: var(--mono); font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.08); }
+        .slide-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.92); z-index: 8999; cursor: zoom-out; }
+        .slide-lightbox {
+            position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%);
+            z-index: 9000; border-radius: 8px; overflow: hidden;
+            border: 1px solid rgba(255,255,255,.12); cursor: zoom-out;
+            max-width: 92vw; max-height: 90vh;
+            animation: lbIn .22s cubic-bezier(.16,1,.3,1);
+        }
+        @keyframes lbIn { from { opacity:0; transform:translate(-50%,-50%) scale(.92); } to { opacity:1; transform:translate(-50%,-50%) scale(1); } }
+        .slide-lightbox img { display: block; max-width: 92vw; max-height: 90vh; width: auto; height: auto; object-fit: contain; }
+        .photo-page-footer {
+            max-width: 1200px; margin: 0 auto; padding: 48px 48px 80px;
+            border-top: 1px solid var(--border);
+        }
+        @media (max-width: 700px) {
+            .photo-page-header { padding: 100px 24px 48px; }
+            .pslide { height: 200px; }
+            .photo-page-footer { padding: 32px 24px 60px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav id="nav">
+    <a href="../index.html" class="nav-logo">FK</a>
+    <a href="../index.html#work" class="proj-page-back" style="position:absolute;right:48px;top:50%;transform:translateY(-50%);margin:0;">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M12 7H2M2 7l5-5M2 7l5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        All Projects
+    </a>
+</nav>
+
+<div class="photo-page-header">
+    <a href="../index.html#work" class="proj-page-back">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M12 7H2M2 7l5-5M2 7l5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        All Projects
+    </a>
+    <span class="proj-page-cat">Photography</span>
+    <div class="proj-title-row">
+        <h1 class="proj-page-title">Sombra</h1>
+        <span class="proj-page-year">2026</span>
+    </div>
+    <p class="proj-page-desc">Seville — Sun — Heat.<br><br>These were the first thoughts that came to mind when thinking about Sombra. Through this photographic series, I want to explore how heat shapes public life in Seville, and how people instinctively seek refuge within shadows while architecture itself becomes shelter, contrast, and structure under the intense southern sun.</p>
+</div>
+
+<div class="photo-rows">
+    <!-- Row 1 — left -->
+    <div class="prow-wrap">
+        <div class="prow-track" style="--dur:120s">
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <!-- duplicate -->
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+        </div>
+    </div>
+    <!-- Row 2 — right -->
+    <div class="prow-wrap">
+        <div class="prow-track reverse" style="--dur:120s">
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <!-- duplicate -->
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+        </div>
+    </div>
+    <!-- Row 3 — left -->
+    <div class="prow-wrap">
+        <div class="prow-track" style="--dur:120s">
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <!-- duplicate -->
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+            <div class="pslide"><div class="pslide-ph"><span>Sombra</span></div></div>
+        </div>
+    </div>
+</div>
+
+<div class="photo-page-footer">
+    <a href="../index.html#work" class="proj-page-back">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M12 7H2M2 7l5-5M2 7l5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Back to all projects
+    </a>
+</div>
+
+<script src="../script.js"></script>
+<script>
+(function() {
+    let backdrop = null, lightbox = null, pausedTrack = null;
+    function collapse() {
+        if (lightbox)  { lightbox.remove(); lightbox = null; }
+        if (backdrop)  { backdrop.remove(); backdrop = null; }
+        if (pausedTrack) { pausedTrack.classList.remove('paused'); pausedTrack = null; }
+    }
+    document.querySelectorAll('.pslide').forEach(slide => {
+        slide.addEventListener('click', () => {
+            const img = slide.querySelector('img');
+            if (!img) return;
+            if (lightbox) { collapse(); return; }
+            pausedTrack = slide.closest('.prow-track');
+            pausedTrack.classList.add('paused');
+            const lb = document.createElement('div');
+            lb.className = 'slide-lightbox';
+            lb.innerHTML = img.outerHTML;
+            lb.addEventListener('click', collapse);
+            document.body.appendChild(lb);
+            lightbox = lb;
+            backdrop = document.createElement('div');
+            backdrop.className = 'slide-backdrop';
+            backdrop.addEventListener('click', collapse);
+            document.body.appendChild(backdrop);
+        });
+    });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') collapse(); });
+})();
+</script>
+</body>
+</html>
