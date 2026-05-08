@@ -44,17 +44,21 @@
         .slide.sq   { width: 216px; aspect-ratio: 4 / 5; }
         .slide.port { width: 160px; aspect-ratio: 9 / 16; }
         .slide img, .slide video { width: 100%; height: 100%; object-fit: cover; display: block; }
+        /* Video slide */
+        .video-slide { position: relative; cursor: zoom-in; }
+        .video-slide video { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .reel-label {
+            position: absolute; bottom: 8px; left: 0; right: 0;
+            text-align: center; font-family: var(--mono); font-size: 9px;
+            letter-spacing: .14em; text-transform: uppercase;
+            color: rgba(255,255,255,.55); pointer-events: none;
+        }
         .slide-ph { width: 100%; height: 100%; background: linear-gradient(140deg,#040A12 0%,#0A1E30 45%,#164260 80%,#226888 100%); display: flex; align-items: center; justify-content: center; }
         .slide-ph-label { font-family: var(--mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.15); }
-        .slide-ph-video { width: 100%; height: 100%; background: linear-gradient(140deg,#08040F 0%,#180A32 45%,#301560 80%,#4C2090 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; }
-        .slide-ph-play { width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,.2); display: flex; align-items: center; justify-content: center; }
-        .slide-ph-play svg { margin-left: 3px; }
-        .slide-ph-video-label { font-family: var(--mono); font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.2); }
-        .slide-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.88); z-index: 8999; cursor: zoom-out; }
+        .slide-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.92); z-index: 8999; cursor: zoom-out; }
         .slide-lightbox { position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%); z-index: 9000; border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,.12); cursor: zoom-out; animation: lbIn .22s cubic-bezier(.16,1,.3,1); }
         @keyframes lbIn { from { opacity:0; transform:translate(-50%,-50%) scale(.92); } to { opacity:1; transform:translate(-50%,-50%) scale(1); } }
         .slide-lightbox img, .slide-lightbox video { display: block; width: 100%; height: 100%; object-fit: cover; }
-        .slide-lightbox .slide-ph, .slide-lightbox .slide-ph-video { width: 100%; height: 100%; }
         .proj-page-footer { padding-top: 48px; border-top: 1px solid var(--border); }
         @media (max-width: 700px) { .proj-page-wrap { padding: 100px 24px 80px; } .slide.sq { width: 160px; } .slide.port { width: 120px; } }
     </style>
@@ -96,31 +100,32 @@
         </div>
         <div class="slider-wrap">
             <div class="slider-track" style="--dur:44s">
-                <div class="slide sq"><img src="happy-fit/aktionen/af0d6c5d-4dc9-4b16-9177-1157559e3028.jpg" alt="" loading="lazy"></div>
-                <div class="slide sq"><img src="happy-fit/aktionen/hansefit.jpg" alt="" loading="lazy"></div>
-                <div class="slide sq"><img src="happy-fit/aktionen/hf_band.jpg" alt="" loading="lazy"></div>
+                <div class="slide sq"><img src="happy-fit/aktionen/hf_zeitenfeiertage.jpg" alt="" loading="lazy"></div>
                 <div class="slide sq"><img src="happy-fit/aktionen/hf_gold_neujahr.jpg" alt="" loading="lazy"></div>
-                <div class="slide sq"><img src="happy-fit/aktionen/hf_movemberspecial_01_11.jpg" alt="" loading="lazy"></div>
+                <div class="slide sq"><img src="happy-fit/aktionen/hf_band.jpg" alt="" loading="lazy"></div>
+                <div class="slide sq"><img src="happy-fit/aktionen/kryo.jpg" alt="" loading="lazy"></div>
                 <div class="slide sq"><img src="happy-fit/aktionen/hf_osteraktion_gruen.jpg" alt="" loading="lazy"></div>
                 <div class="slide sq"><img src="happy-fit/aktionen/hf_weihnachten.jpg" alt="" loading="lazy"></div>
-                <div class="slide sq"><img src="happy-fit/aktionen/hf_zeitenfeiertage.jpg" alt="" loading="lazy"></div>
-                <div class="slide sq"><img src="happy-fit/aktionen/kryo.jpg" alt="" loading="lazy"></div>
                 <div class="slide sq"><img src="happy-fit/aktionen/ostern_oeffnungszeiten_singen.jpg" alt="" loading="lazy"></div>
+                <div class="slide sq"><img src="happy-fit/aktionen/hf_movemberspecial_01_11.jpg" alt="" loading="lazy"></div>
+                <div class="slide sq"><img src="happy-fit/aktionen/af0d6c5d-4dc9-4b16-9177-1157559e3028.jpg" alt="" loading="lazy"></div>
+                <div class="slide sq"><img src="happy-fit/aktionen/hansefit.jpg" alt="" loading="lazy"></div>
                 <div class="slide sq"><img src="happy-fit/aktionen/valentinstag.jpg" alt="" loading="lazy"></div>
-                <div class="slide sq"><img src="happy-fit/aktionen/af0d6c5d-4dc9-4b16-9177-1157559e3028.jpg" alt="" loading="lazy"></div>
-                <div class="slide sq"><img src="happy-fit/aktionen/hansefit.jpg" alt="" loading="lazy"></div>
-                <div class="slide sq"><img src="happy-fit/aktionen/hf_band.jpg" alt="" loading="lazy"></div>
+                <div class="slide sq"><img src="happy-fit/aktionen/hf_zeitenfeiertage.jpg" alt="" loading="lazy"></div>
                 <div class="slide sq"><img src="happy-fit/aktionen/hf_gold_neujahr.jpg" alt="" loading="lazy"></div>
-                <div class="slide sq"><img src="happy-fit/aktionen/hf_movemberspecial_01_11.jpg" alt="" loading="lazy"></div>
+                <div class="slide sq"><img src="happy-fit/aktionen/hf_band.jpg" alt="" loading="lazy"></div>
+                <div class="slide sq"><img src="happy-fit/aktionen/kryo.jpg" alt="" loading="lazy"></div>
                 <div class="slide sq"><img src="happy-fit/aktionen/hf_osteraktion_gruen.jpg" alt="" loading="lazy"></div>
                 <div class="slide sq"><img src="happy-fit/aktionen/hf_weihnachten.jpg" alt="" loading="lazy"></div>
-                <div class="slide sq"><img src="happy-fit/aktionen/hf_zeitenfeiertage.jpg" alt="" loading="lazy"></div>
-                <div class="slide sq"><img src="happy-fit/aktionen/kryo.jpg" alt="" loading="lazy"></div>
                 <div class="slide sq"><img src="happy-fit/aktionen/ostern_oeffnungszeiten_singen.jpg" alt="" loading="lazy"></div>
+                <div class="slide sq"><img src="happy-fit/aktionen/hf_movemberspecial_01_11.jpg" alt="" loading="lazy"></div>
+                <div class="slide sq"><img src="happy-fit/aktionen/af0d6c5d-4dc9-4b16-9177-1157559e3028.jpg" alt="" loading="lazy"></div>
+                <div class="slide sq"><img src="happy-fit/aktionen/hansefit.jpg" alt="" loading="lazy"></div>
                 <div class="slide sq"><img src="happy-fit/aktionen/valentinstag.jpg" alt="" loading="lazy"></div>
             </div>
         </div>
     </div>
+
     <!-- WUSSTEST DU SCHON? -->
     <div class="proj-section">
         <div class="proj-section-head">
@@ -169,6 +174,7 @@
             </div>
         </div>
     </div>
+
     <!-- STUDIOBEITRÄGE -->
     <div class="proj-section">
         <div class="proj-section-head">
@@ -223,6 +229,7 @@
             </div>
         </div>
     </div>
+
     <!-- STORYS -->
     <div class="proj-section">
         <div class="proj-section-head">
@@ -232,43 +239,44 @@
         </div>
         <div class="slider-wrap">
             <div class="slider-track" style="--dur:50s">
-                <div class="slide port"><img src="happy-fit/storys/hf_kurse_mo2.jpg" alt="" loading="lazy"></div>
-                <div class="slide port"><img src="happy-fit/storys/hf_kurse_so.jpg" alt="" loading="lazy"></div>
-                <div class="slide port"><img src="happy-fit/storys/kurse_uebersicht.jpg" alt="" loading="lazy"></div>
-                <div class="slide port"><img src="happy-fit/storys/kurse_uebersicht2.jpg" alt="" loading="lazy"></div>
-                <div class="slide port"><img src="happy-fit/storys/kurse_uebersicht7.jpg" alt="" loading="lazy"></div>
+                <div class="slide port"><img src="happy-fit/storys/shake14.jpg" alt="" loading="lazy"></div>
+                <div class="slide port"><img src="happy-fit/storys/shake3.jpg" alt="" loading="lazy"></div>
                 <div class="slide port"><img src="happy-fit/storys/kurse_uebersicht8.jpg" alt="" loading="lazy"></div>
                 <div class="slide port"><img src="happy-fit/storys/shake.jpg" alt="" loading="lazy"></div>
-                <div class="slide port"><img src="happy-fit/storys/shake14.jpg" alt="" loading="lazy"></div>
-                <div class="slide port"><img src="happy-fit/storys/shake16.jpg" alt="" loading="lazy"></div>
-                <div class="slide port"><img src="happy-fit/storys/shake2.jpg" alt="" loading="lazy"></div>
-                <div class="slide port"><img src="happy-fit/storys/shake3.jpg" alt="" loading="lazy"></div>
-                <div class="slide port"><img src="happy-fit/storys/shake4.jpg" alt="" loading="lazy"></div>
-                <div class="slide port"><img src="happy-fit/storys/shake5.jpg" alt="" loading="lazy"></div>
-                <div class="slide port"><img src="happy-fit/storys/story2407.jpg" alt="" loading="lazy"></div>
-                <div class="slide port"><img src="happy-fit/storys/story2505.jpg" alt="" loading="lazy"></div>
                 <div class="slide port"><img src="happy-fit/storys/wochenuebersicht_kurse.jpg" alt="" loading="lazy"></div>
-                <div class="slide port"><img src="happy-fit/storys/wochenuebersicht_kurse2.jpg" alt="" loading="lazy"></div>
-                <div class="slide port"><img src="happy-fit/storys/hf_kurse_mo2.jpg" alt="" loading="lazy"></div>
+                <div class="slide port"><img src="happy-fit/storys/story2505.jpg" alt="" loading="lazy"></div>
+                <div class="slide port"><img src="happy-fit/storys/story2407.jpg" alt="" loading="lazy"></div>
+                <div class="slide port"><img src="happy-fit/storys/shake2.jpg" alt="" loading="lazy"></div>
+                <div class="slide port"><img src="happy-fit/storys/shake16.jpg" alt="" loading="lazy"></div>
                 <div class="slide port"><img src="happy-fit/storys/hf_kurse_so.jpg" alt="" loading="lazy"></div>
                 <div class="slide port"><img src="happy-fit/storys/kurse_uebersicht.jpg" alt="" loading="lazy"></div>
-                <div class="slide port"><img src="happy-fit/storys/kurse_uebersicht2.jpg" alt="" loading="lazy"></div>
+                <div class="slide port"><img src="happy-fit/storys/shake5.jpg" alt="" loading="lazy"></div>
+                <div class="slide port"><img src="happy-fit/storys/wochenuebersicht_kurse2.jpg" alt="" loading="lazy"></div>
                 <div class="slide port"><img src="happy-fit/storys/kurse_uebersicht7.jpg" alt="" loading="lazy"></div>
+                <div class="slide port"><img src="happy-fit/storys/shake4.jpg" alt="" loading="lazy"></div>
+                <div class="slide port"><img src="happy-fit/storys/hf_kurse_mo2.jpg" alt="" loading="lazy"></div>
+                <div class="slide port"><img src="happy-fit/storys/kurse_uebersicht2.jpg" alt="" loading="lazy"></div>
+                <div class="slide port"><img src="happy-fit/storys/shake14.jpg" alt="" loading="lazy"></div>
+                <div class="slide port"><img src="happy-fit/storys/shake3.jpg" alt="" loading="lazy"></div>
                 <div class="slide port"><img src="happy-fit/storys/kurse_uebersicht8.jpg" alt="" loading="lazy"></div>
                 <div class="slide port"><img src="happy-fit/storys/shake.jpg" alt="" loading="lazy"></div>
-                <div class="slide port"><img src="happy-fit/storys/shake14.jpg" alt="" loading="lazy"></div>
-                <div class="slide port"><img src="happy-fit/storys/shake16.jpg" alt="" loading="lazy"></div>
-                <div class="slide port"><img src="happy-fit/storys/shake2.jpg" alt="" loading="lazy"></div>
-                <div class="slide port"><img src="happy-fit/storys/shake3.jpg" alt="" loading="lazy"></div>
-                <div class="slide port"><img src="happy-fit/storys/shake4.jpg" alt="" loading="lazy"></div>
-                <div class="slide port"><img src="happy-fit/storys/shake5.jpg" alt="" loading="lazy"></div>
-                <div class="slide port"><img src="happy-fit/storys/story2407.jpg" alt="" loading="lazy"></div>
-                <div class="slide port"><img src="happy-fit/storys/story2505.jpg" alt="" loading="lazy"></div>
                 <div class="slide port"><img src="happy-fit/storys/wochenuebersicht_kurse.jpg" alt="" loading="lazy"></div>
+                <div class="slide port"><img src="happy-fit/storys/story2505.jpg" alt="" loading="lazy"></div>
+                <div class="slide port"><img src="happy-fit/storys/story2407.jpg" alt="" loading="lazy"></div>
+                <div class="slide port"><img src="happy-fit/storys/shake2.jpg" alt="" loading="lazy"></div>
+                <div class="slide port"><img src="happy-fit/storys/shake16.jpg" alt="" loading="lazy"></div>
+                <div class="slide port"><img src="happy-fit/storys/hf_kurse_so.jpg" alt="" loading="lazy"></div>
+                <div class="slide port"><img src="happy-fit/storys/kurse_uebersicht.jpg" alt="" loading="lazy"></div>
+                <div class="slide port"><img src="happy-fit/storys/shake5.jpg" alt="" loading="lazy"></div>
                 <div class="slide port"><img src="happy-fit/storys/wochenuebersicht_kurse2.jpg" alt="" loading="lazy"></div>
+                <div class="slide port"><img src="happy-fit/storys/kurse_uebersicht7.jpg" alt="" loading="lazy"></div>
+                <div class="slide port"><img src="happy-fit/storys/shake4.jpg" alt="" loading="lazy"></div>
+                <div class="slide port"><img src="happy-fit/storys/hf_kurse_mo2.jpg" alt="" loading="lazy"></div>
+                <div class="slide port"><img src="happy-fit/storys/kurse_uebersicht2.jpg" alt="" loading="lazy"></div>
             </div>
         </div>
     </div>
+
     <!-- REELS -->
     <div class="proj-section">
         <div class="proj-section-head">
@@ -277,28 +285,29 @@
             <span class="proj-section-count">9 Reels</span>
         </div>
         <div class="slider-wrap">
-            <div class="slider-track" style="--dur:40s">
-                <div class="slide port"><div class="slide-ph-video"><div class="slide-ph-play"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l8 5-8 5V2.5z" fill="rgba(255,255,255,.4)"/></svg></div><span class="slide-ph-video-label">Reel</span></div></div>
-                <div class="slide port"><div class="slide-ph-video"><div class="slide-ph-play"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l8 5-8 5V2.5z" fill="rgba(255,255,255,.4)"/></svg></div><span class="slide-ph-video-label">Reel</span></div></div>
-                <div class="slide port"><div class="slide-ph-video"><div class="slide-ph-play"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l8 5-8 5V2.5z" fill="rgba(255,255,255,.4)"/></svg></div><span class="slide-ph-video-label">Reel</span></div></div>
-                <div class="slide port"><div class="slide-ph-video"><div class="slide-ph-play"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l8 5-8 5V2.5z" fill="rgba(255,255,255,.4)"/></svg></div><span class="slide-ph-video-label">Reel</span></div></div>
-                <div class="slide port"><div class="slide-ph-video"><div class="slide-ph-play"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l8 5-8 5V2.5z" fill="rgba(255,255,255,.4)"/></svg></div><span class="slide-ph-video-label">Reel</span></div></div>
-                <div class="slide port"><div class="slide-ph-video"><div class="slide-ph-play"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l8 5-8 5V2.5z" fill="rgba(255,255,255,.4)"/></svg></div><span class="slide-ph-video-label">Reel</span></div></div>
-                <div class="slide port"><div class="slide-ph-video"><div class="slide-ph-play"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l8 5-8 5V2.5z" fill="rgba(255,255,255,.4)"/></svg></div><span class="slide-ph-video-label">Reel</span></div></div>
-                <div class="slide port"><div class="slide-ph-video"><div class="slide-ph-play"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l8 5-8 5V2.5z" fill="rgba(255,255,255,.4)"/></svg></div><span class="slide-ph-video-label">Reel</span></div></div>
-                <div class="slide port"><div class="slide-ph-video"><div class="slide-ph-play"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l8 5-8 5V2.5z" fill="rgba(255,255,255,.4)"/></svg></div><span class="slide-ph-video-label">Reel</span></div></div>
-                <div class="slide port"><div class="slide-ph-video"><div class="slide-ph-play"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l8 5-8 5V2.5z" fill="rgba(255,255,255,.4)"/></svg></div><span class="slide-ph-video-label">Reel</span></div></div>
-                <div class="slide port"><div class="slide-ph-video"><div class="slide-ph-play"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l8 5-8 5V2.5z" fill="rgba(255,255,255,.4)"/></svg></div><span class="slide-ph-video-label">Reel</span></div></div>
-                <div class="slide port"><div class="slide-ph-video"><div class="slide-ph-play"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l8 5-8 5V2.5z" fill="rgba(255,255,255,.4)"/></svg></div><span class="slide-ph-video-label">Reel</span></div></div>
-                <div class="slide port"><div class="slide-ph-video"><div class="slide-ph-play"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l8 5-8 5V2.5z" fill="rgba(255,255,255,.4)"/></svg></div><span class="slide-ph-video-label">Reel</span></div></div>
-                <div class="slide port"><div class="slide-ph-video"><div class="slide-ph-play"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l8 5-8 5V2.5z" fill="rgba(255,255,255,.4)"/></svg></div><span class="slide-ph-video-label">Reel</span></div></div>
-                <div class="slide port"><div class="slide-ph-video"><div class="slide-ph-play"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l8 5-8 5V2.5z" fill="rgba(255,255,255,.4)"/></svg></div><span class="slide-ph-video-label">Reel</span></div></div>
-                <div class="slide port"><div class="slide-ph-video"><div class="slide-ph-play"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l8 5-8 5V2.5z" fill="rgba(255,255,255,.4)"/></svg></div><span class="slide-ph-video-label">Reel</span></div></div>
-                <div class="slide port"><div class="slide-ph-video"><div class="slide-ph-play"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l8 5-8 5V2.5z" fill="rgba(255,255,255,.4)"/></svg></div><span class="slide-ph-video-label">Reel</span></div></div>
-                <div class="slide port"><div class="slide-ph-video"><div class="slide-ph-play"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l8 5-8 5V2.5z" fill="rgba(255,255,255,.4)"/></svg></div><span class="slide-ph-video-label">Reel</span></div></div>
+            <div class="slider-track" style="--dur:54s">
+                <div class="slide port video-slide"><video src="happy-fit/reels/beinpresse.mp4" autoplay muted loop playsinline preload="metadata"></video><span class="reel-label">Beinpresse</span></div>
+                <div class="slide port video-slide"><video src="happy-fit/reels/beinstrecker.mp4" autoplay muted loop playsinline preload="metadata"></video><span class="reel-label">Beinstrecker</span></div>
+                <div class="slide port video-slide"><video src="happy-fit/reels/bizeps.mp4" autoplay muted loop playsinline preload="metadata"></video><span class="reel-label">Bizeps</span></div>
+                <div class="slide port video-slide"><video src="happy-fit/reels/breites_rudern.mp4" autoplay muted loop playsinline preload="metadata"></video><span class="reel-label">Breites Rudern</span></div>
+                <div class="slide port video-slide"><video src="happy-fit/reels/brust.mp4" autoplay muted loop playsinline preload="metadata"></video><span class="reel-label">Brust</span></div>
+                <div class="slide port video-slide"><video src="happy-fit/reels/enges_rudern.mp4" autoplay muted loop playsinline preload="metadata"></video><span class="reel-label">Enges Rudern</span></div>
+                <div class="slide port video-slide"><video src="happy-fit/reels/latzug.mp4" autoplay muted loop playsinline preload="metadata"></video><span class="reel-label">Latzug</span></div>
+                <div class="slide port video-slide"><video src="happy-fit/reels/seitheben.mp4" autoplay muted loop playsinline preload="metadata"></video><span class="reel-label">Seitheben</span></div>
+                <div class="slide port video-slide"><video src="happy-fit/reels/trizeps.mp4" autoplay muted loop playsinline preload="metadata"></video><span class="reel-label">Trizeps</span></div>
+                <div class="slide port video-slide"><video src="happy-fit/reels/beinpresse.mp4" autoplay muted loop playsinline preload="metadata"></video><span class="reel-label">Beinpresse</span></div>
+                <div class="slide port video-slide"><video src="happy-fit/reels/beinstrecker.mp4" autoplay muted loop playsinline preload="metadata"></video><span class="reel-label">Beinstrecker</span></div>
+                <div class="slide port video-slide"><video src="happy-fit/reels/bizeps.mp4" autoplay muted loop playsinline preload="metadata"></video><span class="reel-label">Bizeps</span></div>
+                <div class="slide port video-slide"><video src="happy-fit/reels/breites_rudern.mp4" autoplay muted loop playsinline preload="metadata"></video><span class="reel-label">Breites Rudern</span></div>
+                <div class="slide port video-slide"><video src="happy-fit/reels/brust.mp4" autoplay muted loop playsinline preload="metadata"></video><span class="reel-label">Brust</span></div>
+                <div class="slide port video-slide"><video src="happy-fit/reels/enges_rudern.mp4" autoplay muted loop playsinline preload="metadata"></video><span class="reel-label">Enges Rudern</span></div>
+                <div class="slide port video-slide"><video src="happy-fit/reels/latzug.mp4" autoplay muted loop playsinline preload="metadata"></video><span class="reel-label">Latzug</span></div>
+                <div class="slide port video-slide"><video src="happy-fit/reels/seitheben.mp4" autoplay muted loop playsinline preload="metadata"></video><span class="reel-label">Seitheben</span></div>
+                <div class="slide port video-slide"><video src="happy-fit/reels/trizeps.mp4" autoplay muted loop playsinline preload="metadata"></video><span class="reel-label">Trizeps</span></div>
             </div>
         </div>
     </div>
+
     <div class="proj-page-footer">
         <a href="../index.html#work" class="proj-page-back">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M12 7H2M2 7l5-5M2 7l5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -312,32 +321,58 @@
 <script>
 (function() {
     let backdrop = null, lightbox = null, pausedTrack = null;
+
     function collapse() {
-        if (lightbox)  { lightbox.remove();  lightbox  = null; }
-        if (backdrop)  { backdrop.remove();  backdrop  = null; }
+        if (lightbox)  {
+            // pause video if lightbox has one
+            const v = lightbox.querySelector('video');
+            if (v) { v.pause(); v.src = ''; }
+            lightbox.remove(); lightbox = null;
+        }
+        if (backdrop)  { backdrop.remove(); backdrop = null; }
         if (pausedTrack) { pausedTrack.classList.remove('paused'); pausedTrack = null; }
     }
+
     document.querySelectorAll('.slide').forEach(slide => {
         slide.addEventListener('click', () => {
             if (lightbox) { collapse(); return; }
             pausedTrack = slide.closest('.slider-track');
             pausedTrack.classList.add('paused');
-            const isPortrait = slide.classList.contains('port');
+
+            const isPort = slide.classList.contains('port');
             const lb = document.createElement('div');
             lb.className = 'slide-lightbox';
-            lb.style.cssText = isPortrait
+            lb.style.cssText = isPort
                 ? 'width:min(55vw,340px); aspect-ratio:9/16;'
                 : 'width:min(75vw,480px); aspect-ratio:4/5;';
-            lb.innerHTML = slide.innerHTML;
+
+            // For video slides: create a fresh playing video
+            const origVideo = slide.querySelector('video');
+            if (origVideo) {
+                const v = document.createElement('video');
+                v.src = origVideo.src;
+                v.autoplay = true;
+                v.muted = false;   // unmute in lightbox
+                v.loop = true;
+                v.playsInline = true;
+                v.controls = true;
+                v.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block;';
+                lb.appendChild(v);
+            } else {
+                lb.innerHTML = slide.innerHTML;
+            }
+
             lb.addEventListener('click', collapse);
             document.body.appendChild(lb);
             lightbox = lb;
+
             backdrop = document.createElement('div');
             backdrop.className = 'slide-backdrop';
             backdrop.addEventListener('click', collapse);
             document.body.appendChild(backdrop);
         });
     });
+
     document.addEventListener('keydown', e => { if (e.key === 'Escape') collapse(); });
 })();
 </script>
