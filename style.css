@@ -404,7 +404,7 @@
         }
 
         /* ── GRID / CARDS ───────────────────────── */
-        .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 12px; }
+        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
         .card {
             position: relative; overflow: hidden; cursor: pointer;
             background: var(--bg-card); border: 1px solid var(--border);
@@ -414,20 +414,6 @@
         .card:hover { border-color: rgba(255,255,255,.14); }
         .card:hover .card-thumb { transform: scale(1.04); }
         .card:hover .card-veil { opacity: 1; }
-
-        .card:nth-child(1)  { grid-column: span 8; }
-        .card:nth-child(2)  { grid-column: span 4; }
-        .card:nth-child(3)  { grid-column: span 4; }
-        .card:nth-child(4)  { grid-column: span 8; }
-        .card:nth-child(5)  { grid-column: span 6; }
-        .card:nth-child(6)  { grid-column: span 6; }
-        .card:nth-child(7)  { grid-column: span 4; }
-        .card:nth-child(8)  { grid-column: span 4; }
-        .card:nth-child(9)  { grid-column: span 4; }
-        .card:nth-child(10) { grid-column: span 5; }
-        .card:nth-child(11) { grid-column: span 7; }
-        .card:nth-child(12) { grid-column: span 6; }
-        .card:nth-child(13) { grid-column: span 6; }
         .card.hidden { display: none; }
 
         .card-thumb {
