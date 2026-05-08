@@ -999,3 +999,5 @@
 
 /* ── Project pages shared ── */
 .proj-page-year { color: var(--accent) !important; }
+.proj-section-count { color: var(--accent) !important; }
+.mockup-label { color: var(--accent) !important; }
