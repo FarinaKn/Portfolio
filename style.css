@@ -285,7 +285,7 @@
         .hero-hl { color: var(--accent); position: relative; display: inline-block; }
         .hero-hl svg {
             position: absolute; top: 50%; left: 50%;
-            transform: translate(-50%, -48%);
+            transform: translate(-50%, -38%);
             width: 120%; height: 160%;
             pointer-events: none; overflow: visible;
         }
