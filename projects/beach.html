@@ -58,9 +58,9 @@
         .slide { flex-shrink: 0; border-radius: 6px; overflow: hidden; border: 1px solid var(--border); cursor: zoom-in; transition: border-color .3s; }
         .slide:hover { border-color: rgba(255,255,255,.18); }
         .slide.sq { width: 220px; aspect-ratio: 1/1; }
-        /* Illustration slides use a warm sandy background so transparent→white JPEGs look intentional */
-        .slide.illus { background: #F5ECD8; }
-        .slide.illus img { width: 100%; height: 100%; object-fit: contain; display: block; padding: 12px; box-sizing: border-box; }
+        /* Illustration slides: transparent background, illustration centred */
+        .slide.illus { background: transparent; border-color: transparent; }
+        .slide.illus img { width: 100%; height: 100%; object-fit: contain; display: block; padding: 8px; box-sizing: border-box; }
 
         /* ── Lightbox ── */
         .slide-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.88); z-index: 8999; cursor: zoom-out; }
@@ -72,7 +72,7 @@
         }
         @keyframes lbIn { from { opacity:0; transform:translate(-50%,-50%) scale(.92); } to { opacity:1; transform:translate(-50%,-50%) scale(1); } }
         .slide-lightbox img { display: block; max-width: 80vw; max-height: 85vh; width: auto; height: auto; }
-        .slide-lightbox.illus-lb { background: #F5ECD8; padding: 24px; }
+        .slide-lightbox.illus-lb { background: transparent; }
 
         /* ── Mockups grid ── */
         .mockup-grid {
@@ -88,15 +88,6 @@
             border-radius: 6px; overflow: hidden; border: 1px solid var(--border);
             background: var(--surface, #1A1816);
         }
-        /* Wireframes: tall scroll — show in a fixed-height scrollable box */
-        .mockup-frame.scrollable {
-            max-height: 520px;
-            overflow-y: auto;
-            scrollbar-width: thin;
-            scrollbar-color: var(--border) transparent;
-        }
-        .mockup-frame.scrollable img { width: 100%; display: block; }
-        /* Normal (ads): just show the full image */
         .mockup-frame img { width: 100%; display: block; }
         .mockup-label {
             font-family: var(--mono); font-size: 10px; letter-spacing: .16em;
@@ -179,47 +170,47 @@
         </div>
         <div class="slider-wrap">
             <div class="slider-track" style="--dur:64s">
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/beach.jpg" alt="Beach" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/beachdarkmode.jpg" alt="Beach Darkmode" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/bucket.jpg" alt="Bucket" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/headphones.jpg" alt="Headphones" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/ice1.jpg" alt="Ice Cream" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/ice2.jpg" alt="Ice Cream" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/ice3.jpg" alt="Ice Cream" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/ice4.jpg" alt="Ice Cream" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/ice5.jpg" alt="Ice Cream" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/sandcastle.jpg" alt="Sandcastle" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/sandcastle2.jpg" alt="Sandcastle" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/sandcastle3.jpg" alt="Sandcastle" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/sunglasses.jpg" alt="Sunglasses" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/sunscreen.jpg" alt="Sunscreen" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/umbrella.jpg" alt="Umbrella" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/unicorn.jpg" alt="Unicorn" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/feet1.jpg" alt="Feet" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/feet2.jpg" alt="Feet" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/feet3.jpg" alt="Feet" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/feet4.jpg" alt="Feet" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/beach.png" alt="Beach" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/beachdarkmode.png" alt="Beach Darkmode" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/bucket.png" alt="Bucket" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/headphones.png" alt="Headphones" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/ice1.png" alt="Ice Cream" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/ice2.png" alt="Ice Cream" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/ice3.png" alt="Ice Cream" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/ice4.png" alt="Ice Cream" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/ice5.png" alt="Ice Cream" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/sandcastle.png" alt="Sandcastle" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/sandcastle2.png" alt="Sandcastle" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/sandcastle3.png" alt="Sandcastle" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/sunglasses.png" alt="Sunglasses" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/sunscreen.png" alt="Sunscreen" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/umbrella.png" alt="Umbrella" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/unicorn.png" alt="Unicorn" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/feet1.png" alt="Feet" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/feet2.png" alt="Feet" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/feet3.png" alt="Feet" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/feet4.png" alt="Feet" loading="lazy"></div>
                 <!-- duplicate set for seamless loop -->
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/beach.jpg" alt="" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/beachdarkmode.jpg" alt="" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/bucket.jpg" alt="" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/headphones.jpg" alt="" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/ice1.jpg" alt="" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/ice2.jpg" alt="" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/ice3.jpg" alt="" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/ice4.jpg" alt="" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/ice5.jpg" alt="" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/sandcastle.jpg" alt="" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/sandcastle2.jpg" alt="" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/sandcastle3.jpg" alt="" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/sunglasses.jpg" alt="" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/sunscreen.jpg" alt="" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/umbrella.jpg" alt="" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/unicorn.jpg" alt="" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/feet1.jpg" alt="" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/feet2.jpg" alt="" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/feet3.jpg" alt="" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/Beach/web/feet4.jpg" alt="" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/beach.png" alt="" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/beachdarkmode.png" alt="" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/bucket.png" alt="" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/headphones.png" alt="" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/ice1.png" alt="" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/ice2.png" alt="" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/ice3.png" alt="" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/ice4.png" alt="" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/ice5.png" alt="" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/sandcastle.png" alt="" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/sandcastle2.png" alt="" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/sandcastle3.png" alt="" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/sunglasses.png" alt="" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/sunscreen.png" alt="" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/umbrella.png" alt="" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/unicorn.png" alt="" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/feet1.png" alt="" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/feet2.png" alt="" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/feet3.png" alt="" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Webdesign/Beach/web/feet4.png" alt="" loading="lazy"></div>
             </div>
         </div>
     </div>
@@ -233,22 +224,13 @@
         </div>
         <div class="mockup-grid">
 
-            <!-- Wireframe Web -->
-            <div class="mockup-item">
-                <div class="mockup-frame scrollable">
-                    <img src="../Webdesign/Beach/web/wireframe_web.jpg" alt="Wireframe Web" loading="lazy">
+            <!-- Website Screenshot -->
+            <div class="mockup-item full">
+                <div class="mockup-frame">
+                    <img src="../Webdesign/Beach/web/webshowcase.jpg" alt="Website Screenshot" loading="lazy">
                 </div>
-                <span class="mockup-label">Wireframe — Web</span>
-                <span class="mockup-sublabel">Desktop-Ansicht, vollständiger Seitenflow</span>
-            </div>
-
-            <!-- Wireframe Mobile -->
-            <div class="mockup-item">
-                <div class="mockup-frame scrollable">
-                    <img src="../Webdesign/Beach/web/wireframe_mobile.jpg" alt="Wireframe Mobile" loading="lazy">
-                </div>
-                <span class="mockup-label">Wireframe — Mobile</span>
-                <span class="mockup-sublabel">Mobile-Ansicht, vollständiger Seitenflow</span>
+                <span class="mockup-label">Website — Startseite</span>
+                <span class="mockup-sublabel">Responsive Web Design, HTML / CSS / JavaScript</span>
             </div>
 
             <!-- Half Page Ad -->
@@ -279,8 +261,7 @@
             <div class="proj-section-line"></div>
             <span class="proj-section-count">Live-Projekt</span>
         </div>
-        <!-- TODO: Replace href="#" with the actual URL of your beach website -->
-        <a class="website-link" href="#" target="_blank" rel="noopener">
+        <a class="website-link" href="https://farinakn.github.io/Beach_ResponsiveWebdesign_SoSe24/" target="_blank" rel="noopener">
             <img src="../Webdesign/Beach/web/webshowcase.jpg" alt="Childhood Escape Website" loading="lazy">
             <div class="website-link-overlay">
                 <span class="website-link-label">
