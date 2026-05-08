@@ -285,8 +285,8 @@
         .hero-hl { color: var(--accent); position: relative; display: inline-block; }
         .hero-hl svg {
             position: absolute; top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            width: 115%; height: 150%;
+            transform: translate(-50%, -48%);
+            width: 120%; height: 160%;
             pointer-events: none; overflow: visible;
         }
         .hero-hl svg ellipse {
@@ -639,7 +639,7 @@
             margin-bottom: 20px;
         }
         .exp-edu-item {
-            margin-bottom: 22px;
+            margin-bottom: 40px;
         }
         .exp-edu-item:last-child { margin-bottom: 0; }
         .exp-edu-role {
@@ -996,3 +996,6 @@
             .proj-modal-gallery { min-height: 220px; }
             .proj-modal-info { width: 100%; padding: 24px; }
         }
+
+/* ── Project pages shared ── */
+.proj-page-year { color: var(--accent) !important; }
