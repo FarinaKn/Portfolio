@@ -1022,7 +1022,7 @@
 .vi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .vi-block { display: flex; flex-direction: column; }
 .vi-full { grid-column: 1 / -1; }
-.vi-label { font-family: var(--mono); font-size: 9px; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; display: block; }
+.vi-label { font-family: var(--mono); font-size: 9px; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; display: block; }
 /* Typography */
 .vi-typo-stack { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
 .vi-typo-row { display: flex; align-items: center; gap: 16px; padding: 14px 20px; background: #1A1816; border-bottom: 1px solid var(--border); }
