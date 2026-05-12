@@ -1002,3 +1002,28 @@
 .no-shapes .card-thumb::before, .no-shapes .card-thumb::after { display: none !important; }
 .proj-section-count { color: var(--accent) !important; }
 .mockup-label { color: var(--accent) !important; }
+
+/* ── Visual Identity / Brand Direction ── */
+.vi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.vi-block { display: flex; flex-direction: column; }
+.vi-full { grid-column: 1 / -1; }
+.vi-label { font-family: var(--mono); font-size: 9px; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; display: block; }
+/* Typography */
+.vi-typo-stack { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.vi-typo-row { display: flex; align-items: center; gap: 16px; padding: 14px 20px; background: #1A1816; border-bottom: 1px solid var(--border); }
+.vi-typo-row:last-child { border-bottom: none; }
+.vi-typo-sample { flex-shrink: 0; width: 52px; color: var(--text); line-height: 1; }
+.vi-typo-role { display: block; font-family: var(--mono); font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+.vi-typo-name { display: block; font-family: var(--mono); font-size: 11px; letter-spacing: .03em; color: var(--text); margin-top: 3px; }
+/* Colors */
+.vi-color-stack { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.vi-color-row { display: flex; align-items: center; gap: 16px; padding: 12px 20px; background: #1A1816; border-bottom: 1px solid var(--border); }
+.vi-color-row:last-child { border-bottom: none; }
+.vi-swatch-sm { width: 32px; height: 32px; border-radius: 5px; flex-shrink: 0; border: 1px solid rgba(255,255,255,.07); }
+.vi-color-name { display: block; font-family: var(--mono); font-size: 11px; letter-spacing: .03em; color: var(--text); }
+.vi-color-hex { display: block; font-family: var(--mono); font-size: 9px; letter-spacing: .1em; color: var(--muted); margin-top: 3px; }
+/* Layout Principle */
+.vi-layout-block { border: 1px solid var(--border); border-radius: 8px; padding: 20px 24px; background: #1A1816; display: flex; align-items: flex-start; gap: 24px; }
+.vi-layout-tag { font-family: var(--mono); font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); white-space: nowrap; flex-shrink: 0; padding-top: 2px; min-width: 100px; }
+.vi-layout-text { font-size: 13px; color: var(--muted); line-height: 1.8; }
+@media (max-width: 700px) { .vi-grid { grid-template-columns: 1fr; } .vi-full { grid-column: 1; } }
