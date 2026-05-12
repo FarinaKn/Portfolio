@@ -1003,6 +1003,21 @@
 .proj-section-count { color: var(--accent) !important; }
 .mockup-label { color: var(--accent) !important; }
 
+/* ── Shared project page blocks ── */
+.concept-block { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+.concept-text { font-size: 14px; color: var(--muted); line-height: 1.9; }
+.mockup-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.mockup-item { display: flex; flex-direction: column; gap: 10px; }
+.mockup-item.full { grid-column: 1 / -1; }
+.mockup-frame { border-radius: 6px; overflow: hidden; border: 1px solid var(--border); background: #1A1816; }
+.mockup-frame img { width: 100%; display: block; }
+.mockup-label { font-family: var(--mono); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; }
+.mockup-sublabel { font-size: 12px; color: rgba(98,92,82,.7); margin-top: 2px; }
+.ph-block { border-radius: 6px; border: 1px solid var(--border); background: linear-gradient(140deg, #141210 0%, #1E1C18 55%, #161412 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+.ph-block::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(45deg, transparent, transparent 28px, rgba(255,255,255,.012) 28px, rgba(255,255,255,.012) 29px); }
+.ph-text { font-family: var(--mono); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.12); position: relative; }
+@media (max-width: 700px) { .concept-block { grid-template-columns: 1fr; } .mockup-grid { grid-template-columns: 1fr; } .mockup-item.full { grid-column: 1; } }
+
 /* ── Visual Identity / Brand Direction ── */
 .vi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .vi-block { display: flex; flex-direction: column; }
