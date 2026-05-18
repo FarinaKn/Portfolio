@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noordlicht – Brunch · Coffee · Hygge</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=8">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="#hero" class="nav-logo">
+    <img src="graphics/4n_b.png" alt="Noordlicht Logo">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about" data-i18n data-de="Über uns" data-en="About">Über uns</a></li>
+    <li><a href="#menu" data-i18n data-de="Menü" data-en="Menu">Menü</a></li>
+    <li><a href="#hours" data-i18n data-de="Öffnungszeiten" data-en="Opening Hours">Öffnungszeiten</a></li>
+    <li><a href="#contact" data-i18n data-de="Kontakt" data-en="Contact">Kontakt</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-sw">
+      <button class="lang-btn active" title="Deutsch">🇩🇪</button>
+      <button class="lang-btn" title="English">🇬🇧</button>
+      <button class="lang-btn" title="Français">🇫🇷</button>
+      <button class="lang-btn" title="Italiano">🇮🇹</button>
+    </div>
+    <div class="burger" id="burger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mob-menu">
+  <a href="#about" data-i18n data-de="Über uns" data-en="About">Über uns</a>
+  <a href="#menu" data-i18n data-de="Menü" data-en="Menu">Menü</a>
+  <a href="#hours" data-i18n data-de="Öffnungszeiten" data-en="Opening Hours">Öffnungszeiten</a>
+  <a href="#contact" data-i18n data-de="Kontakt" data-en="Contact">Kontakt</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="icon-pattern js-icons"></div>
+  <div class="hero-left">
+    <p class="hero-tag reveal" data-i18n data-de="Schaffhausen · Schweiz" data-en="Schaffhausen · Switzerland">Schaffhausen · Schweiz</p>
+    <h1 class="hero-title reveal">NOORDLICHT</h1>
+    <p class="hero-sub reveal" data-i18n data-de="Brunch &nbsp;·&nbsp; Kaffee &nbsp;·&nbsp; Hygge" data-en="Brunch &nbsp;·&nbsp; Coffee &nbsp;·&nbsp; Hygge">Brunch &nbsp;·&nbsp; Kaffee &nbsp;·&nbsp; Hygge</p>
+    <p class="hero-claim reveal" data-i18n data-de="Ein Ort zum Ankommen,&lt;br&gt;Durchatmen und Geniessen." data-en="A place to arrive,&lt;br&gt;breathe and enjoy.">Ein Ort zum Ankommen,<br>Durchatmen und Geniessen.</p>
+    <a href="#menu" class="btn reveal">
+      <span data-i18n data-de="Menü entdecken" data-en="Explore Menu">Menü entdecken</span>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+    </a>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="icon-pattern js-icons"></div>
+  <div class="about-inner">
+    <div>
+      <p class="sec-label reveal" data-i18n data-de="Über uns" data-en="About Us">Über uns</p>
+      <h2 class="sec-title reveal" data-i18n data-de="Willkommen bei&lt;br&gt;Noordlicht." data-en="Welcome to&lt;br&gt;Noordlicht.">Willkommen bei<br>Noordlicht.</h2>
+      <p class="about-text reveal" data-i18n data-de="Ein skandinavisch inspiriertes Café im Herzen von Schaffhausen. Geniesse Spezialitätenkaffee, entspannte Atmosphäre und hausgemachte Speisen." data-en="A Scandinavian-inspired café in the heart of Schaffhausen. Enjoy specialty coffee, a relaxed atmosphere and homemade food.">
+        Ein skandinavisch inspiriertes Café im Herzen von Schaffhausen.
+        Geniesse Spezialitätenkaffee, entspannte Atmosphäre
+        und hausgemachte Speisen.
+      </p>
+      <ul class="about-pills reveal">
+        <li class="about-pill">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="#263A7B"><path d="M7 1l1.8 4.3 4.7.4-3.5 3 1 4.6L7 10.8l-4 2.5 1-4.6L.5 5.7l4.7-.4z"/></svg>
+          <span data-i18n data-de="Frühstück &amp;nbsp;·&amp;nbsp; Brunch" data-en="Breakfast &amp;nbsp;·&amp;nbsp; Brunch">Frühstück &nbsp;·&nbsp; Brunch</span>
+        </li>
+        <li class="about-pill">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="#263A7B"><path d="M7 1l1.8 4.3 4.7.4-3.5 3 1 4.6L7 10.8l-4 2.5 1-4.6L.5 5.7l4.7-.4z"/></svg>
+          <span data-i18n data-de="Frische Bagels &amp;nbsp;·&amp;nbsp; Bowls" data-en="Fresh Bagels &amp;nbsp;·&amp;nbsp; Bowls">Frische Bagels &nbsp;·&nbsp; Bowls</span>
+        </li>
+        <li class="about-pill">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="#263A7B"><path d="M7 1l1.8 4.3 4.7.4-3.5 3 1 4.6L7 10.8l-4 2.5 1-4.6L.5 5.7l4.7-.4z"/></svg>
+          <span data-i18n data-de="Hausgemachte Kuchen" data-en="Homemade Cakes">Hausgemachte Kuchen</span>
+        </li>
+        <li class="about-pill">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="#263A7B"><path d="M7 1l1.8 4.3 4.7.4-3.5 3 1 4.6L7 10.8l-4 2.5 1-4.6L.5 5.7l4.7-.4z"/></svg>
+          <span data-i18n data-de="Kaffee &amp;nbsp;·&amp;nbsp; Getränke" data-en="Coffee &amp;nbsp;·&amp;nbsp; Drinks">Kaffee &nbsp;·&nbsp; Getränke</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="about-visual reveal">
+<div class="about-photo-main"></div>
+      <div class="about-photo-accent">
+        <p class="about-quote" data-i18n data-de="Hygge — die kleinen,&lt;br&gt;warmen Momente des Lebens geniessen." data-en="Hygge — savouring&lt;br&gt;life's small, warm moments.">Hygge — die kleinen,<br>warmen Momente des Lebens geniessen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="menu-sec" id="menu">
+  <div class="icon-pattern js-icons"></div>
+  <div class="menu-head reveal">
+    <p class="sec-label" data-i18n data-de="Menü" data-en="Menu">Menü</p>
+    <h2 class="sec-title" data-i18n data-de="Unser Menü" data-en="Our Menu">Unser Menü</h2>
+    <div class="menu-tabs">
+      <button class="menu-tab-btn on" data-pane="essen" data-i18n data-de="Essen" data-en="Food">Essen</button>
+      <button class="menu-tab-btn" data-pane="trinken" data-i18n data-de="Trinken" data-en="Drinks">Trinken</button>
+    </div>
+  </div>
+
+  <!-- ═══ FOOD ═══ -->
+  <div class="menu-pane on" id="pane-essen">
+    <div class="menu-cat reveal">
+      <h3 class="menu-cat-hd" data-i18n data-de="Brunch Menü" data-en="Brunch Menu">Brunch Menü</h3>
+      <div class="menu-grid">
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Karlson-Bagel" data-en="Karlson-Bagel">Karlson-Bagel</div><div class="mi-desc" data-i18n data-de="Bagel mit Speck und Rührei dazu Birchermüesli" data-en="Bagel with bacon and scrambled eggs with Bircher muesli">Bagel mit Speck und Rührei dazu Birchermüesli</div></div><div class="mi-price">17.0</div></div>
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Freja-Bagel" data-en="Freja-Bagel">Freja-Bagel</div><div class="mi-desc" data-i18n data-de="Bagel mit Rührei und Lachs dazu Birchermüesli" data-en="Bagel with scrambled eggs and salmon with Bircher muesli">Bagel mit Rührei und Lachs dazu Birchermüesli</div></div><div class="mi-price">17.5</div></div>
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Noora-Bagel" data-en="Noora-Bagel">Noora-Bagel</div><div class="mi-desc" data-i18n data-de="Bagel mit Rührei und Gemüse dazu Birchermüesli" data-en="Bagel with scrambled eggs and vegetables with Bircher muesli">Bagel mit Rührei und Gemüse dazu Birchermüesli</div></div><div class="mi-price">15.5</div></div>
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Frieda" data-en="Frieda">Frieda</div><div class="mi-desc" data-i18n data-de="Kaffee nach Wahl, 2 Gebäck, Butter, Confi und O-Saft" data-en="Coffee of your choice, 2 pastries, butter, jam and orange juice">Kaffee nach Wahl, 2 Gebäck, Butter, Confi und O-Saft</div></div><div class="mi-price">11.5</div></div>
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Lasse" data-en="Lasse">Lasse</div><div class="mi-desc" data-i18n data-de="2 Gebäck, Butter, Confi, Speck &amp; Rühr- oder Spiegelei, O-Saft" data-en="2 pastries, butter, jam, bacon &amp; scrambled or fried egg, orange juice">2 Gebäck, Butter, Confi, Speck &amp; Rühr- oder Spiegelei, O-Saft</div></div><div class="mi-price">15.0</div></div>
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Matilda" data-en="Matilda">Matilda</div><div class="mi-desc" data-i18n data-de="2 Gebäck, Joghurt mit Früchte &amp; Crunch, Butter, Confi, O-Saft" data-en="2 pastries, yoghurt with fruit &amp; granola, butter, jam, orange juice">2 Gebäck, Joghurt mit Früchte &amp; Crunch, Butter, Confi, O-Saft</div></div><div class="mi-price">15.0</div></div>
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Noordlicht" data-en="Noordlicht">Noordlicht</div><div class="mi-desc" data-i18n data-de="Kaffee nach Wahl, Orangensaft, 2 Gebäck, Rühreier, Lachs, Butter &amp; Confi" data-en="Coffee of your choice, orange juice, 2 pastries, scrambled eggs, salmon, butter &amp; jam">Kaffee nach Wahl, Orangensaft, 2 Gebäck, Rühreier, Lachs, Butter &amp; Confi</div></div><div class="mi-price">19.0</div></div>
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Farmer" data-en="Farmer">Farmer</div><div class="mi-desc" data-i18n data-de="Kaffee nach Wahl, Orangensaft, Rühreier mit Speck, Birchermüesli, Käse, 2 Gebäck, Butter &amp; Confi" data-en="Coffee, orange juice, scrambled eggs with bacon, Bircher muesli, cheese, 2 pastries, butter &amp; jam">Kaffee nach Wahl, Orangensaft, Rühreier mit Speck, Birchermüesli, Käse, 2 Gebäck, Butter &amp; Confi</div></div><div class="mi-price">22.5</div></div>
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Joghurt Griechischer Art" data-en="Greek-style Yoghurt">Joghurt Griechischer Art</div><div class="mi-desc" data-i18n data-de="mit Erdbeerpüree und Crunch, Goji Beeren, Chia Samen" data-en="with strawberry purée and granola, goji berries, chia seeds">mit Erdbeerpüree und Crunch, Goji Beeren, Chia Samen</div></div><div class="mi-price">12.0</div></div>
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Hausgemachtes Birchermüesli" data-en="Homemade Bircher Muesli">Hausgemachtes Birchermüesli</div><div class="mi-desc" data-i18n data-de="klassisch mit Apfel, Haferflocken, Nüssen und Joghurt" data-en="classic with apple, oats, nuts and yoghurt">klassisch mit Apfel, Haferflocken, Nüssen und Joghurt</div></div><div class="mi-price">9.5</div></div>
+      </div>
+    </div>
+
+    <div class="menu-cat reveal">
+      <h3 class="menu-cat-hd" data-i18n data-de="Unsere Favoriten" data-en="Our Favourites">Unsere Favoriten</h3>
+      <div class="menu-grid">
+        <div class="mi mi-feat"><div><div class="mi-name" data-i18n data-de="Spass für 2 ★" data-en="Fun for 2 ★">Spass für 2 ★</div><div class="mi-desc" data-i18n data-de="2 Cüpli, 2 Kaffee nach Wahl, 4 Gebäck, 2 Butter und 2 Confi, Rühreier mit Speck oder Lachs, Birchermüesli" data-en="2 glasses of sparkling wine, 2 coffees of your choice, 4 pastries, 2 butter and 2 jam, scrambled eggs with bacon or salmon, Bircher muesli">2 Cüpli, 2 Kaffee nach Wahl, 4 Gebäck, 2 Butter und 2 Confi, Rühreier mit Speck oder Lachs, Birchermüesli</div></div><div class="mi-price">44.0</div></div>
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Avocado Poke Bowl" data-en="Avocado Poke Bowl">Avocado Poke Bowl</div><div class="mi-desc" data-i18n data-de="mit Sushi-Reis, Avocado, Gurke, Karotten, Edamame, Sesam" data-en="with sushi rice, avocado, cucumber, carrots, edamame, sesame">mit Sushi-Reis, Avocado, Gurke, Karotten, Edamame, Sesam</div></div><div class="mi-price">21.0</div></div>
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Poulet Poke Bowl" data-en="Chicken Poke Bowl">Poulet Poke Bowl</div><div class="mi-desc" data-i18n data-de="mit Sushi-Reis, Poulet, Gurke, Karotten, Edamame und Sesam" data-en="with sushi rice, chicken, cucumber, carrots, edamame and sesame">mit Sushi-Reis, Poulet, Gurke, Karotten, Edamame und Sesam</div></div><div class="mi-price">25.0</div></div>
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Nordic Poke Bowl" data-en="Nordic Poke Bowl">Nordic Poke Bowl</div><div class="mi-desc" data-i18n data-de="mit Sushi-Reis, Räucherlachs, Gurke, Karotten, Edamame, Sesam" data-en="with sushi rice, smoked salmon, cucumber, carrots, edamame, sesame">mit Sushi-Reis, Räucherlachs, Gurke, Karotten, Edamame, Sesam</div></div><div class="mi-price">26.0</div></div>
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Pulled Beef Bagel (CH Rind)" data-en="Pulled Beef Bagel (CH Rind)">Pulled Beef Bagel (CH Rind)</div><div class="mi-desc" data-i18n data-de="mit Pulled Beef, Relish-Sauce, Salat oder Pommes" data-en="with pulled beef, relish sauce, salad or fries">mit Pulled Beef, Relish-Sauce, Salat oder Pommes</div></div><div class="mi-price">20.0</div></div>
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Avocado Bagel" data-en="Avocado Bagel">Avocado Bagel</div><div class="mi-desc" data-i18n data-de="mit Tomate, Feta und garnierter Salat" data-en="with tomato, feta and dressed salad">mit Tomate, Feta und garnierter Salat</div></div><div class="mi-price">17.0</div></div>
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Mediterraner Bagel" data-en="Mediterraner Bagel">Mediterraner Bagel</div><div class="mi-desc" data-i18n data-de="mit gegrillter Zucchetti, Aubergine und Peperoni, Brie, Salat" data-en="with grilled courgette, aubergine and peppers, brie, salad">mit gegrillter Zucchetti, Aubergine und Peperoni, Brie, Salat</div></div><div class="mi-price">17.0</div></div>
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Poulet-Salat" data-en="Chicken Salad">Poulet-Salat</div><div class="mi-desc" data-i18n data-de="Pouletbrust auf Blattsalat, Gurke, Karotten, Tomaten" data-en="Chicken breast on mixed leaves, cucumber, carrots, tomatoes">Pouletbrust auf Blattsalat, Gurke, Karotten, Tomaten</div></div><div class="mi-price">20.0</div></div>
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Couscous-Salat" data-en="Couscous-Salat">Couscous-Salat</div><div class="mi-desc" data-i18n data-de="mit Avocado, Feta und Gemüse (Tomaten, Gurke, Kräuter)" data-en="with avocado, feta and vegetables (tomatoes, cucumber, herbs)">mit Avocado, Feta und Gemüse (Tomaten, Gurke, Kräuter)</div></div><div class="mi-price">20.0</div></div>
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Egli-Fischknusperli" data-en="Crispy Perch Fillet">Egli-Fischknusperli</div><div class="mi-desc" data-i18n data-de="mit Pommes oder auf gemischtem Salat" data-en="with fries or on mixed salad">mit Pommes oder auf gemischtem Salat</div></div><div class="mi-price">25.0</div></div>
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Falafel" data-en="Falafel">Falafel</div><div class="mi-desc" data-i18n data-de="auf Blattsalat, Gurke, Karotten, Tomaten" data-en="on mixed leaves, cucumber, carrots, tomatoes">auf Blattsalat, Gurke, Karotten, Tomaten</div></div><div class="mi-price">22.0</div></div>
+      </div>
+    </div>
+
+    <div class="menu-cat reveal">
+      <h3 class="menu-cat-hd" data-i18n data-de="Dessert" data-en="Dessert">Dessert</h3>
+      <div class="menu-grid">
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Zimtschnecke" data-en="Cinnamon Roll">Zimtschnecke</div></div><div class="mi-price">5.0</div></div>
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Kuchen" data-en="Cake">Kuchen</div><div class="mi-desc" data-i18n data-de="saisonal" data-en="seasonal">saisonal</div></div><div class="mi-price">4.0</div></div>
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Waffel Heisse Liebe" data-en="Hot Love Waffle">Waffel Heisse Liebe</div><div class="mi-desc" data-i18n data-de="mit einer Kugel Vanille-Eis und warmer Erdbeersosse" data-en="with a scoop of vanilla ice cream and warm strawberry sauce">mit einer Kugel Vanille-Eis und warmer Erdbeersosse</div></div><div class="mi-price">4.0</div></div>
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Pancakes" data-en="Pancakes">Pancakes</div><div class="mi-desc" data-i18n data-de="mit Zimtzucker und frischen Früchten" data-en="with cinnamon sugar and fresh fruit">mit Zimtzucker und frischen Früchten</div></div><div class="mi-price">13.5</div></div>
+      </div>
+    </div>
+
+    <div class="menu-cat reveal">
+      <h3 class="menu-cat-hd" data-i18n data-de="Extras" data-en="Extras">Extras</h3>
+      <div class="menu-grid">
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="2 Spiegel- / Rühreier mit Brot und Butter" data-en="2 Fried / Scrambled Eggs with bread and butter">2 Spiegel- / Rühreier mit Brot und Butter</div></div><div class="mi-price">9.5</div></div>
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Jedes weitere Ei" data-en="Each additional egg">Jedes weitere Ei</div></div><div class="mi-price">3.0</div></div>
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Portion Käse, Schinken oder Speck" data-en="Portion of cheese, ham or bacon">Portion Käse, Schinken oder Speck</div></div><div class="mi-price">4.5</div></div>
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Hausgemachte Confi oder Portion Butter" data-en="Homemade jam or portion of butter">Hausgemachte Confi oder Portion Butter</div></div><div class="mi-price">1.5</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ DRINKS ═══ -->
+  <div class="menu-pane" id="pane-trinken">
+    <div class="menu-cat reveal">
+      <h3 class="menu-cat-hd" data-i18n data-de="Kaffee" data-en="Coffee">Kaffee</h3>
+      <div class="menu-grid">
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Espresso / Ristretto" data-en="Espresso / Ristretto">Espresso / Ristretto</div></div><div class="mi-price">4.5</div></div>
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Café Crème / Americano" data-en="Café Crème / Americano">Café Crème / Americano</div></div><div class="mi-price">4.5</div></div>
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Cappuccino" data-en="Cappuccino">Cappuccino</div></div><div class="mi-price">5.0</div></div>
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Milch Café" data-en="Café au Lait">Milch Café</div></div><div class="mi-price">5.2</div></div>
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Latte Macchiato" data-en="Latte Macchiato">Latte Macchiato</div></div><div class="mi-price">6.0</div></div>
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Caotina / Ovomaltine" data-en="Caotina / Ovomaltine">Caotina / Ovomaltine</div><div class="mi-desc" data-i18n data-de="heiss / kalt" data-en="hot / cold">heiss / kalt</div></div><div class="mi-price">4.5</div></div>
+        <div class="menu-extras-note" data-i18n data-de="&lt;strong&gt;Extra Flavour&lt;/strong&gt; – Karamell, Zimt, Vanille &lt;strong&gt;+0.8&lt;/strong&gt; &amp;nbsp;·&amp;nbsp; Soja- oder Laktosefreie Milch &lt;strong&gt;+0.5&lt;/strong&gt;" data-en="&lt;strong&gt;Extra Flavour&lt;/strong&gt; – Caramel, Cinnamon, Vanilla &lt;strong&gt;+0.8&lt;/strong&gt; &amp;nbsp;·&amp;nbsp; Soy or Lactose-free Milk &lt;strong&gt;+0.5&lt;/strong&gt;">
+          <strong>Extra Flavour</strong> – Karamell, Zimt, Vanille <strong>+0.8</strong> &nbsp;·&nbsp; Soja- oder Laktosefreie Milch <strong>+0.5</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-cat reveal">
+      <h3 class="menu-cat-hd" data-i18n data-de="Tee" data-en="Tea">Tee</h3>
+      <div class="menu-grid">
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Bio Tee" data-en="Organic Tea">Bio Tee</div><div class="mi-desc" data-i18n data-de="(Grüntee Jasmin, Earl Grey, Assam, Chai Gewürz, Irish Cream, Früchtetee, Karkade, Rooibos, Kräutertee, Pfefferminze, Kamille)" data-en="Green Tea Jasmine, Earl Grey, Assam, Chai Spice, Irish Cream, Fruit Tea, Hibiscus, Rooibos, Herbal Tea, Peppermint, Chamomile">(Grüntee Jasmin, Earl Grey, Assam, Chai Gewürz, Irish Cream, Früchtetee, Karkade, Rooibos, Kräutertee, Pfefferminze, Kamille)</div></div><div class="mi-price">5.0</div></div>
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Heisse Zitrone" data-en="Hot Lemon">Heisse Zitrone</div><div class="mi-desc" data-i18n data-de="mit Honig und Ingwer" data-en="with honey and ginger">mit Honig und Ingwer</div></div><div class="mi-price">5.0</div></div>
+      </div>
+    </div>
+
+    <div class="menu-cat reveal">
+      <h3 class="menu-cat-hd" data-i18n data-de="Kalte Getränke" data-en="Cold Drinks">Kalte Getränke</h3>
+      <div class="menu-grid">
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Home Made Ice Teas" data-en="Home Made Ice Teas">Home Made Ice Teas</div><div class="mi-desc" data-i18n data-de="Frische Minze mit Holunderblüten, Hibiskus und Kräuter" data-en="Fresh mint with elderflower, hibiscus and herbs">Frische Minze mit Holunderblüten, Hibiskus und Kräuter</div></div><div class="mi-price">6.0</div></div>
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Valser Wasser" data-en="Valser Wasser">Valser Wasser</div><div class="mi-desc" data-i18n data-de="mit / ohne Kohlensäure" data-en="still / sparkling">mit / ohne Kohlensäure</div></div><div class="mi-price">4.5</div></div>
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Cola / Cola Zero / Sprite / Fanta" data-en="Cola / Cola Zero / Sprite / Fanta">Cola / Cola Zero / Sprite / Fanta</div></div><div class="mi-price">4.5</div></div>
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Apfelschorle / Rivella" data-en="Apfelschorle / Rivella">Apfelschorle / Rivella</div><div class="mi-desc" data-i18n data-de="rot, blau" data-en="rot, blau">rot, blau</div></div><div class="mi-price">4.0</div></div>
+        <div class="mi"><div><div class="mi-name" data-i18n data-de="Schweppes" data-en="Schweppes">Schweppes</div><div class="mi-desc" data-i18n data-de="Tonic, Lemon" data-en="Tonic, Lemon">Tonic, Lemon</div></div><div class="mi-price">4.5</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOURS -->
+<section class="hours-sec" id="hours">
+  <div class="icon-pattern icon-pattern--light js-icons"></div>
+  <div class="hours-inner">
+    <div>
+      <p class="sec-label reveal" data-i18n data-de="Öffnungszeiten" data-en="Opening Hours">Öffnungszeiten</p>
+      <h2 class="sec-title reveal" data-i18n data-de="Wir sind&lt;br&gt;für euch da." data-en="We are&lt;br&gt;here for you.">Wir sind<br>für euch da.</h2>
+      <table class="hours-tbl reveal">
+        <tr class="closed"><td data-i18n data-de="Montag" data-en="Monday">Montag</td><td data-i18n data-de="Geschlossen" data-en="Closed">Geschlossen</td></tr>
+        <tr><td data-i18n data-de="Dienstag – Freitag" data-en="Tuesday – Friday">Dienstag – Freitag</td><td>08:00 – 17:00</td></tr>
+        <tr><td data-i18n data-de="Samstag" data-en="Saturday">Samstag</td><td>08:00 – 16:00</td></tr>
+        <tr><td data-i18n data-de="Sonntag" data-en="Sunday">Sonntag</td><td>08:00 – 16:00</td></tr>
+      </table>
+      <div class="hours-addr reveal">
+        Noordlicht<br>
+        Fronwagplatz 28<br>
+        8200 Schaffhausen
+      </div>
+    </div>
+    <div class="map-wrap reveal">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2698.5!2d8.6342!3d47.6967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479a922b7ea4b905%3A0x1!2sFronwagplatz+28%2C+8200+Schaffhausen!5e0!3m2!1sde!2sch!4v1704000000000"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-sec" id="contact">
+  <div class="icon-pattern js-icons"></div>
+  <div class="contact-inner">
+    <div>
+      <p class="sec-label reveal" data-i18n data-de="Kontakt" data-en="Contact">Kontakt</p>
+      <h2 class="sec-title reveal" data-i18n data-de="Kommt und&lt;br&gt;besucht uns." data-en="Come and&lt;br&gt;visit us.">Kommt und<br>besucht uns.</h2>
+      <div class="contact-items">
+
+        <a href="https://instagram.com/noordlicht_cafe" target="_blank" class="ci reveal">
+          <div class="ci-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none"/>
+            </svg>
+          </div>
+          <div><div class="ci-lbl" data-i18n data-de="Instagram" data-en="Instagram">Instagram</div><div class="ci-val">@noordlicht_schaffhausen</div></div>
+        </a>
+
+        <a href="tel:+41526300502" class="ci reveal">
+          <div class="ci-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+          </div>
+          <div><div class="ci-lbl" data-i18n data-de="Telefon" data-en="Phone">Telefon</div><div class="ci-val">+41 52 630 05 02</div></div>
+        </a>
+
+        <a href="mailto:noordlicht@info.com" class="ci reveal">
+          <div class="ci-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <div><div class="ci-lbl" data-i18n data-de="E-Mail" data-en="E-Mail">E-Mail</div><div class="ci-val">noordlicht@info.com</div></div>
+        </a>
+
+        <div class="ci reveal">
+          <div class="ci-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <div><div class="ci-lbl" data-i18n data-de="Adresse" data-en="Address">Adresse</div><div class="ci-val">Fronwagplatz 28, 8200 Schaffhausen</div></div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="contact-visual reveal">
+      <img src="graphics/4N_w.png" alt="Noordlicht Logo" class="cv-logo-img">
+      <div class="cv-logo">Noordlicht</div>
+      <div class="cv-sub" data-i18n data-de="Brunch &amp;nbsp;·&amp;nbsp; Kaffee &amp;nbsp;·&amp;nbsp; Hygge" data-en="Brunch &amp;nbsp;·&amp;nbsp; Coffee &amp;nbsp;·&amp;nbsp; Hygge">Brunch &nbsp;·&nbsp; Kaffee &nbsp;·&nbsp; Hygge</div>
+      <div class="cv-url">www.noordlicht.com</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-in">
+    <div class="f-logo">Noordlicht</div>
+    <ul class="f-links">
+      <li><a href="#about" data-i18n data-de="Über uns" data-en="About">Über uns</a></li>
+      <li><a href="#menu" data-i18n data-de="Menü" data-en="Menu">Menü</a></li>
+      <li><a href="#hours" data-i18n data-de="Öffnungszeiten" data-en="Opening Hours">Öffnungszeiten</a></li>
+      <li><a href="#contact" data-i18n data-de="Kontakt" data-en="Contact">Kontakt</a></li>
+    </ul>
+    <a href="https://instagram.com/noordlicht_cafe" target="_blank" class="f-ig">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+      </svg>
+      @noordlicht_schaffhausen
+    </a>
+    <p class="f-copy" data-i18n data-de="© 2024 Noordlicht &amp;nbsp;–&amp;nbsp; Brunch · Kaffee · Hygge" data-en="© 2024 Noordlicht &amp;nbsp;–&amp;nbsp; Brunch · Coffee · Hygge">© 2024 Noordlicht &nbsp;–&nbsp; Brunch · Kaffee · Hygge</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
