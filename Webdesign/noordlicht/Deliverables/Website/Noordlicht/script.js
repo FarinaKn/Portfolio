@@ -30,6 +30,12 @@ function applyLang(lang) {
     const btnLang = b.getAttribute('title') === 'Deutsch' ? 'de' : 'en';
     b.classList.toggle('active', btnLang === lang);
   });
+  // Swap map language
+  const mapFrame = document.getElementById('map-frame');
+  if (mapFrame) {
+    const src = mapFrame.getAttribute('data-src-' + lang) || mapFrame.getAttribute('data-src-en');
+    if (src) mapFrame.src = src;
+  }
 }
 
 document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -55,7 +61,7 @@ const obs = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-// ── Icon grid ─────────────────────────────────────────────────────────────────
+// ── Icon grid (single fixed layer, covers full viewport seamlessly) ───────────
 (function scatterIcons() {
   const icons = [
     'graphics/icons_fettfett_01.png',
@@ -84,8 +90,8 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
   }
 
   function populate(container) {
-    const w = container.offsetWidth  || window.innerWidth;
-    const h = container.offsetHeight || 600;
+    const w = window.innerWidth;
+    const h = window.innerHeight;
 
     const cols = Math.max(1, Math.floor(w / COL_GAP) + 1);
     const rows = Math.ceil(h / ROW_GAP) + 2;
@@ -99,7 +105,6 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
         const x  = c * COL_GAP;
         const y  = cy - ICON_SIZE / 2;
 
-        // Skip icons that would be cut off on the edges
         if (x < 0 || x + ICON_SIZE > w) continue;
 
         const rot = (Math.random() * 24 - 12).toFixed(1);
@@ -114,5 +119,6 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
     }
   }
 
-  document.querySelectorAll('.js-icons').forEach(populate);
+  const container = document.getElementById('global-icons');
+  if (container) populate(container);
 })();

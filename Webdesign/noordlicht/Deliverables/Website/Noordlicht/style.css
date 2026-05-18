@@ -182,24 +182,19 @@ body::after {
   color: rgba(255,255,255,.6); font-weight: 500; white-space: nowrap;
 }
 
-/* ── ICON PATTERN ── */
-.icon-pattern {
-  position: absolute;
+/* ── ICON PATTERN (single fixed layer, spans entire page seamlessly) ── */
+#global-icons {
+  position: fixed;
   inset: 0;
   pointer-events: none;
+  z-index: 1;
   overflow: hidden;
-  z-index: 0;
 }
 .ip-icon {
   position: absolute;
-  opacity: .11;
+  opacity: .10;
   mix-blend-mode: multiply;
   user-select: none;
-}
-/* auf blauem Hintergrund: screen statt multiply */
-.icon-pattern--light .ip-icon {
-  mix-blend-mode: screen;
-  opacity: .15;
 }
 
 /* ── ANIMATIONS ── */
