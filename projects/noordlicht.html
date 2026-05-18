@@ -49,29 +49,22 @@
         .mockup-sublabel { font-family: var(--serif, var(--body)); font-size: 12px; color: rgba(98,92,82,.7); margin-top: 2px; }
 
         /* Logo frames */
-        .logo-frame-light { background: #F5F5F2; border: 1px solid rgba(38,58,123,.1); border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 52px; aspect-ratio: 4/3; }
-        .logo-frame-light img { max-width: 100%; height: auto; display: block; max-height: 200px; object-fit: contain; }
-        .logo-frame-dark { background: #1c2d61; border: 1px solid rgba(255,255,255,.06); border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 52px; aspect-ratio: 4/3; }
-        .logo-frame-dark img { max-width: 100%; height: auto; display: block; max-height: 200px; object-fit: contain; }
+        .logo-frame-light { background: #F5F5F2; border: 1px solid rgba(38,58,123,.1); border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 28px; aspect-ratio: 4/3; }
+        .logo-frame-light img { max-width: 100%; height: auto; display: block; max-height: 130px; object-fit: contain; }
+        .logo-frame-light.lg img { max-height: 180px; }
+        .logo-frame-dark { background: #1c2d61; border: 1px solid rgba(255,255,255,.06); border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 28px; aspect-ratio: 4/3; }
+        .logo-frame-dark img { max-width: 100%; height: auto; display: block; max-height: 130px; object-fit: contain; }
 
-        /* Icon grid — static, no animation, each icon once */
-        .icon-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
-        }
-        .icon-cell {
-            background: #F5F5F2;
-            border: 1px solid rgba(38,58,123,.1);
-            border-radius: 6px;
-            aspect-ratio: 1/1;
-            display: flex; align-items: center; justify-content: center;
-            overflow: hidden;
-            cursor: zoom-in;
-            transition: border-color .3s;
-        }
-        .icon-cell:hover { border-color: rgba(38,58,123,.3); }
-        .icon-cell img { width: 65%; height: 65%; object-fit: contain; display: block; }
+        /* Icon slider */
+        @keyframes slider-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .slider-wrap { overflow: hidden; -webkit-mask: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%); mask: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%); }
+        .slider-track { display: flex; align-items: flex-start; gap: 10px; width: max-content; animation: slider-scroll var(--dur,60s) linear infinite; }
+        .slider-track:hover, .slider-track.paused { animation-play-state: paused; }
+        .slide { flex-shrink: 0; border-radius: 6px; overflow: hidden; border: 1px solid rgba(38,58,123,.1); cursor: zoom-in; transition: border-color .3s; }
+        .slide:hover { border-color: rgba(38,58,123,.3); }
+        .slide.sq { width: 220px; aspect-ratio: 1/1; }
+        .slide.illus { background: #F5F5F2; }
+        .slide.illus img { width: 100%; height: 100%; object-fit: contain; display: block; padding: 24px; box-sizing: border-box; }
 
         /* Lightbox */
         .slide-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.88); z-index: 8999; cursor: zoom-out; }
@@ -140,7 +133,7 @@
         <span class="proj-page-cat">Brand Identity</span>
         <div class="proj-title-row">
             <h1 class="proj-page-title">Noordlicht</h1>
-            <span class="proj-page-year">2025</span>
+            <span class="proj-page-year">2026</span>
         </div>
         <p class="proj-page-desc">Complete rebranding for Noordlicht — a nordic-inspired café in Schaffhausen. New logo, custom icon set, brand patterns, social media templates, a redesigned menu card, outdoor advertising and a matching website. The identity captures the warmth and quietude of Scandinavian design: clean, considered and inviting.</p>
         <p class="proj-page-desc" style="margin-top:14px;font-size:12px;color:rgba(98,92,82,.55);font-style:italic;">This is a student project created during my exchange semester in Art Direction. Noordlicht and its owners have no affiliation with this work — all brand rights belong to them. Created for educational purposes only.</p>
@@ -171,20 +164,6 @@
                 <span class="mockup-sublabel">Primary · light backgrounds</span>
             </div>
             <div class="mockup-item">
-                <div class="logo-frame-dark" style="background:#263A7B;">
-                    <img src="../Branding/Noordlicht/Deliverables/IconsLogo/noordlicht_w.png" alt="Wordmark Noordlicht Blue" loading="lazy">
-                </div>
-                <span class="mockup-label">Wordmark Blue</span>
-                <span class="mockup-sublabel">Wordmark · brand blue</span>
-            </div>
-            <div class="mockup-item">
-                <div class="logo-frame-light">
-                    <img src="../Branding/Noordlicht/Deliverables/IconsLogo/CombinationMark.png" alt="Combination Mark" loading="lazy">
-                </div>
-                <span class="mockup-label">Combination Mark</span>
-                <span class="mockup-sublabel">Icon + wordmark lockup</span>
-            </div>
-            <div class="mockup-item">
                 <div class="logo-frame-dark">
                     <img src="../Branding/Noordlicht/Deliverables/IconsLogo/logo_w.png" alt="Noordlicht Logo White" loading="lazy">
                 </div>
@@ -193,17 +172,31 @@
             </div>
             <div class="mockup-item">
                 <div class="logo-frame-light">
+                    <img src="../Branding/Noordlicht/Deliverables/IconsLogo/CombinationMark.png" alt="Combination Mark" loading="lazy">
+                </div>
+                <span class="mockup-label">Combination Mark</span>
+                <span class="mockup-sublabel">Icon + wordmark · light</span>
+            </div>
+            <div class="mockup-item">
+                <div class="logo-frame-dark">
+                    <img src="../Branding/Noordlicht/Deliverables/IconsLogo/CombinationMark_w.png" alt="Combination Mark White" loading="lazy">
+                </div>
+                <span class="mockup-label">Combination Mark White</span>
+                <span class="mockup-sublabel">Icon + wordmark · inverted</span>
+            </div>
+            <div class="mockup-item">
+                <div class="logo-frame-dark" style="background:#263A7B;">
+                    <img src="../Branding/Noordlicht/Deliverables/IconsLogo/noordlicht_w.png" alt="Wordmark Noordlicht Blue" loading="lazy">
+                </div>
+                <span class="mockup-label">Wordmark Blue</span>
+                <span class="mockup-sublabel">Wordmark · brand blue</span>
+            </div>
+            <div class="mockup-item">
+                <div class="logo-frame-light lg">
                     <img src="../Branding/Noordlicht/Deliverables/IconsLogo/icon_thin-14.png" alt="Noordlicht Brand Mark" loading="lazy">
                 </div>
                 <span class="mockup-label">Brand Mark</span>
                 <span class="mockup-sublabel">Icon · standalone use</span>
-            </div>
-            <div class="mockup-item">
-                <div class="logo-frame-light">
-                    <img src="../Branding/Noordlicht/Deliverables/Website/Noordlicht/graphics/4n_b.png" alt="Noordlicht Compact Mark" loading="lazy">
-                </div>
-                <span class="mockup-label">Compact Mark</span>
-                <span class="mockup-sublabel">Social &amp; stamp use</span>
             </div>
         </div>
     </div>
@@ -287,20 +280,36 @@
             <div class="proj-section-line"></div>
             <span class="proj-section-count">13 Custom Illustrations</span>
         </div>
-        <div class="icon-grid">
-            <div class="icon-cell"><img src="../Branding/Noordlicht/Deliverables/IconsLogo/bread.png" alt="Bread" loading="lazy"></div>
-            <div class="icon-cell"><img src="../Branding/Noordlicht/Deliverables/IconsLogo/cinnamonbun.png" alt="Cinnamon Bun" loading="lazy"></div>
-            <div class="icon-cell"><img src="../Branding/Noordlicht/Deliverables/IconsLogo/salmon.png" alt="Salmon" loading="lazy"></div>
-            <div class="icon-cell"><img src="../Branding/Noordlicht/Deliverables/IconsLogo/lettuce.png" alt="Lettuce" loading="lazy"></div>
-            <div class="icon-cell"><img src="../Branding/Noordlicht/Deliverables/Website/Noordlicht/graphics/icons_fettfett_01.png" alt="Icon" loading="lazy"></div>
-            <div class="icon-cell"><img src="../Branding/Noordlicht/Deliverables/Website/Noordlicht/graphics/icons_fettfett_02.png" alt="Icon" loading="lazy"></div>
-            <div class="icon-cell"><img src="../Branding/Noordlicht/Deliverables/Website/Noordlicht/graphics/icons_fettfett_03.png" alt="Icon" loading="lazy"></div>
-            <div class="icon-cell"><img src="../Branding/Noordlicht/Deliverables/Website/Noordlicht/graphics/icons_fettfett_04.png" alt="Icon" loading="lazy"></div>
-            <div class="icon-cell"><img src="../Branding/Noordlicht/Deliverables/Website/Noordlicht/graphics/icons_fettfett_05.png" alt="Icon" loading="lazy"></div>
-            <div class="icon-cell"><img src="../Branding/Noordlicht/Deliverables/Website/Noordlicht/graphics/icons_fettfett_06.png" alt="Icon" loading="lazy"></div>
-            <div class="icon-cell"><img src="../Branding/Noordlicht/Deliverables/Website/Noordlicht/graphics/icons_fettfett_07.png" alt="Icon" loading="lazy"></div>
-            <div class="icon-cell"><img src="../Branding/Noordlicht/Deliverables/Website/Noordlicht/graphics/icons_fettfett_08.png" alt="Icon" loading="lazy"></div>
-            <div class="icon-cell"><img src="../Branding/Noordlicht/Deliverables/Website/Noordlicht/graphics/icons_fettfett_09.png" alt="Icon" loading="lazy"></div>
+        <div class="slider-wrap">
+            <div class="slider-track" style="--dur:55s">
+                <div class="slide sq illus"><img src="../Branding/Noordlicht/Deliverables/IconsLogo/bread.png" alt="Bread" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Branding/Noordlicht/Deliverables/IconsLogo/cinnamonbun.png" alt="Cinnamon Bun" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Branding/Noordlicht/Deliverables/IconsLogo/salmon.png" alt="Salmon" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Branding/Noordlicht/Deliverables/IconsLogo/lettuce.png" alt="Lettuce" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Branding/Noordlicht/Deliverables/Website/Noordlicht/graphics/icons_fettfett_01.png" alt="Icon" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Branding/Noordlicht/Deliverables/Website/Noordlicht/graphics/icons_fettfett_02.png" alt="Icon" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Branding/Noordlicht/Deliverables/Website/Noordlicht/graphics/icons_fettfett_03.png" alt="Icon" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Branding/Noordlicht/Deliverables/Website/Noordlicht/graphics/icons_fettfett_04.png" alt="Icon" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Branding/Noordlicht/Deliverables/Website/Noordlicht/graphics/icons_fettfett_05.png" alt="Icon" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Branding/Noordlicht/Deliverables/Website/Noordlicht/graphics/icons_fettfett_06.png" alt="Icon" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Branding/Noordlicht/Deliverables/Website/Noordlicht/graphics/icons_fettfett_07.png" alt="Icon" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Branding/Noordlicht/Deliverables/Website/Noordlicht/graphics/icons_fettfett_08.png" alt="Icon" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Branding/Noordlicht/Deliverables/Website/Noordlicht/graphics/icons_fettfett_09.png" alt="Icon" loading="lazy"></div>
+                <!-- duplicate for seamless loop -->
+                <div class="slide sq illus"><img src="../Branding/Noordlicht/Deliverables/IconsLogo/bread.png" alt="" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Branding/Noordlicht/Deliverables/IconsLogo/cinnamonbun.png" alt="" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Branding/Noordlicht/Deliverables/IconsLogo/salmon.png" alt="" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Branding/Noordlicht/Deliverables/IconsLogo/lettuce.png" alt="" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Branding/Noordlicht/Deliverables/Website/Noordlicht/graphics/icons_fettfett_01.png" alt="" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Branding/Noordlicht/Deliverables/Website/Noordlicht/graphics/icons_fettfett_02.png" alt="" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Branding/Noordlicht/Deliverables/Website/Noordlicht/graphics/icons_fettfett_03.png" alt="" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Branding/Noordlicht/Deliverables/Website/Noordlicht/graphics/icons_fettfett_04.png" alt="" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Branding/Noordlicht/Deliverables/Website/Noordlicht/graphics/icons_fettfett_05.png" alt="" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Branding/Noordlicht/Deliverables/Website/Noordlicht/graphics/icons_fettfett_06.png" alt="" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Branding/Noordlicht/Deliverables/Website/Noordlicht/graphics/icons_fettfett_07.png" alt="" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Branding/Noordlicht/Deliverables/Website/Noordlicht/graphics/icons_fettfett_08.png" alt="" loading="lazy"></div>
+                <div class="slide sq illus"><img src="../Branding/Noordlicht/Deliverables/Website/Noordlicht/graphics/icons_fettfett_09.png" alt="" loading="lazy"></div>
+            </div>
         </div>
     </div>
 
@@ -365,6 +374,13 @@
                 <span class="mockup-label">Save the Date</span>
                 <span class="mockup-sublabel">Event announcement</span>
             </div>
+            <div class="mockup-item">
+                <div class="mockup-frame">
+                    <img src="../Branding/Noordlicht/Deliverables/Instagram/Instagram.png" alt="Bus Advertising" loading="lazy">
+                </div>
+                <span class="mockup-label">Bus Advertising</span>
+                <span class="mockup-sublabel">Public transport · brand in context</span>
+            </div>
         </div>
     </div>
 
@@ -376,13 +392,6 @@
             <span class="proj-section-count">MUPI · Bus · City Poster</span>
         </div>
         <div class="mockup-grid">
-            <div class="mockup-item full">
-                <div class="mockup-frame">
-                    <img src="../Branding/Noordlicht/Deliverables/Instagram/Instagram.png" alt="Bus Advertising" loading="lazy">
-                </div>
-                <span class="mockup-label">Bus Advertising</span>
-                <span class="mockup-sublabel">Public transport · brand in context</span>
-            </div>
             <div class="mockup-item">
                 <div class="mockup-frame">
                     <img src="../Branding/Noordlicht/Deliverables/MUPI/MupiFinal.png" alt="MUPI Poster Final" loading="lazy">
@@ -492,6 +501,7 @@
                 </span>
             </div>
         </a>
+        <p class="proj-page-desc" style="margin-top:24px;max-width:720px;">The site was built mobile-first — every layout decision starts from the smallest screen and scales up. Navigation collapses to a clean burger menu on mobile, sections reflow to single-column layouts and images are optimised for fast loading across all breakpoints. The result is a consistent, warm experience whether the user arrives on a phone, tablet or desktop.</p>
     </div>
 
     <div class="proj-page-footer">
@@ -506,18 +516,20 @@
 <script src="../script.js"></script>
 <script>
 (function() {
-    let backdrop = null, lightbox = null;
+    let backdrop = null, lightbox = null, pausedTrack = null;
     function collapse() {
         if (lightbox)  { lightbox.remove();  lightbox  = null; }
         if (backdrop)  { backdrop.remove();  backdrop  = null; }
+        if (pausedTrack) { pausedTrack.classList.remove('paused'); pausedTrack = null; }
     }
-    document.querySelectorAll('.icon-cell').forEach(cell => {
-        cell.addEventListener('click', () => {
+    document.querySelectorAll('.slide').forEach(slide => {
+        slide.addEventListener('click', () => {
             if (lightbox) { collapse(); return; }
+            pausedTrack = slide.closest('.slider-track');
+            if (pausedTrack) pausedTrack.classList.add('paused');
             const lb = document.createElement('div');
             lb.className = 'slide-lightbox illus-lb';
-            lb.innerHTML = cell.querySelector('img').outerHTML;
-            lb.querySelector('img').style.cssText = '';
+            lb.innerHTML = slide.querySelector('img').outerHTML;
             lb.addEventListener('click', collapse);
             document.body.appendChild(lb);
             lightbox = lb;
