@@ -12,9 +12,9 @@ const nav = document.getElementById('nav');
         toggle.classList.remove('open');
     }));
 
-    document.querySelectorAll('.f-btn').forEach(btn => {
+    document.querySelectorAll('.f-btn[data-f]').forEach(btn => {
         btn.addEventListener('click', () => {
-            document.querySelectorAll('.f-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.f-btn[data-f]').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             const f = btn.dataset.f;
             document.querySelectorAll('.card').forEach(c =>
