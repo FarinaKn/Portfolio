@@ -37,7 +37,7 @@
         .proj-section-line { flex: 1; height: 1px; background: var(--border); }
         .proj-section-count { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; color: var(--muted); white-space: nowrap; }
 
-        /* ── Slider (Icons) ── */
+        /* ── Slider ── */
         @keyframes slider-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         .slider-wrap {
             overflow: hidden;
@@ -52,24 +52,18 @@
         .slide { flex-shrink: 0; border-radius: 6px; overflow: hidden; border: 1px solid var(--border); cursor: zoom-in; transition: border-color .3s; }
         .slide:hover { border-color: rgba(255,255,255,.18); }
         .slide.sq { width: 220px; aspect-ratio: 1/1; }
-        /* Icon slides: cream background, icon contained */
         .slide.illus { background: #F5F5F2; border-color: rgba(38,58,123,.1); }
         .slide.illus:hover { border-color: rgba(38,58,123,.3); }
         .slide.illus img { width: 100%; height: 100%; object-fit: contain; display: block; padding: 24px; box-sizing: border-box; }
 
         /* ── Lightbox ── */
         .slide-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.88); z-index: 8999; cursor: zoom-out; }
-        .slide-lightbox {
-            position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%);
-            z-index: 9000; border-radius: 8px; overflow: hidden;
-            border: 1px solid rgba(255,255,255,.12); cursor: zoom-out;
-            animation: lbIn .22s cubic-bezier(.16,1,.3,1);
-        }
+        .slide-lightbox { position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%); z-index: 9000; border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,.12); cursor: zoom-out; animation: lbIn .22s cubic-bezier(.16,1,.3,1); }
         @keyframes lbIn { from { opacity:0; transform:translate(-50%,-50%) scale(.92); } to { opacity:1; transform:translate(-50%,-50%) scale(1); } }
         .slide-lightbox img { display: block; max-width: 80vw; max-height: 85vh; width: auto; height: auto; }
         .slide-lightbox.illus-lb { background: #F5F5F2; padding: 32px; }
 
-        /* ── Mockups grid ── */
+        /* ── Mockup grid ── */
         .mockup-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
         .mockup-item { display: flex; flex-direction: column; gap: 10px; }
         .mockup-item.full { grid-column: 1 / -1; }
@@ -77,31 +71,39 @@
         .mockup-frame img { width: 100%; display: block; }
         .mockup-label { font-family: var(--mono); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
         .mockup-sublabel { font-family: var(--serif, var(--body)); font-size: 12px; color: rgba(98,92,82,.7); margin-top: 2px; }
+        .mockup-text { font-size: 14px; color: var(--muted); line-height: 1.9; margin-top: 20px; max-width: 660px; }
 
         /* ── Logo frames ── */
-        .logo-frame-light { background: #F5F5F2; border: 1px solid rgba(38,58,123,.1); border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 36px; }
+        .logo-frame-light { background: #F5F5F2; border: 1px solid rgba(38,58,123,.1); border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 40px; }
         .logo-frame-light img { max-width: 100%; height: auto; display: block; max-height: 120px; object-fit: contain; }
-        .logo-frame-dark { background: #1c2d61; border: 1px solid rgba(255,255,255,.06); border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 36px; }
+        .logo-frame-dark { background: #1c2d61; border: 1px solid rgba(255,255,255,.06); border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 40px; }
         .logo-frame-dark img { max-width: 100%; height: auto; display: block; max-height: 120px; object-fit: contain; }
 
+        /* ── Typography specimen ── */
+        .typo-specimen {
+            margin-top: 20px; border-radius: 8px; background: #F5F5F2;
+            border: 1px solid rgba(38,58,123,.08); padding: 36px 44px; overflow: hidden;
+        }
+        .typo-specimen-main {
+            font-family: 'Noordlicht', sans-serif;
+            font-size: clamp(22px, 3.5vw, 42px);
+            letter-spacing: .06em; color: #1A1A1A;
+            line-height: 1.5; display: block;
+        }
+        .typo-specimen-label {
+            display: block; font-family: var(--mono); font-size: 9px;
+            letter-spacing: .2em; text-transform: uppercase;
+            color: #6B6B68; margin-bottom: 16px;
+        }
+
         /* ── Website link ── */
-        .website-link {
-            display: block; position: relative; border-radius: 8px; overflow: hidden;
-            border: 1px solid var(--border); text-decoration: none; transition: border-color .3s;
-            max-width: 860px; margin: 0 auto;
-        }
+        .website-link { display: block; position: relative; border-radius: 8px; overflow: hidden; border: 1px solid var(--border); text-decoration: none; transition: border-color .3s; max-width: 860px; margin: 0 auto; }
         .website-link:hover { border-color: rgba(255,255,255,.25); }
-        .website-link img { width: 100%; display: block; }
-        .website-link-overlay {
-            position: absolute; inset: 0; background: rgba(0,0,0,0);
-            transition: background .35s; display: flex; align-items: center; justify-content: center;
-        }
+        .website-link-hero { overflow: hidden; line-height: 0; }
+        .website-link-hero img { width: 100%; display: block; max-height: 480px; object-fit: cover; object-position: top; }
+        .website-link-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0); transition: background .35s; display: flex; align-items: center; justify-content: center; }
         .website-link:hover .website-link-overlay { background: rgba(0,0,0,.45); }
-        .website-link-label {
-            opacity: 0; transform: translateY(6px); transition: opacity .3s, transform .3s;
-            font-family: var(--mono); font-size: 11px; letter-spacing: .18em;
-            text-transform: uppercase; color: #fff; display: flex; align-items: center; gap: 8px;
-        }
+        .website-link-label { opacity: 0; transform: translateY(6px); transition: opacity .3s, transform .3s; font-family: var(--mono); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: #fff; display: flex; align-items: center; gap: 8px; }
         .website-link:hover .website-link-label { opacity: 1; transform: translateY(0); }
         .website-link-label svg { flex-shrink: 0; }
 
@@ -111,6 +113,7 @@
             .proj-page-wrap { padding: 100px 24px 80px; }
             .mockup-grid { grid-template-columns: 1fr; }
             .mockup-item.full { grid-column: 1; }
+            .typo-specimen { padding: 24px; }
         }
     </style>
 </head>
@@ -135,7 +138,7 @@
         <span class="proj-page-cat">Web Design</span>
         <div class="proj-title-row">
             <h1 class="proj-page-title">Noordlicht</h1>
-            <span class="proj-page-year">2025</span>
+            <span class="proj-page-year">2026</span>
         </div>
         <p class="proj-page-desc">Website for Noordlicht — a nordic-inspired café in Zürich. Developed as part of a comprehensive rebranding, the site brings the new brand identity to life online: calm, refined and rooted in Scandinavian simplicity. Clean layouts, considered typography and a visual language that feels as warm as the café itself.</p>
     </header>
@@ -146,16 +149,7 @@
             <h2 class="proj-section-title">Concept &amp; Strategy</h2>
             <div class="proj-section-line"></div>
         </div>
-        <div class="concept-block">
-            <div class="concept-text">
-                <p>Noordlicht is a Nordic-inspired café in Zürich — a place for slow mornings, quality coffee and the quiet pleasure of something homemade. The brief called for a complete brand identity and responsive website that captures exactly that feeling: calm, considered and warm.</p>
-                <br>
-                <p>The visual language was built around a custom typeface, a restrained blue-and-cream palette and a set of hand-crafted café illustrations. Every element — from the trifold menu to the website — follows the same quiet logic, creating a cohesive presence across print and screen.</p>
-            </div>
-            <div class="ph-block" style="aspect-ratio:4/3;">
-                <span class="ph-text">Moodboard · Concept</span>
-            </div>
-        </div>
+        <p class="proj-page-desc" style="max-width:720px;">A fully responsive website built with HTML, CSS and JavaScript as the digital centrepiece of Noordlicht's brand relaunch. The site needed to communicate calm quality and Nordic warmth — a clear hierarchy of information, smooth navigation and a layout that guides visitors naturally from the café's story to its menu and location. Content architecture was defined first, with each section serving a specific purpose: introduce the brand, communicate the offer, build trust and convert to a visit.</p>
     </div>
 
     <!-- LOGO & MARK -->
@@ -163,28 +157,22 @@
         <div class="proj-section-head">
             <h2 class="proj-section-title">Logo &amp; Mark</h2>
             <div class="proj-section-line"></div>
-            <span class="proj-section-count">Wordmark &amp; Variants</span>
+            <span class="proj-section-count">Primary &amp; White</span>
         </div>
         <div class="mockup-grid">
-            <div class="mockup-item full">
-                <div class="logo-frame-light" style="aspect-ratio:16/6;">
+            <div class="mockup-item">
+                <div class="logo-frame-light" style="aspect-ratio:4/3;">
                     <img src="../Webdesign/noordlicht/Deliverables/IconsLogo/logo_b.png" alt="Noordlicht Logo">
                 </div>
                 <span class="mockup-label">Primary Logo</span>
                 <span class="mockup-sublabel">Wordmark · light backgrounds</span>
             </div>
             <div class="mockup-item">
-                <div class="logo-frame-dark" style="aspect-ratio:1/1;">
+                <div class="logo-frame-dark" style="aspect-ratio:4/3;">
                     <img src="../Webdesign/noordlicht/Deliverables/IconsLogo/logo_w.png" alt="Noordlicht Logo White">
                 </div>
                 <span class="mockup-label">Logo White</span>
                 <span class="mockup-sublabel">Reversed · dark backgrounds</span>
-            </div>
-            <div class="mockup-item">
-                <div class="logo-frame-light" style="aspect-ratio:1/1;">
-                    <img src="../Webdesign/noordlicht/Deliverables/IconsLogo/fett-03.png" alt="Logo Variant">
-                </div>
-                <span class="mockup-label">Logo Variant</span>
             </div>
         </div>
     </div>
@@ -213,13 +201,6 @@
                             <span class="vi-typo-name">Inter</span>
                         </div>
                     </div>
-                    <div class="vi-typo-row">
-                        <div class="vi-typo-sample" style="font-family:'DM Mono',monospace;font-size:14px;color:var(--text);width:52px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:4px;flex-shrink:0;">01</div>
-                        <div>
-                            <span class="vi-typo-role">Numbers / UI</span>
-                            <span class="vi-typo-name">DM Mono</span>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="vi-block">
@@ -237,10 +218,6 @@
                         <div class="vi-swatch-sm" style="background:#1A1A1A;"></div>
                         <div><span class="vi-color-name">Deep Black</span><span class="vi-color-hex">#1A1A1A</span></div>
                     </div>
-                    <div class="vi-color-row">
-                        <div class="vi-swatch-sm" style="background:#6B6B68;"></div>
-                        <div><span class="vi-color-name">Stone</span><span class="vi-color-hex">#6B6B68</span></div>
-                    </div>
                 </div>
             </div>
             <div class="vi-block vi-full">
@@ -251,29 +228,10 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- ICONS & PATTERNS -->
-    <div class="proj-section">
-        <div class="proj-section-head">
-            <h2 class="proj-section-title">Icons &amp; Patterns</h2>
-            <div class="proj-section-line"></div>
-            <span class="proj-section-count">Coming soon</span>
-        </div>
-        <div class="mockup-grid">
-            <div class="mockup-item">
-                <div class="mockup-frame" style="background:#F5F5F2;">
-                    <img src="../Webdesign/noordlicht/Deliverables/IconsLogo/icons_patter.png" alt="Icon Pattern" loading="lazy">
-                </div>
-                <span class="mockup-label">Icon Pattern</span>
-                <span class="mockup-sublabel">Full icon set as surface pattern</span>
-            </div>
-            <div class="mockup-item">
-                <div class="mockup-frame ph-block" style="aspect-ratio:1/1;">
-                    <span class="ph-text">Pattern Application</span>
-                </div>
-                <span class="mockup-label">Pattern Application</span>
-            </div>
+        <div class="typo-specimen">
+            <span class="typo-specimen-label">Noordlicht · Custom Typeface · A – Z</span>
+            <span class="typo-specimen-main">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</span>
+            <span class="typo-specimen-main" style="font-size:clamp(18px,2.8vw,34px);opacity:.7;">a b c d e f g h i j k l m n o p q r s t u v w x y z</span>
         </div>
     </div>
 
@@ -286,6 +244,7 @@
         </div>
         <div class="slider-wrap">
             <div class="slider-track" style="--dur:52s">
+                <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/logo_b.png" alt="Noordlicht Logo" loading="lazy"></div>
                 <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/bread.png" alt="Bread" loading="lazy"></div>
                 <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/cinnamonbun.png" alt="Cinnamon Bun" loading="lazy"></div>
                 <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/salmon.png" alt="Salmon" loading="lazy"></div>
@@ -293,12 +252,11 @@
                 <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/fett-04.png" alt="Brand Element" loading="lazy"></div>
                 <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/fett-05.png" alt="Brand Element" loading="lazy"></div>
                 <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/fett-06.png" alt="Brand Element" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/fett-08.png" alt="Brand Element" loading="lazy"></div>
                 <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/instagram.png" alt="Instagram" loading="lazy"></div>
                 <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/mail.png" alt="Mail" loading="lazy"></div>
                 <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/telephone.png" alt="Phone" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/icon_thin-14.png" alt="Icon" loading="lazy"></div>
                 <!-- duplicate set for seamless loop -->
+                <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/logo_b.png" alt="" loading="lazy"></div>
                 <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/bread.png" alt="" loading="lazy"></div>
                 <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/cinnamonbun.png" alt="" loading="lazy"></div>
                 <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/salmon.png" alt="" loading="lazy"></div>
@@ -306,45 +264,30 @@
                 <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/fett-04.png" alt="" loading="lazy"></div>
                 <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/fett-05.png" alt="" loading="lazy"></div>
                 <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/fett-06.png" alt="" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/fett-08.png" alt="" loading="lazy"></div>
                 <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/instagram.png" alt="" loading="lazy"></div>
                 <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/mail.png" alt="" loading="lazy"></div>
                 <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/telephone.png" alt="" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/icon_thin-14.png" alt="" loading="lazy"></div>
             </div>
         </div>
     </div>
 
-    <!-- MOCKUPS -->
+    <!-- MOCKUP -->
     <div class="proj-section">
         <div class="proj-section-head">
-            <h2 class="proj-section-title">Mockups</h2>
+            <h2 class="proj-section-title">Mockup</h2>
             <div class="proj-section-line"></div>
-            <span class="proj-section-count">3 Formate</span>
+            <span class="proj-section-count">Responsive Web Design</span>
         </div>
         <div class="mockup-grid">
             <div class="mockup-item full">
                 <div class="mockup-frame">
                     <img src="../Webdesign/noordlicht/Deliverables/Mockups/Website.png" alt="Website Mockup" loading="lazy">
                 </div>
-                <span class="mockup-label">Website</span>
-                <span class="mockup-sublabel">Responsive Web Design · HTML / CSS / JavaScript</span>
-            </div>
-            <div class="mockup-item">
-                <div class="mockup-frame">
-                    <img src="../Webdesign/noordlicht/Deliverables/Mockups/CoffeeToGo.png" alt="Coffee To Go" loading="lazy">
-                </div>
-                <span class="mockup-label">Coffee To Go</span>
-                <span class="mockup-sublabel">Branded takeaway cup</span>
-            </div>
-            <div class="mockup-item">
-                <div class="mockup-frame">
-                    <img src="../Webdesign/noordlicht/Deliverables/Mockups/Mupi.png" alt="MUPI Poster" loading="lazy">
-                </div>
-                <span class="mockup-label">MUPI Poster</span>
-                <span class="mockup-sublabel">Outdoor advertising · large format</span>
+                <span class="mockup-label">Website · Desktop &amp; Mobile</span>
+                <span class="mockup-sublabel">HTML / CSS / JavaScript</span>
             </div>
         </div>
+        <p class="mockup-text">The site was built mobile-first — every layout decision starts from the smallest screen and scales up. Navigation collapses to a clean burger menu on mobile, sections reflow to single-column layouts and images are optimised for fast loading across all breakpoints. The result is a consistent, warm experience whether the user arrives on a phone, tablet or desktop.</p>
     </div>
 
     <!-- WEBSITE -->
@@ -355,7 +298,9 @@
             <span class="proj-section-count">Live-Projekt</span>
         </div>
         <a class="website-link" href="https://farinakn.github.io/Noordlicht/" target="_blank" rel="noopener">
-            <img src="../Webdesign/noordlicht/Deliverables/Website/Website_Desktop.png" alt="Noordlicht Website" loading="lazy">
+            <div class="website-link-hero">
+                <img src="../Webdesign/noordlicht/Deliverables/Website/Website_Desktop.png" alt="Noordlicht Website Hero">
+            </div>
             <div class="website-link-overlay">
                 <span class="website-link-label">
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
