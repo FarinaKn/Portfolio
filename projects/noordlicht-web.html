@@ -74,10 +74,10 @@
         .mockup-text { font-size: 14px; color: var(--muted); line-height: 1.9; margin-top: 20px; max-width: 660px; }
 
         /* ── Logo frames ── */
-        .logo-frame-light { background: #F5F5F2; border: 1px solid rgba(38,58,123,.1); border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 40px; }
-        .logo-frame-light img { max-width: 100%; height: auto; display: block; max-height: 120px; object-fit: contain; }
-        .logo-frame-dark { background: #1c2d61; border: 1px solid rgba(255,255,255,.06); border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 40px; }
-        .logo-frame-dark img { max-width: 100%; height: auto; display: block; max-height: 120px; object-fit: contain; }
+        .logo-frame-light { background: #F5F5F2; border: 1px solid rgba(38,58,123,.1); border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 52px; }
+        .logo-frame-light img { max-width: 100%; height: auto; display: block; max-height: 200px; object-fit: contain; }
+        .logo-frame-dark { background: #1c2d61; border: 1px solid rgba(255,255,255,.06); border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 52px; }
+        .logo-frame-dark img { max-width: 100%; height: auto; display: block; max-height: 200px; object-fit: contain; }
 
         /* ── Typography specimen ── */
         .typo-specimen {
@@ -149,7 +149,7 @@
             <h2 class="proj-section-title">Concept &amp; Strategy</h2>
             <div class="proj-section-line"></div>
         </div>
-        <p class="proj-page-desc" style="max-width:720px;">A fully responsive website built with HTML, CSS and JavaScript as the digital centrepiece of Noordlicht's brand relaunch. The site needed to communicate calm quality and Nordic warmth — a clear hierarchy of information, smooth navigation and a layout that guides visitors naturally from the café's story to its menu and location. Content architecture was defined first, with each section serving a specific purpose: introduce the brand, communicate the offer, build trust and convert to a visit.</p>
+        <p class="proj-page-desc" style="max-width:720px;">A fully responsive website built with HTML, CSS and JavaScript as the digital centrepiece of Noordlicht's brand relaunch — part of a <a href="noordlicht.html" style="color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(212,168,184,.35);padding-bottom:1px;transition:border-color .3s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='rgba(212,168,184,.35)'">full rebranding</a>. The site needed to communicate calm quality and Nordic warmth — a clear hierarchy of information, smooth navigation and a layout that guides visitors naturally from the café's story to its menu and location. Content architecture was defined first, with each section serving a specific purpose: introduce the brand, communicate the offer, build trust and convert to a visit.</p>
     </div>
 
     <!-- LOGO & MARK -->
@@ -180,7 +180,7 @@
     <!-- COLOUR & TYPOGRAPHY -->
     <div class="proj-section">
         <div class="proj-section-head">
-            <h2 class="proj-section-title">Colour &amp; Typography</h2>
+            <h2 class="proj-section-title">Color &amp; Typography</h2>
             <div class="proj-section-line"></div>
         </div>
         <div class="vi-grid">
@@ -204,11 +204,15 @@
                 </div>
             </div>
             <div class="vi-block">
-                <span class="vi-label">Colours</span>
+                <span class="vi-label">Colors</span>
                 <div class="vi-color-stack">
                     <div class="vi-color-row">
                         <div class="vi-swatch-sm" style="background:#263A7B;"></div>
                         <div><span class="vi-color-name">Noordlicht Blue</span><span class="vi-color-hex">#263A7B</span></div>
+                    </div>
+                    <div class="vi-color-row">
+                        <div class="vi-swatch-sm" style="background:#aaaecd;"></div>
+                        <div><span class="vi-color-name">Secondary / Backgrounds</span><span class="vi-color-hex">#AAAECD</span></div>
                     </div>
                     <div class="vi-color-row">
                         <div class="vi-swatch-sm" style="background:#F5F5F2;border:1px solid rgba(0,0,0,.09);"></div>
@@ -231,7 +235,6 @@
         <div class="typo-specimen">
             <span class="typo-specimen-label">Noordlicht · Custom Typeface · A – Z</span>
             <span class="typo-specimen-main">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</span>
-            <span class="typo-specimen-main" style="font-size:clamp(18px,2.8vw,34px);opacity:.7;">a b c d e f g h i j k l m n o p q r s t u v w x y z</span>
         </div>
     </div>
 
@@ -278,16 +281,36 @@
             <div class="proj-section-line"></div>
             <span class="proj-section-count">Responsive Web Design</span>
         </div>
-        <div class="mockup-grid">
-            <div class="mockup-item full">
+        <div style="max-width:760px;margin:0 auto;">
+            <div class="mockup-item full" style="margin-bottom:20px;">
                 <div class="mockup-frame">
                     <img src="../Webdesign/noordlicht/Deliverables/Mockups/Website.png" alt="Website Mockup" loading="lazy">
                 </div>
-                <span class="mockup-label">Website · Desktop &amp; Mobile</span>
+                <span class="mockup-label">Website · Desktop, Tablet &amp; Mobile</span>
                 <span class="mockup-sublabel">HTML / CSS / JavaScript</span>
             </div>
+            <div class="mockup-grid" style="grid-template-columns:1fr 1fr 1fr;">
+                <div class="mockup-item">
+                    <div class="mockup-frame">
+                        <img src="../Webdesign/noordlicht/Deliverables/Website/Website_Desktop.png" alt="Desktop View" loading="lazy">
+                    </div>
+                    <span class="mockup-label">Desktop</span>
+                </div>
+                <div class="mockup-item">
+                    <div class="mockup-frame">
+                        <img src="../Webdesign/noordlicht/Deliverables/Website/Website_Tablet.png" alt="Tablet View" loading="lazy">
+                    </div>
+                    <span class="mockup-label">Tablet</span>
+                </div>
+                <div class="mockup-item">
+                    <div class="mockup-frame">
+                        <img src="../Webdesign/noordlicht/Deliverables/Website/Website_Smartphone.png" alt="Mobile View" loading="lazy">
+                    </div>
+                    <span class="mockup-label">Mobile</span>
+                </div>
+            </div>
         </div>
-        <p class="mockup-text">The site was built mobile-first — every layout decision starts from the smallest screen and scales up. Navigation collapses to a clean burger menu on mobile, sections reflow to single-column layouts and images are optimised for fast loading across all breakpoints. The result is a consistent, warm experience whether the user arrives on a phone, tablet or desktop.</p>
+        <p class="mockup-text" style="max-width:760px;margin:20px auto 0;">The site was built mobile-first — every layout decision starts from the smallest screen and scales up. Navigation collapses to a clean burger menu on mobile, sections reflow to single-column layouts and images are optimised for fast loading across all breakpoints. The result is a consistent, warm experience whether the user arrives on a phone, tablet or desktop.</p>
     </div>
 
     <!-- WEBSITE -->
