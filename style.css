@@ -634,7 +634,7 @@
             border-top: 1px solid var(--border);
         }
         .exp-edu-label {
-            font-size: 10px;
+            font-size: 12px;
             letter-spacing: .2em;
             text-transform: uppercase;
             color: var(--muted);
