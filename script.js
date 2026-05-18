@@ -91,3 +91,22 @@ const nav = document.getElementById('nav');
             btn.classList.remove('sending');
         });
     }
+
+// CV Popup
+function openCV(file) {
+    const overlay = document.getElementById('cv-overlay');
+    document.getElementById('cv-frame').src = file;
+    document.getElementById('cv-title').textContent = file.includes('_EN') ? 'CV · English' : 'CV · Deutsch';
+    overlay.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+function closeCV() {
+    const overlay = document.getElementById('cv-overlay');
+    overlay.style.display = 'none';
+    document.getElementById('cv-frame').src = '';
+    document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCV(); });
+document.getElementById('cv-overlay').addEventListener('click', function(e) {
+    if (e.target === this) closeCV();
+});
