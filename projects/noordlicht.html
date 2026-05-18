@@ -11,7 +11,7 @@
     <style>
         @font-face {
             font-family: 'Noordlicht';
-            src: url('../Webdesign/noordlicht/Deliverables/Typography/noordlicht_font.otf') format('opentype');
+            src: url('../Branding/Noordlicht/Deliverables/Typography/noordlicht_font.otf') format('opentype');
         }
         .proj-page-wrap { max-width: 1200px; margin: 0 auto; padding: 130px 48px 100px; }
         .proj-page-back {
@@ -37,24 +37,41 @@
         .proj-section-line { flex: 1; height: 1px; background: var(--border); }
         .proj-section-count { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; color: var(--muted); white-space: nowrap; }
 
-        /* Slider */
-        @keyframes slider-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-        .slider-wrap {
+        /* Mockup grid */
+        .mockup-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .mockup-item { display: flex; flex-direction: column; gap: 10px; }
+        .mockup-item.full { grid-column: 1 / -1; }
+        .mockup-frame { border-radius: 6px; overflow: hidden; border: 1px solid var(--border); background: #1A1816; }
+        .mockup-frame.white { background: #ffffff; }
+        .mockup-frame img { width: 100%; display: block; }
+        .mockup-frame.fixed img { width: 100%; display: block; object-fit: cover; aspect-ratio: 4/5; }
+        .mockup-label { font-family: var(--mono); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+        .mockup-sublabel { font-family: var(--serif, var(--body)); font-size: 12px; color: rgba(98,92,82,.7); margin-top: 2px; }
+
+        /* Logo frames */
+        .logo-frame-light { background: #F5F5F2; border: 1px solid rgba(38,58,123,.1); border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 52px; aspect-ratio: 4/3; }
+        .logo-frame-light img { max-width: 100%; height: auto; display: block; max-height: 200px; object-fit: contain; }
+        .logo-frame-dark { background: #1c2d61; border: 1px solid rgba(255,255,255,.06); border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 52px; aspect-ratio: 4/3; }
+        .logo-frame-dark img { max-width: 100%; height: auto; display: block; max-height: 200px; object-fit: contain; }
+
+        /* Icon grid — static, no animation, each icon once */
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+        .icon-cell {
+            background: #F5F5F2;
+            border: 1px solid rgba(38,58,123,.1);
+            border-radius: 6px;
+            aspect-ratio: 1/1;
+            display: flex; align-items: center; justify-content: center;
             overflow: hidden;
-            -webkit-mask: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%);
-            mask: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%);
+            cursor: zoom-in;
+            transition: border-color .3s;
         }
-        .slider-track {
-            display: flex; align-items: flex-start; gap: 10px; width: max-content;
-            animation: slider-scroll var(--dur,60s) linear infinite;
-        }
-        .slider-track:hover, .slider-track.paused { animation-play-state: paused; }
-        .slide { flex-shrink: 0; border-radius: 6px; overflow: hidden; border: 1px solid var(--border); cursor: zoom-in; transition: border-color .3s; }
-        .slide:hover { border-color: rgba(255,255,255,.18); }
-        .slide.sq { width: 220px; aspect-ratio: 1/1; }
-        .slide.illus { background: #F5F5F2; border-color: rgba(38,58,123,.1); }
-        .slide.illus:hover { border-color: rgba(38,58,123,.3); }
-        .slide.illus img { width: 100%; height: 100%; object-fit: contain; display: block; padding: 24px; box-sizing: border-box; }
+        .icon-cell:hover { border-color: rgba(38,58,123,.3); }
+        .icon-cell img { width: 65%; height: 65%; object-fit: contain; display: block; }
 
         /* Lightbox */
         .slide-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.88); z-index: 8999; cursor: zoom-out; }
@@ -62,22 +79,6 @@
         @keyframes lbIn { from { opacity:0; transform:translate(-50%,-50%) scale(.92); } to { opacity:1; transform:translate(-50%,-50%) scale(1); } }
         .slide-lightbox img { display: block; max-width: 80vw; max-height: 85vh; width: auto; height: auto; }
         .slide-lightbox.illus-lb { background: #F5F5F2; padding: 32px; }
-
-        /* Mockup grid */
-        .mockup-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-        .mockup-item { display: flex; flex-direction: column; gap: 10px; }
-        .mockup-item.full { grid-column: 1 / -1; }
-        .mockup-frame { border-radius: 6px; overflow: hidden; border: 1px solid var(--border); background: #1A1816; }
-        .mockup-frame img { width: 100%; display: block; }
-        .mockup-label { font-family: var(--mono); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
-        .mockup-sublabel { font-family: var(--serif, var(--body)); font-size: 12px; color: rgba(98,92,82,.7); margin-top: 2px; }
-        .mockup-text { font-size: 14px; color: var(--muted); line-height: 1.9; margin-top: 20px; }
-
-        /* Logo frames */
-        .logo-frame-light { background: #F5F5F2; border: 1px solid rgba(38,58,123,.1); border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 52px; aspect-ratio: 4/3; }
-        .logo-frame-light img { max-width: 100%; height: auto; display: block; max-height: 200px; object-fit: contain; }
-        .logo-frame-dark { background: #1c2d61; border: 1px solid rgba(255,255,255,.06); border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 52px; aspect-ratio: 4/3; }
-        .logo-frame-dark img { max-width: 100%; height: auto; display: block; max-height: 200px; object-fit: contain; }
 
         /* Typography specimen */
         .typo-specimen {
@@ -113,6 +114,7 @@
             .proj-page-wrap { padding: 100px 24px 80px; }
             .mockup-grid { grid-template-columns: 1fr; }
             .mockup-item.full { grid-column: 1; }
+            .icon-grid { grid-template-columns: repeat(3, 1fr); }
             .typo-specimen { padding: 24px; }
         }
     </style>
@@ -163,31 +165,31 @@
         <div class="mockup-grid">
             <div class="mockup-item">
                 <div class="logo-frame-light">
-                    <img src="../Webdesign/noordlicht/Deliverables/IconsLogo/logo_b.png" alt="Noordlicht Logo" loading="lazy">
+                    <img src="../Branding/Noordlicht/Deliverables/IconsLogo/logo_b.png" alt="Noordlicht Logo" loading="lazy">
                 </div>
                 <span class="mockup-label">Primary Logo</span>
                 <span class="mockup-sublabel">Wordmark · light backgrounds</span>
             </div>
             <div class="mockup-item">
                 <div class="logo-frame-dark">
-                    <img src="../Webdesign/noordlicht/Deliverables/IconsLogo/logo_w.png" alt="Noordlicht Logo White" loading="lazy">
+                    <img src="../Branding/Noordlicht/Deliverables/IconsLogo/logo_w.png" alt="Noordlicht Logo White" loading="lazy">
                 </div>
                 <span class="mockup-label">Logo White</span>
                 <span class="mockup-sublabel">Reversed · dark backgrounds</span>
             </div>
             <div class="mockup-item">
                 <div class="logo-frame-light">
-                    <img src="../Branding/Noordlicht/Logo/Noordlicht-14.png" alt="Noordlicht Brand Mark" loading="lazy">
+                    <img src="../Branding/Noordlicht/Deliverables/IconsLogo/icon_thin-14.png" alt="Noordlicht Brand Mark" loading="lazy">
                 </div>
                 <span class="mockup-label">Brand Mark</span>
                 <span class="mockup-sublabel">Icon · standalone use</span>
             </div>
             <div class="mockup-item">
-                <div class="logo-frame-dark" style="background:#F5F5F2;border:1px solid rgba(38,58,123,.1);">
-                    <img src="../Branding/Noordlicht/Logo/4n_b.png" alt="Noordlicht Alternate Logo" loading="lazy">
+                <div class="logo-frame-light">
+                    <img src="../Branding/Noordlicht/Deliverables/Website/Noordlicht/graphics/4n_b.png" alt="Noordlicht Compact Mark" loading="lazy">
                 </div>
-                <span class="mockup-label">Alternate Mark</span>
-                <span class="mockup-sublabel">Compact · social &amp; stamp use</span>
+                <span class="mockup-label">Compact Mark</span>
+                <span class="mockup-sublabel">Social &amp; stamp use</span>
             </div>
         </div>
     </div>
@@ -269,38 +271,22 @@
         <div class="proj-section-head">
             <h2 class="proj-section-title">Icons &amp; Patterns</h2>
             <div class="proj-section-line"></div>
-            <span class="proj-section-count">Custom Illustrations</span>
+            <span class="proj-section-count">13 Custom Illustrations</span>
         </div>
-        <div class="slider-wrap">
-            <div class="slider-track" style="--dur:55s">
-                <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/bread.png" alt="Bread" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/cinnamonbun.png" alt="Cinnamon Bun" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/salmon.png" alt="Salmon" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/lettuce.png" alt="Lettuce" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Branding/Noordlicht/Icons/fett-01.png" alt="Icon" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Branding/Noordlicht/Icons/fett-02.png" alt="Icon" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/fett-03.png" alt="Icon" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/fett-04.png" alt="Icon" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/fett-05.png" alt="Icon" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/fett-06.png" alt="Icon" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/fett-07.png" alt="Icon" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/fett-08.png" alt="Icon" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Branding/Noordlicht/Icons/fett-09.png" alt="Icon" loading="lazy"></div>
-                <!-- duplicate for seamless loop -->
-                <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/bread.png" alt="" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/cinnamonbun.png" alt="" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/salmon.png" alt="" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/lettuce.png" alt="" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Branding/Noordlicht/Icons/fett-01.png" alt="" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Branding/Noordlicht/Icons/fett-02.png" alt="" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/fett-03.png" alt="" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/fett-04.png" alt="" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/fett-05.png" alt="" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/fett-06.png" alt="" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/fett-07.png" alt="" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Webdesign/noordlicht/Deliverables/IconsLogo/fett-08.png" alt="" loading="lazy"></div>
-                <div class="slide sq illus"><img src="../Branding/Noordlicht/Icons/fett-09.png" alt="" loading="lazy"></div>
-            </div>
+        <div class="icon-grid">
+            <div class="icon-cell"><img src="../Branding/Noordlicht/Deliverables/IconsLogo/bread.png" alt="Bread" loading="lazy"></div>
+            <div class="icon-cell"><img src="../Branding/Noordlicht/Deliverables/IconsLogo/cinnamonbun.png" alt="Cinnamon Bun" loading="lazy"></div>
+            <div class="icon-cell"><img src="../Branding/Noordlicht/Deliverables/IconsLogo/salmon.png" alt="Salmon" loading="lazy"></div>
+            <div class="icon-cell"><img src="../Branding/Noordlicht/Deliverables/IconsLogo/lettuce.png" alt="Lettuce" loading="lazy"></div>
+            <div class="icon-cell"><img src="../Branding/Noordlicht/Deliverables/Website/Noordlicht/graphics/icons_fettfett_01.png" alt="Icon" loading="lazy"></div>
+            <div class="icon-cell"><img src="../Branding/Noordlicht/Deliverables/Website/Noordlicht/graphics/icons_fettfett_02.png" alt="Icon" loading="lazy"></div>
+            <div class="icon-cell"><img src="../Branding/Noordlicht/Deliverables/Website/Noordlicht/graphics/icons_fettfett_03.png" alt="Icon" loading="lazy"></div>
+            <div class="icon-cell"><img src="../Branding/Noordlicht/Deliverables/Website/Noordlicht/graphics/icons_fettfett_04.png" alt="Icon" loading="lazy"></div>
+            <div class="icon-cell"><img src="../Branding/Noordlicht/Deliverables/Website/Noordlicht/graphics/icons_fettfett_05.png" alt="Icon" loading="lazy"></div>
+            <div class="icon-cell"><img src="../Branding/Noordlicht/Deliverables/Website/Noordlicht/graphics/icons_fettfett_06.png" alt="Icon" loading="lazy"></div>
+            <div class="icon-cell"><img src="../Branding/Noordlicht/Deliverables/Website/Noordlicht/graphics/icons_fettfett_07.png" alt="Icon" loading="lazy"></div>
+            <div class="icon-cell"><img src="../Branding/Noordlicht/Deliverables/Website/Noordlicht/graphics/icons_fettfett_08.png" alt="Icon" loading="lazy"></div>
+            <div class="icon-cell"><img src="../Branding/Noordlicht/Deliverables/Website/Noordlicht/graphics/icons_fettfett_09.png" alt="Icon" loading="lazy"></div>
         </div>
     </div>
 
@@ -313,32 +299,25 @@
         </div>
         <div class="mockup-grid">
             <div class="mockup-item">
-                <div class="mockup-frame" style="background:#ffffff;">
-                    <img src="../Webdesign/noordlicht/Deliverables/Instagram/Instagram_1_1.png" alt="Instagram 1:1" loading="lazy">
+                <div class="mockup-frame white">
+                    <img src="../Branding/Noordlicht/Deliverables/Instagram/Instagram_1_1.png" alt="Instagram 1:1" loading="lazy">
                 </div>
                 <span class="mockup-label">Post 1 : 1</span>
                 <span class="mockup-sublabel">Square format</span>
             </div>
             <div class="mockup-item">
-                <div class="mockup-frame" style="background:#ffffff;">
-                    <img src="../Webdesign/noordlicht/Deliverables/Instagram/Instagram_4_5.png" alt="Instagram 4:5" loading="lazy">
+                <div class="mockup-frame white">
+                    <img src="../Branding/Noordlicht/Deliverables/Instagram/Instagram_4_5.png" alt="Instagram 4:5" loading="lazy">
                 </div>
                 <span class="mockup-label">Post 4 : 5</span>
                 <span class="mockup-sublabel">Portrait format</span>
             </div>
-            <div class="mockup-item full">
-                <div class="mockup-frame" style="background:#ffffff;">
-                    <img src="../Webdesign/noordlicht/Deliverables/Instagram/Instagram_16_9.png" alt="Instagram 16:9" loading="lazy">
+            <div class="mockup-item">
+                <div class="mockup-frame white">
+                    <img src="../Branding/Noordlicht/Deliverables/Instagram/Instagram_16_9.png" alt="Instagram 16:9" loading="lazy">
                 </div>
                 <span class="mockup-label">Post 16 : 9</span>
                 <span class="mockup-sublabel">Landscape · Story cover</span>
-            </div>
-            <div class="mockup-item full">
-                <div class="mockup-frame" style="background:#ffffff;">
-                    <img src="../Webdesign/noordlicht/Deliverables/Mockups/SocialMedia.png" alt="Social Media Mockup" loading="lazy">
-                </div>
-                <span class="mockup-label">Social Media Mockup</span>
-                <span class="mockup-sublabel">Brand in context</span>
             </div>
         </div>
     </div>
@@ -348,47 +327,26 @@
         <div class="proj-section-head">
             <h2 class="proj-section-title">Print &amp; Collateral</h2>
             <div class="proj-section-line"></div>
-            <span class="proj-section-count">Menu · Stamp Card · Packaging</span>
+            <span class="proj-section-count">Menu · Stamp Card · Save the Date</span>
         </div>
         <div class="mockup-grid">
-            <div class="mockup-item full">
-                <div class="mockup-frame">
-                    <img src="../Webdesign/noordlicht/Deliverables/Mockups/Trifold.PNG" alt="Trifold Menu" loading="lazy">
+            <div class="mockup-item">
+                <div class="mockup-frame white">
+                    <img src="../Branding/Noordlicht/Deliverables/Stampcard/stempcard_front.png" alt="Stamp Card Front" loading="lazy">
                 </div>
-                <span class="mockup-label">Menu Card</span>
-                <span class="mockup-sublabel">Trifold · print-ready</span>
+                <span class="mockup-label">Stamp Card Front</span>
+                <span class="mockup-sublabel">Loyalty card · front side</span>
             </div>
             <div class="mockup-item">
-                <div class="mockup-frame" style="background:#ffffff;">
-                    <img src="../Webdesign/noordlicht/Deliverables/Mockups/StampCard.png" alt="Stamp Card" loading="lazy">
+                <div class="mockup-frame white">
+                    <img src="../Branding/Noordlicht/Deliverables/Stampcard/stempcard_back.png" alt="Stamp Card Back" loading="lazy">
                 </div>
-                <span class="mockup-label">Stamp Card</span>
-                <span class="mockup-sublabel">Loyalty card · front &amp; back</span>
+                <span class="mockup-label">Stamp Card Back</span>
+                <span class="mockup-sublabel">Loyalty card · back side</span>
             </div>
             <div class="mockup-item">
-                <div class="mockup-frame">
-                    <img src="../Webdesign/noordlicht/Deliverables/Mockups/Sticker.png" alt="Sticker" loading="lazy">
-                </div>
-                <span class="mockup-label">Sticker</span>
-                <span class="mockup-sublabel">Brand sticker · die-cut</span>
-            </div>
-            <div class="mockup-item">
-                <div class="mockup-frame">
-                    <img src="../Webdesign/noordlicht/Deliverables/Mockups/CoffeeToGo.png" alt="Coffee to Go Cup" loading="lazy">
-                </div>
-                <span class="mockup-label">Coffee to Go</span>
-                <span class="mockup-sublabel">Cup sleeve · packaging</span>
-            </div>
-            <div class="mockup-item">
-                <div class="mockup-frame">
-                    <img src="../Webdesign/noordlicht/Deliverables/Mockups/packaging.png" alt="Packaging" loading="lazy">
-                </div>
-                <span class="mockup-label">Packaging</span>
-                <span class="mockup-sublabel">Take-away bag</span>
-            </div>
-            <div class="mockup-item full">
-                <div class="mockup-frame">
-                    <img src="../Webdesign/noordlicht/Deliverables/SaveTheDate/savethedate.png" alt="Save the Date" loading="lazy">
+                <div class="mockup-frame white">
+                    <img src="../Branding/Noordlicht/Deliverables/SaveTheDate/savethedate.png" alt="Save the Date" loading="lazy">
                 </div>
                 <span class="mockup-label">Save the Date</span>
                 <span class="mockup-sublabel">Event announcement</span>
@@ -406,42 +364,42 @@
         <div class="mockup-grid">
             <div class="mockup-item full">
                 <div class="mockup-frame">
-                    <img src="../Webdesign/noordlicht/Deliverables/Instagram/Instagram.png" alt="Bus Advertising" loading="lazy">
+                    <img src="../Branding/Noordlicht/Deliverables/Instagram/Instagram.png" alt="Bus Advertising" loading="lazy">
                 </div>
                 <span class="mockup-label">Bus Advertising</span>
                 <span class="mockup-sublabel">Public transport · brand in context</span>
             </div>
-            <div class="mockup-item full">
+            <div class="mockup-item">
                 <div class="mockup-frame">
-                    <img src="../Webdesign/noordlicht/Deliverables/MUPI/MupiFinal.png" alt="MUPI Poster Final" loading="lazy">
+                    <img src="../Branding/Noordlicht/Deliverables/MUPI/MupiFinal.png" alt="MUPI Poster Final" loading="lazy">
                 </div>
                 <span class="mockup-label">MUPI Poster</span>
                 <span class="mockup-sublabel">City lightbox · outdoor advertising</span>
             </div>
             <div class="mockup-item">
                 <div class="mockup-frame">
-                    <img src="../Webdesign/noordlicht/Deliverables/MUPI/mupi_long.png" alt="MUPI Long" loading="lazy">
+                    <img src="../Branding/Noordlicht/Deliverables/MUPI/mupi_long.png" alt="MUPI Long" loading="lazy">
                 </div>
                 <span class="mockup-label">Variant A</span>
                 <span class="mockup-sublabel">Landscape format</span>
             </div>
             <div class="mockup-item">
                 <div class="mockup-frame">
-                    <img src="../Webdesign/noordlicht/Deliverables/MUPI/mupi_long2.png" alt="MUPI Long 2" loading="lazy">
+                    <img src="../Branding/Noordlicht/Deliverables/MUPI/mupi_long2.png" alt="MUPI Long 2" loading="lazy">
                 </div>
                 <span class="mockup-label">Variant B</span>
                 <span class="mockup-sublabel">Landscape format</span>
             </div>
             <div class="mockup-item">
-                <div class="mockup-frame" style="background:#ffffff;">
-                    <img src="../Webdesign/noordlicht/Deliverables/MUPI/mupi.png" alt="MUPI" loading="lazy">
+                <div class="mockup-frame white">
+                    <img src="../Branding/Noordlicht/Deliverables/MUPI/mupi.png" alt="MUPI C" loading="lazy">
                 </div>
                 <span class="mockup-label">Variant C</span>
                 <span class="mockup-sublabel">Portrait format</span>
             </div>
             <div class="mockup-item">
-                <div class="mockup-frame" style="background:#ffffff;">
-                    <img src="../Webdesign/noordlicht/Deliverables/MUPI/mupi2.png" alt="MUPI 2" loading="lazy">
+                <div class="mockup-frame white">
+                    <img src="../Branding/Noordlicht/Deliverables/MUPI/mupi2.png" alt="MUPI D" loading="lazy">
                 </div>
                 <span class="mockup-label">Variant D</span>
                 <span class="mockup-sublabel">Portrait format</span>
@@ -457,47 +415,47 @@
             <span class="proj-section-count">Brand in Context</span>
         </div>
         <div class="mockup-grid">
-            <div class="mockup-item full">
+            <div class="mockup-item">
                 <div class="mockup-frame">
-                    <img src="../Webdesign/noordlicht/Deliverables/Mockups/Trifold.PNG" alt="Trifold Menu Mockup" loading="lazy">
+                    <img src="../Branding/Noordlicht/Deliverables/Mockups/Trifold.PNG" alt="Menu Card Mockup" loading="lazy">
                 </div>
                 <span class="mockup-label">Menu Card</span>
                 <span class="mockup-sublabel">Trifold · applied mockup</span>
             </div>
             <div class="mockup-item">
-                <div class="mockup-frame" style="background:#ffffff;">
-                    <img src="../Webdesign/noordlicht/Deliverables/Mockups/StampCard.png" alt="Stamp Card Mockup" loading="lazy">
+                <div class="mockup-frame white">
+                    <img src="../Branding/Noordlicht/Deliverables/Mockups/StampCard.png" alt="Stamp Card Mockup" loading="lazy">
                 </div>
                 <span class="mockup-label">Stamp Card</span>
-                <span class="mockup-sublabel">Loyalty card</span>
+                <span class="mockup-sublabel">Loyalty card mockup</span>
             </div>
             <div class="mockup-item">
                 <div class="mockup-frame">
-                    <img src="../Webdesign/noordlicht/Deliverables/Mockups/Sticker.png" alt="Sticker Mockup" loading="lazy">
+                    <img src="../Branding/Noordlicht/Deliverables/Mockups/Sticker.png" alt="Sticker Mockup" loading="lazy">
                 </div>
                 <span class="mockup-label">Sticker</span>
                 <span class="mockup-sublabel">Die-cut brand sticker</span>
             </div>
             <div class="mockup-item">
-                <div class="mockup-frame">
-                    <img src="../Webdesign/noordlicht/Deliverables/Mockups/CoffeeToGo.png" alt="Coffee to Go Mockup" loading="lazy">
+                <div class="mockup-frame white">
+                    <img src="../Branding/Noordlicht/Deliverables/Mockups/SocialMedia.png" alt="Social Media Mockup" loading="lazy">
+                </div>
+                <span class="mockup-label">Social Media</span>
+                <span class="mockup-sublabel">Brand in context</span>
+            </div>
+            <div class="mockup-item">
+                <div class="mockup-frame fixed">
+                    <img src="../Branding/Noordlicht/Deliverables/Mockups/CoffeeToGo.png" alt="Coffee to Go" loading="lazy">
                 </div>
                 <span class="mockup-label">Coffee to Go</span>
                 <span class="mockup-sublabel">Cup sleeve</span>
             </div>
             <div class="mockup-item">
-                <div class="mockup-frame">
-                    <img src="../Webdesign/noordlicht/Deliverables/Mockups/packaging.png" alt="Packaging Mockup" loading="lazy">
+                <div class="mockup-frame fixed">
+                    <img src="../Branding/Noordlicht/Deliverables/Mockups/packaging.png" alt="Packaging" loading="lazy">
                 </div>
                 <span class="mockup-label">Packaging</span>
                 <span class="mockup-sublabel">Take-away bag</span>
-            </div>
-            <div class="mockup-item full">
-                <div class="mockup-frame" style="background:#ffffff;">
-                    <img src="../Webdesign/noordlicht/Deliverables/Mockups/SocialMedia.png" alt="Social Media Mockup" loading="lazy">
-                </div>
-                <span class="mockup-label">Social Media</span>
-                <span class="mockup-sublabel">Brand in context</span>
             </div>
         </div>
     </div>
@@ -511,7 +469,7 @@
         </div>
         <a class="website-link" href="noordlicht-web.html">
             <div class="website-link-hero">
-                <img src="../Webdesign/noordlicht/Deliverables/Mockups/Website.png" alt="Noordlicht Website Mockup">
+                <img src="../Branding/Noordlicht/Deliverables/Mockups/Website.png" alt="Noordlicht Website Mockup">
             </div>
             <div class="website-link-overlay">
                 <span class="website-link-label">
@@ -534,21 +492,18 @@
 <script src="../script.js"></script>
 <script>
 (function() {
-    let backdrop = null, lightbox = null, pausedTrack = null;
+    let backdrop = null, lightbox = null;
     function collapse() {
         if (lightbox)  { lightbox.remove();  lightbox  = null; }
         if (backdrop)  { backdrop.remove();  backdrop  = null; }
-        if (pausedTrack) { pausedTrack.classList.remove('paused'); pausedTrack = null; }
     }
-    document.querySelectorAll('.slide').forEach(slide => {
-        slide.addEventListener('click', () => {
+    document.querySelectorAll('.icon-cell').forEach(cell => {
+        cell.addEventListener('click', () => {
             if (lightbox) { collapse(); return; }
-            pausedTrack = slide.closest('.slider-track');
-            if (pausedTrack) pausedTrack.classList.add('paused');
-            const isIllus = slide.classList.contains('illus');
             const lb = document.createElement('div');
-            lb.className = 'slide-lightbox' + (isIllus ? ' illus-lb' : '');
-            lb.innerHTML = slide.querySelector('img').outerHTML;
+            lb.className = 'slide-lightbox illus-lb';
+            lb.innerHTML = cell.querySelector('img').outerHTML;
+            lb.querySelector('img').style.cssText = '';
             lb.addEventListener('click', collapse);
             document.body.appendChild(lb);
             lightbox = lb;
