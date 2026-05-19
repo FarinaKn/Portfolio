@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style.css?v=5">
+    <link rel="stylesheet" href="../style.css?v=6">
     <style>
         @font-face {
             font-family: 'Noordlicht';
@@ -87,7 +87,7 @@
         .typo-specimen-main {
             font-family: 'Noordlicht', sans-serif;
             font-size: clamp(22px, 3.5vw, 42px);
-            letter-spacing: .06em; color: #1A1A1A;
+            letter-spacing: .06em; color: #000000;
             line-height: 1.5; display: block;
         }
         .typo-specimen-label {
@@ -196,7 +196,7 @@
                         </div>
                     </div>
                     <div class="vi-typo-row">
-                        <div class="vi-typo-sample" style="font-family:'Inter',sans-serif;font-size:18px;background:#F5F5F2;color:#1A1A1A;width:52px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:4px;flex-shrink:0;">Aa</div>
+                        <div class="vi-typo-sample" style="font-family:'Inter',sans-serif;font-size:18px;background:#F5F5F2;color:#000000;width:52px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:4px;flex-shrink:0;">Aa</div>
                         <div>
                             <span class="vi-typo-role">Body Font</span>
                             <span class="vi-typo-name">Inter</span>
@@ -223,8 +223,8 @@
                     </div>
                     <div class="vi-color-stack">
                         <div class="vi-color-row">
-                            <div class="vi-swatch-sm" style="background:#1A1A1A;"></div>
-                            <div><span class="vi-color-name">Deep Black</span><span class="vi-color-hex">#1A1A1A</span></div>
+                            <div class="vi-swatch-sm" style="background:#000000;"></div>
+                            <div><span class="vi-color-name">Deep Black</span><span class="vi-color-hex">#000000</span></div>
                         </div>
                         <div class="vi-color-row">
                             <div class="vi-swatch-sm" style="background:#F5F5F2;border:1px solid rgba(0,0,0,.09);"></div>
@@ -334,7 +334,7 @@
 
 </div>
 
-<script src="../script.js"></script>
+<script src="../script.js?v=6"></script>
 <script>
 (function() {
     let backdrop = null, lightbox = null, pausedTrack = null;
@@ -365,5 +365,6 @@
 })();
 </script>
 
+<script src="../slider-drag.js"></script>
 </body>
 </html>

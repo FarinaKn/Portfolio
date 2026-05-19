@@ -95,14 +95,30 @@ const nav = document.getElementById('nav');
 // CV Popup
 function openCV(file) {
     const overlay = document.getElementById('cv-overlay');
-    document.getElementById('cv-frame').src = file;
+    const frame   = document.getElementById('cv-frame');
+    const mobile  = document.getElementById('cv-mobile');
+    const dl      = document.getElementById('cv-dl');
+
     document.getElementById('cv-title').textContent = file.includes('_EN') ? 'CV · English' : 'CV · Deutsch';
+    dl.href = file;
+
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth < 600;
+    if (isMobile) {
+        frame.style.display  = 'none';
+        mobile.style.display = 'flex';
+        document.getElementById('cv-mobile-open').href = file;
+        document.getElementById('cv-mobile-dl').href  = file;
+    } else {
+        frame.style.display  = 'block';
+        mobile.style.display = 'none';
+        frame.src = file + '#view=FitH&toolbar=1';
+    }
+
     overlay.style.display = 'flex';
     document.body.style.overflow = 'hidden';
 }
 function closeCV() {
-    const overlay = document.getElementById('cv-overlay');
-    overlay.style.display = 'none';
+    document.getElementById('cv-overlay').style.display = 'none';
     document.getElementById('cv-frame').src = '';
     document.body.style.overflow = '';
 }

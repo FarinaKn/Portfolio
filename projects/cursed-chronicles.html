@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style.css?v=5">
+    <link rel="stylesheet" href="../style.css?v=6">
     <style>
         .proj-page-wrap { max-width: 1200px; margin: 0 auto; padding: 130px 48px 100px; }
         .proj-page-back {
@@ -30,11 +30,11 @@
         .social-links { display: flex; flex-direction: column; gap: 14px; flex-shrink: 0; padding-top: 3px; margin-left: auto; }
         .social-link {
             display: inline-flex; align-items: center; gap: 9px;
-            text-decoration: none; color: var(--muted);
+            text-decoration: none; color: var(--accent);
             font-family: var(--mono); font-size: 10px; letter-spacing: .1em;
             transition: color .25s; white-space: nowrap;
         }
-        .social-link:hover { color: var(--accent); }
+        .social-link:hover { color: var(--text); }
         .social-link svg { flex-shrink: 0; }
         /* Sections */
         .proj-section { margin-bottom: 72px; }
@@ -91,8 +91,10 @@
         }
         /* Overview grid */
         .overview-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-        .overview-item { border-radius: 6px; overflow: hidden; border: 1px solid var(--border); }
-        .overview-item img { width: 100%; display: block; }
+        .overview-item { display: flex; flex-direction: column; gap: 8px; }
+        .overview-item-img { border-radius: 6px; overflow: hidden; border: 1px solid var(--border); }
+        .overview-item-img img { width: 100%; display: block; }
+        .overview-item-label { font-family: var(--mono); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
         /* Lightbox */
         .slide-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.88); z-index: 8999; cursor: zoom-out; }
         .slide-lightbox {
@@ -105,11 +107,13 @@
         .slide-lightbox img, .slide-lightbox video { display: block; width: 100%; height: 100%; object-fit: cover; }
         .vi-label { color: var(--accent) !important; }
         .proj-page-footer { padding-top: 48px; border-top: 1px solid var(--border); }
+        .color-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px; }
         @media (max-width: 700px) {
             .proj-page-wrap { padding: 100px 24px 80px; }
             .slide.sq { width: 160px; } .slide.port { width: 120px; }
             .yt-grid { grid-template-columns: 1fr; }
             .overview-grid { grid-template-columns: repeat(2, 1fr); }
+            .color-cols { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -215,8 +219,8 @@
                 </div>
             </div>
             <div class="vi-block">
-                <span class="vi-label">Colours</span>
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 20px;">
+                <span class="vi-label">Colors</span>
+                <div class="color-cols">
                     <div class="vi-color-stack">
                         <div class="vi-color-row"><div class="vi-swatch-sm" style="background:#000000;"></div><div><span class="vi-color-name">Black</span><span class="vi-color-hex">#000000</span></div></div>
                         <div class="vi-color-row"><div class="vi-swatch-sm" style="background:#3c3d3c;"></div><div><span class="vi-color-name">Dark Grey</span><span class="vi-color-hex">#3C3D3C</span></div></div>
@@ -549,10 +553,22 @@
             <span class="proj-section-count">4 Overviews</span>
         </div>
         <div class="overview-grid">
-            <div class="overview-item"><img src="cursed-chronicles/overview/01_aufrufe_dezember_bis_februar.jpg" alt="" loading="lazy"></div>
-            <div class="overview-item"><img src="cursed-chronicles/overview/03_instagram_startseite_1.jpg" alt="" loading="lazy"></div>
-            <div class="overview-item"><img src="cursed-chronicles/overview/03_instagram_startseite_2.jpg" alt="" loading="lazy"></div>
-            <div class="overview-item"><img src="cursed-chronicles/overview/03_instagram_startseite_3.jpg" alt="" loading="lazy"></div>
+            <div class="overview-item">
+                <div class="overview-item-img"><img src="cursed-chronicles/overview/01_aufrufe_dezember_bis_februar.jpg" alt="" loading="lazy"></div>
+                <span class="overview-item-label">Reach · Dec–Feb</span>
+            </div>
+            <div class="overview-item">
+                <div class="overview-item-img"><img src="cursed-chronicles/overview/03_instagram_startseite_1.jpg" alt="" loading="lazy"></div>
+                <span class="overview-item-label">Feed Overview</span>
+            </div>
+            <div class="overview-item">
+                <div class="overview-item-img"><img src="cursed-chronicles/overview/03_instagram_startseite_2.jpg" alt="" loading="lazy"></div>
+                <span class="overview-item-label">Feed Overview</span>
+            </div>
+            <div class="overview-item">
+                <div class="overview-item-img"><img src="cursed-chronicles/overview/03_instagram_startseite_3.jpg" alt="" loading="lazy"></div>
+                <span class="overview-item-label">Feed Overview</span>
+            </div>
         </div>
     </div>
 
@@ -565,7 +581,7 @@
 
 </div>
 
-<script src="../script.js"></script>
+<script src="../script.js?v=6"></script>
 <script>
 (function() {
     let backdrop = null, lightbox = null, pausedTrack = null;
@@ -607,5 +623,6 @@
     document.addEventListener('keydown', e => { if (e.key === 'Escape') collapse(); });
 })();
 </script>
+<script src="../slider-drag.js"></script>
 </body>
 </html>

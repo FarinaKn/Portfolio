@@ -6,8 +6,8 @@
     <title>Happy Fit — Farina Knoblauch</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style.css?v=5">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css?v=6">
     <style>
         .proj-page-wrap { max-width: 1200px; margin: 0 auto; padding: 130px 48px 100px; }
         .proj-page-back {
@@ -29,12 +29,12 @@
         .ig-links { display: flex; flex-direction: column; gap: 14px; flex-shrink: 0; padding-top: 3px; margin-left: auto; }
         .ig-link {
             display: inline-flex; align-items: center; gap: 9px;
-            text-decoration: none; color: var(--muted);
+            text-decoration: none; color: var(--accent);
             font-family: var(--mono); font-size: 10px; letter-spacing: .1em;
             transition: color .25s;
             white-space: nowrap;
         }
-        .ig-link:hover { color: var(--accent); }
+        .ig-link:hover { color: var(--text); }
         .ig-link svg { flex-shrink: 0; transition: opacity .25s; }
         .ig-link:hover svg { opacity: .85; }
         .proj-section { margin-bottom: 72px; }
@@ -72,7 +72,14 @@
         .slide-lightbox img, .slide-lightbox video { display: block; width: 100%; height: 100%; object-fit: cover; }
         .vi-label { color: var(--accent) !important; }
         .proj-page-footer { padding-top: 48px; border-top: 1px solid var(--border); }
-        @media (max-width: 700px) { .proj-page-wrap { padding: 100px 24px 80px; } .slide.sq { width: 160px; } .slide.port { width: 120px; } }
+        .overview-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+        .overview-item { display: flex; flex-direction: column; gap: 8px; }
+        .overview-item-img { border-radius: 6px; overflow: hidden; border: 1px solid var(--border); }
+        .overview-item-img img { width: 100%; display: block; }
+        .overview-item-label { font-family: var(--mono); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+        .ph-block { background: linear-gradient(140deg,#040A12 0%,#0A1E30 45%,#164260 80%,#226888 100%); display: flex; align-items: center; justify-content: center; }
+        .ph-text { font-family: var(--mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.15); }
+        @media (max-width: 700px) { .proj-page-wrap { padding: 100px 24px 80px; } .slide.sq { width: 160px; } .slide.port { width: 120px; } .overview-grid { grid-template-columns: repeat(2, 1fr); } }
     </style>
 </head>
 <body>
@@ -133,7 +140,7 @@
                 <br>
                 <p>Seasonal campaigns, educational fitness content and product highlights form the content pillars — designed to serve both new and existing members and grow organic reach across Instagram.</p>
             </div>
-            <div class="ph-block" style="aspect-ratio:4/3;"><span class="ph-text">Moodboard · Concept</span></div>
+            <div style="border-radius:6px;overflow:hidden;border:1px solid var(--border);flex-shrink:0;max-width:580px;"><img src="../Social%20Media/HappyFit/_RW_5624.jpg" alt="HappyFit" style="width:100%;display:block;"></div>
         </div>
     </div>
 
@@ -142,21 +149,36 @@
         <div class="proj-section-head">
             <h2 class="proj-section-title">Logo &amp; Mark</h2>
             <div class="proj-section-line"></div>
-            <span class="proj-section-count">Coming soon</span>
+            <span class="proj-section-count">Gold &amp; Green</span>
         </div>
         <div class="mockup-grid">
-            <div class="mockup-item full">
-                <div class="mockup-frame ph-block" style="aspect-ratio:16/6;"><span class="ph-text">Primary Logo</span></div>
-                <span class="mockup-label">Primary Logo</span>
-                <span class="mockup-sublabel">Full lockup · horizontal &amp; stacked variants</span>
+            <div class="mockup-item">
+                <div class="mockup-frame" style="background:#000;border:none;display:flex;align-items:center;justify-content:center;padding:20px;aspect-ratio:3/2;">
+                    <img src="../Social%20Media/HappyFit/Logo%20:%20Icons/GoldLogo_transparent.png" alt="HF Gold Logo" loading="lazy" style="max-width:90%;max-height:190px;object-fit:contain;">
+                </div>
+                <span class="mockup-label">Logo · Gold</span>
+                <span style="font-family:var(--mono);font-size:10px;color:rgba(98,92,82,.5);margin-top:2px;">Pre-existing logo</span>
             </div>
             <div class="mockup-item">
-                <div class="mockup-frame ph-block" style="aspect-ratio:1/1;"><span class="ph-text">Mark / Icon</span></div>
-                <span class="mockup-label">Brand Mark</span>
+                <div class="mockup-frame" style="background:#000;border:none;display:flex;align-items:center;justify-content:center;padding:20px;aspect-ratio:3/2;">
+                    <img src="../Social%20Media/HappyFit/Logo%20:%20Icons/GrünLogo_trans_neu.png" alt="HF Green Logo" loading="lazy" style="max-width:90%;max-height:190px;object-fit:contain;">
+                </div>
+                <span class="mockup-label">Logo · Green</span>
+                <span style="font-family:var(--mono);font-size:10px;color:rgba(98,92,82,.5);margin-top:2px;">Pre-existing logo</span>
             </div>
             <div class="mockup-item">
-                <div class="mockup-frame ph-block" style="aspect-ratio:1/1;"><span class="ph-text">Logo Variants</span></div>
-                <span class="mockup-label">Logo Variants</span>
+                <div class="mockup-frame" style="background:#000;border:none;display:flex;align-items:center;justify-content:center;padding:20px;aspect-ratio:3/2;">
+                    <img src="../Social%20Media/HappyFit/Logo%20:%20Icons/GoldHF_Transparent.png" alt="HF Gold Mark" loading="lazy" style="max-width:90%;max-height:240px;object-fit:contain;">
+                </div>
+                <span class="mockup-label">Brand Mark · Gold</span>
+                <span style="font-family:var(--mono);font-size:10px;color:rgba(98,92,82,.5);margin-top:2px;">Pre-existing mark</span>
+            </div>
+            <div class="mockup-item">
+                <div class="mockup-frame" style="background:#000;border:none;display:flex;align-items:center;justify-content:center;padding:20px;aspect-ratio:3/2;">
+                    <img src="../Social%20Media/HappyFit/Logo%20:%20Icons/GrünHF_transparent.png" alt="HF Green Mark" loading="lazy" style="max-width:90%;max-height:160px;object-fit:contain;">
+                </div>
+                <span class="mockup-label">Brand Mark · Green</span>
+                <span style="font-family:var(--mono);font-size:10px;color:rgba(98,92,82,.5);margin-top:2px;">Pre-existing mark</span>
             </div>
         </div>
     </div>
@@ -164,7 +186,7 @@
     <!-- COLOUR & TYPOGRAPHY -->
     <div class="proj-section">
         <div class="proj-section-head">
-            <h2 class="proj-section-title">Colour &amp; Typography</h2>
+            <h2 class="proj-section-title">Color &amp; Typography</h2>
             <div class="proj-section-line"></div>
         </div>
         <div class="vi-grid">
@@ -172,33 +194,33 @@
                 <span class="vi-label">Typography</span>
                 <div class="vi-typo-stack">
                     <div class="vi-typo-row">
-                        <div class="vi-typo-sample" style="font-family:'Playfair Display',serif;font-size:26px;font-weight:900;">Aa</div>
-                        <div><span class="vi-typo-role">Headline Font</span><span class="vi-typo-name">Playfair Display</span></div>
+                        <div class="vi-typo-sample" style="font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:.06em;background:#000000;color:#ffffff;width:52px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:4px;flex-shrink:0;">Aa</div>
+                        <div><span class="vi-typo-role">Headline Font</span><span class="vi-typo-name">Bebas Neue Pro · Expanded Bold</span></div>
                     </div>
                     <div class="vi-typo-row">
-                        <div class="vi-typo-sample" style="font-family:'Cormorant Garamond',serif;font-size:20px;">Aa</div>
-                        <div><span class="vi-typo-role">Body Font</span><span class="vi-typo-name">Cormorant Garamond</span></div>
-                    </div>
-                    <div class="vi-typo-row">
-                        <div class="vi-typo-sample" style="font-family:'DM Mono',monospace;font-size:15px;">01</div>
-                        <div><span class="vi-typo-role">Numbers / UI</span><span class="vi-typo-name">DM Mono</span></div>
+                        <div class="vi-typo-sample" style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.08em;background:#000000;color:#ffffff;width:52px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:4px;flex-shrink:0;">Aa</div>
+                        <div><span class="vi-typo-role">Body Font</span><span class="vi-typo-name">Bebas Neue Pro · Middle</span></div>
                     </div>
                 </div>
             </div>
             <div class="vi-block">
-                <span class="vi-label">Colours</span>
+                <span class="vi-label">Colors</span>
                 <div class="vi-color-stack">
                     <div class="vi-color-row">
-                        <div class="vi-swatch-sm" style="background:#1A1A1A;"></div>
-                        <div><span class="vi-color-name">Black</span><span class="vi-color-hex">#1A1A1A</span></div>
+                        <div class="vi-swatch-sm" style="background:#000000;"></div>
+                        <div><span class="vi-color-name">Black</span><span class="vi-color-hex">#000000</span></div>
                     </div>
                     <div class="vi-color-row">
-                        <div class="vi-swatch-sm" style="background:#D4AF37;"></div>
-                        <div><span class="vi-color-name">Gold</span><span class="vi-color-hex">#D4AF37</span></div>
+                        <div class="vi-swatch-sm" style="background:#fec503;"></div>
+                        <div><span class="vi-color-name">Gold</span><span class="vi-color-hex">#FEC503</span></div>
                     </div>
                     <div class="vi-color-row">
-                        <div class="vi-swatch-sm" style="background:#F5F0E8;"></div>
-                        <div><span class="vi-color-name">Warm White</span><span class="vi-color-hex">#F5F0E8</span></div>
+                        <div class="vi-swatch-sm" style="background:#4d7d38;"></div>
+                        <div><span class="vi-color-name">Green</span><span class="vi-color-hex">#4D7D38</span></div>
+                    </div>
+                    <div class="vi-color-row">
+                        <div class="vi-swatch-sm" style="background:#ffffff;border:1px solid rgba(0,0,0,.09);"></div>
+                        <div><span class="vi-color-name">White</span><span class="vi-color-hex">#FFFFFF</span></div>
                     </div>
                 </div>
             </div>
@@ -206,33 +228,60 @@
                 <span class="vi-label">Layout Principle</span>
                 <div class="vi-layout-block">
                     <span class="vi-layout-tag">Content First</span>
-                    <p class="vi-layout-text">Clean, high-contrast layouts with strong typographic hierarchy. Gold accents draw attention to actions and highlights. Posts follow a consistent grid structure — alternating between full-bleed imagery and text-driven cards to maintain rhythm across the feed.</p>
+                    <p class="vi-layout-text">Clean, high-contrast layouts with strong typographic hierarchy. Accent colour follows the studio identity — gold or green depending on which studio the content is created for. Posts follow a consistent grid structure, alternating between full-bleed imagery and text-driven cards to maintain rhythm across the feed.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- ICONS & PATTERNS -->
+    <!-- ICONS -->
     <div class="proj-section">
         <div class="proj-section-head">
-            <h2 class="proj-section-title">Icons &amp; Patterns</h2>
+            <h2 class="proj-section-title">Icons</h2>
             <div class="proj-section-line"></div>
-            <span class="proj-section-count">Coming soon</span>
+            <span class="proj-section-count">Story Highlights &amp; Profile</span>
         </div>
-        <div class="mockup-grid">
-            <div class="mockup-item">
-                <div class="mockup-frame ph-block" style="aspect-ratio:1/1;"><span class="ph-text">Icon Set</span></div>
-                <span class="mockup-label">Icon Set</span>
-            </div>
-            <div class="mockup-item">
-                <div class="mockup-frame ph-block" style="aspect-ratio:1/1;"><span class="ph-text">Patterns</span></div>
-                <span class="mockup-label">Brand Patterns</span>
+        <div class="slider-wrap">
+            <div class="slider-track" style="--dur:40s">
+                <div class="slide" style="width:220px;aspect-ratio:1/1;background:#000;border:none;"><img src="../Social%20Media/HappyFit/Logo%20:%20Icons/Story_Highlights.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:8px;box-sizing:border-box;"></div>
+                <div class="slide" style="width:220px;aspect-ratio:1/1;background:#000;border:none;"><img src="../Social%20Media/HappyFit/Logo%20:%20Icons/Story_Highlights2.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:8px;box-sizing:border-box;"></div>
+                <div class="slide" style="width:220px;aspect-ratio:1/1;background:#000;border:none;"><img src="../Social%20Media/HappyFit/Logo%20:%20Icons/Story_Highlights3.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:8px;box-sizing:border-box;"></div>
+                <div class="slide" style="width:220px;aspect-ratio:1/1;background:#000;border:none;"><img src="../Social%20Media/HappyFit/Logo%20:%20Icons/Story_Highlights4.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:8px;box-sizing:border-box;"></div>
+                <div class="slide" style="width:220px;aspect-ratio:1/1;background:#000;border:none;"><img src="../Social%20Media/HappyFit/Logo%20:%20Icons/Story_Highlights5.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:8px;box-sizing:border-box;"></div>
+                <div class="slide" style="width:220px;aspect-ratio:1/1;background:#000;border:none;"><img src="../Social%20Media/HappyFit/Logo%20:%20Icons/Story_Highlights6.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:8px;box-sizing:border-box;"></div>
+                <div class="slide" style="width:220px;aspect-ratio:1/1;background:#000;border:none;"><img src="../Social%20Media/HappyFit/Logo%20:%20Icons/Story_Highlights7.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:8px;box-sizing:border-box;"></div>
+                <div class="slide" style="width:220px;aspect-ratio:1/1;background:#000;border:none;"><img src="../Social%20Media/HappyFit/Logo%20:%20Icons/Story_Highlights8.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:8px;box-sizing:border-box;"></div>
+                <div class="slide" style="width:220px;aspect-ratio:1/1;background:#000;border:none;"><img src="../Social%20Media/HappyFit/Logo%20:%20Icons/Story_Highlights9.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:8px;box-sizing:border-box;"></div>
+                <div class="slide" style="width:220px;aspect-ratio:1/1;background:#000;border:none;"><img src="../Social%20Media/HappyFit/Logo%20:%20Icons/Story_Highlights10.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:8px;box-sizing:border-box;"></div>
+                <div class="slide" style="width:220px;aspect-ratio:1/1;background:#000;border:none;"><img src="../Social%20Media/HappyFit/Logo%20:%20Icons/Profilbild_Storys.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:8px;box-sizing:border-box;"></div>
+                <div class="slide" style="width:220px;aspect-ratio:1/1;background:#000;border:none;"><img src="../Social%20Media/HappyFit/Logo%20:%20Icons/Profilbild_Storys2.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:8px;box-sizing:border-box;"></div>
+                <div class="slide" style="width:220px;aspect-ratio:1/1;background:#000;border:none;"><img src="../Social%20Media/HappyFit/Logo%20:%20Icons/Profilbild_Storys3.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:8px;box-sizing:border-box;"></div>
+                <div class="slide" style="width:220px;aspect-ratio:1/1;background:#000;border:none;"><img src="../Social%20Media/HappyFit/Logo%20:%20Icons/Profilbild_Storys4.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:8px;box-sizing:border-box;"></div>
+                <div class="slide" style="width:220px;aspect-ratio:1/1;background:#000;border:none;"><img src="../Social%20Media/HappyFit/Logo%20:%20Icons/Profilbild_Storys5.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:8px;box-sizing:border-box;"></div>
+                <div class="slide" style="width:220px;aspect-ratio:1/1;background:#000;border:none;"><img src="../Social%20Media/HappyFit/Logo%20:%20Icons/Profilbild_Storys6.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:8px;box-sizing:border-box;"></div>
+                <!-- duplicate for loop -->
+                <div class="slide" style="width:220px;aspect-ratio:1/1;background:#000;border:none;"><img src="../Social%20Media/HappyFit/Logo%20:%20Icons/Story_Highlights.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:8px;box-sizing:border-box;"></div>
+                <div class="slide" style="width:220px;aspect-ratio:1/1;background:#000;border:none;"><img src="../Social%20Media/HappyFit/Logo%20:%20Icons/Story_Highlights2.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:8px;box-sizing:border-box;"></div>
+                <div class="slide" style="width:220px;aspect-ratio:1/1;background:#000;border:none;"><img src="../Social%20Media/HappyFit/Logo%20:%20Icons/Story_Highlights3.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:8px;box-sizing:border-box;"></div>
+                <div class="slide" style="width:220px;aspect-ratio:1/1;background:#000;border:none;"><img src="../Social%20Media/HappyFit/Logo%20:%20Icons/Story_Highlights4.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:8px;box-sizing:border-box;"></div>
+                <div class="slide" style="width:220px;aspect-ratio:1/1;background:#000;border:none;"><img src="../Social%20Media/HappyFit/Logo%20:%20Icons/Story_Highlights5.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:8px;box-sizing:border-box;"></div>
+                <div class="slide" style="width:220px;aspect-ratio:1/1;background:#000;border:none;"><img src="../Social%20Media/HappyFit/Logo%20:%20Icons/Story_Highlights6.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:8px;box-sizing:border-box;"></div>
+                <div class="slide" style="width:220px;aspect-ratio:1/1;background:#000;border:none;"><img src="../Social%20Media/HappyFit/Logo%20:%20Icons/Story_Highlights7.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:8px;box-sizing:border-box;"></div>
+                <div class="slide" style="width:220px;aspect-ratio:1/1;background:#000;border:none;"><img src="../Social%20Media/HappyFit/Logo%20:%20Icons/Story_Highlights8.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:8px;box-sizing:border-box;"></div>
+                <div class="slide" style="width:220px;aspect-ratio:1/1;background:#000;border:none;"><img src="../Social%20Media/HappyFit/Logo%20:%20Icons/Story_Highlights9.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:8px;box-sizing:border-box;"></div>
+                <div class="slide" style="width:220px;aspect-ratio:1/1;background:#000;border:none;"><img src="../Social%20Media/HappyFit/Logo%20:%20Icons/Story_Highlights10.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:8px;box-sizing:border-box;"></div>
+                <div class="slide" style="width:220px;aspect-ratio:1/1;background:#000;border:none;"><img src="../Social%20Media/HappyFit/Logo%20:%20Icons/Profilbild_Storys.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:8px;box-sizing:border-box;"></div>
+                <div class="slide" style="width:220px;aspect-ratio:1/1;background:#000;border:none;"><img src="../Social%20Media/HappyFit/Logo%20:%20Icons/Profilbild_Storys2.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:8px;box-sizing:border-box;"></div>
+                <div class="slide" style="width:220px;aspect-ratio:1/1;background:#000;border:none;"><img src="../Social%20Media/HappyFit/Logo%20:%20Icons/Profilbild_Storys3.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:8px;box-sizing:border-box;"></div>
+                <div class="slide" style="width:220px;aspect-ratio:1/1;background:#000;border:none;"><img src="../Social%20Media/HappyFit/Logo%20:%20Icons/Profilbild_Storys4.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:8px;box-sizing:border-box;"></div>
+                <div class="slide" style="width:220px;aspect-ratio:1/1;background:#000;border:none;"><img src="../Social%20Media/HappyFit/Logo%20:%20Icons/Profilbild_Storys5.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:8px;box-sizing:border-box;"></div>
+                <div class="slide" style="width:220px;aspect-ratio:1/1;background:#000;border:none;"><img src="../Social%20Media/HappyFit/Logo%20:%20Icons/Profilbild_Storys6.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:8px;box-sizing:border-box;"></div>
             </div>
         </div>
     </div>
 
     <!-- INTRO NOTE -->
-    <p style="font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--muted);margin-bottom:48px;line-height:1.8;">A small glimpse into the content created — for the full feed, visit the studios on Instagram.</p>
+    <p style="font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:48px;display:flex;align-items:center;gap:10px;">A small glimpse into the content created — for the full feed, visit the studios on Instagram.<svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="flex-shrink:0;opacity:.5;"><path d="M6 1v10M1 7l5 5 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></p>
 
     <!-- AKTIONEN -->
     <div class="proj-section">
@@ -451,6 +500,33 @@
         </div>
     </div>
 
+    <!-- RESULTS -->
+    <div class="proj-section">
+        <div class="proj-section-head">
+            <h2 class="proj-section-title">Results</h2>
+            <div class="proj-section-line"></div>
+            <span class="proj-section-count">Coming soon</span>
+        </div>
+        <div class="overview-grid">
+            <div class="overview-item">
+                <div class="overview-item-img"><img src="../Social%20Media/HappyFit/Results/zeitraum.png" alt="" loading="lazy"></div>
+                <span class="overview-item-label">Reach · Time Period</span>
+            </div>
+            <div class="overview-item">
+                <div class="overview-item-img"><img src="../Social%20Media/HappyFit/Results/eins.png" alt="" loading="lazy"></div>
+                <span class="overview-item-label">Feed Overview</span>
+            </div>
+            <div class="overview-item">
+                <div class="overview-item-img"><img src="../Social%20Media/HappyFit/Results/2.png" alt="" loading="lazy"></div>
+                <span class="overview-item-label">Feed Overview</span>
+            </div>
+            <div class="overview-item">
+                <div class="overview-item-img"><img src="../Social%20Media/HappyFit/Results/3.png" alt="" loading="lazy"></div>
+                <span class="overview-item-label">Feed Overview</span>
+            </div>
+        </div>
+    </div>
+
     <div class="proj-page-footer">
         <a href="../index.html#work" class="proj-page-back">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M12 7H2M2 7l5-5M2 7l5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -460,7 +536,7 @@
 
 </div>
 
-<script src="../script.js"></script>
+<script src="../script.js?v=6"></script>
 <script>
 (function() {
     let backdrop = null, lightbox = null, pausedTrack = null;
@@ -520,5 +596,6 @@
 })();
 </script>
 
+<script src="../slider-drag.js"></script>
 </body>
 </html>
