@@ -425,7 +425,7 @@
         }
         .card-veil {
             position: absolute; inset: 0;
-            background: rgba(19,18,17,.45);
+            background: rgba(19,18,17,.62);
             display: flex; align-items: center; justify-content: center;
             opacity: 0; transition: opacity .4s;
         }
