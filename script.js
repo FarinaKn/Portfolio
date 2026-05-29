@@ -11,6 +11,12 @@ const nav = document.getElementById('nav');
         links.classList.remove('open');
         toggle.classList.remove('open');
     }));
+    document.addEventListener('click', e => {
+        if (links.classList.contains('open') && !links.contains(e.target) && !toggle.contains(e.target)) {
+            links.classList.remove('open');
+            toggle.classList.remove('open');
+        }
+    });
 
     document.querySelectorAll('.f-btn[data-f]').forEach(btn => {
         btn.addEventListener('click', () => {
