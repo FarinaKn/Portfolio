@@ -3,3 +3,5 @@ serve.py
 skills-lock.json
 .agents/
 .claude/
+Photography/
+.DS_Store
