@@ -475,7 +475,7 @@
         .about-text { font-family: var(--serif); font-size: clamp(22px, 2.5vw, 30px); font-weight: 300; line-height: 1.55; }
         .about-text em { color: var(--accent); font-style: italic; }
         .about-sub { margin-top: 28px; font-size: 13px; color: var(--muted); line-height: 2; }
-        .tools-label { font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+        .tools-label { font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
 
         .tools-grid {
             display: grid; grid-template-columns: 1fr 1fr;
@@ -643,7 +643,7 @@
             font-size: 12px;
             letter-spacing: .2em;
             text-transform: uppercase;
-            color: var(--muted);
+            color: var(--accent);
             margin-bottom: 20px;
         }
         .exp-edu-item {
