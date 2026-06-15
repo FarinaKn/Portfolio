@@ -46,10 +46,16 @@
         }
         nav.scrolled {
             padding: 14px 48px;
+            border-bottom: 1px solid rgba(255,255,255,.07);
+        }
+        nav.scrolled::before {
+            content: '';
+            position: absolute;
+            inset: 0;
             background: rgba(19,18,17,.85);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255,255,255,.07);
+            z-index: -1;
         }
         .nav-logo {
             font-family: var(--display);
@@ -63,15 +69,10 @@
         .nav-logo:hover { opacity: 1; }
 
         .nav-links {
-            position: fixed;
-            top: 0;
-            right: 48px;
-            padding: 24px 0;
             display: flex;
             align-items: center;
             gap: 6px;
             list-style: none;
-            z-index: 500;
         }
         .nav-links a {
             display: block;
