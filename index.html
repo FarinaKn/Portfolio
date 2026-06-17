@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=7">
+    <link rel="preload" href="Avatar_Farina.png" as="image" fetchpriority="high">
+    <link rel="prefetch" href="projects/happy-fit.html">
     <style>
         .no-deco .card-thumb::before, .no-deco .card-thumb::after { display: none; }
         .card-badge {
@@ -80,7 +82,7 @@
     <div class="hero-split">
         <div class="hero-avatar">
             <div class="avatar-frame">
-                <img src="Avatar_Farina.png" alt="Farina Knoblauch" class="avatar-img">
+                <img src="Avatar_Farina.png" alt="Farina Knoblauch" class="avatar-img" fetchpriority="high" loading="eager">
             </div>
         </div>
         <div class="hero-copy">
